@@ -22,8 +22,10 @@ public enum DescriptiveTag {
     BEDTIME("Bedtime"),
     INFORMATIVE("Informative"),
     NONFICTION("Non-fiction"),
+    ACTIVITYBOOK("Activity Book"),
     SAD("Sad"),
     DARK("Dark"),
+    BIGFEELINGS("Big Feelings"),
     EMOTIONAL("Emotional"),
     MIDDLEGRADE("Middle Grade"),
     YA("YA"),
@@ -39,9 +41,16 @@ public enum DescriptiveTag {
     POPUPBOOK("Pop-up Book"),
     EDUCATIONAL("Educational"),
     ANIMALS("Animals"),
+    IDENTITY("Identity"),
+    ROMANCE("Romance"),
     CONTAINSFARTS("Contains Farts"),
     HOWTOBOOK("How-to Book"),
-    FIRSTEXPERIENCES("First Experiences");
+    FIRSTEXPERIENCES("First Experiences"),
+    COMIC("Comic"),
+    POETRY("Poetry"),
+    LGBTQ("LGBTQ+"),
+    NURSERYRHYMES("Nursery Rhymes"),
+    CD("CD");
 
     private final String value;
 

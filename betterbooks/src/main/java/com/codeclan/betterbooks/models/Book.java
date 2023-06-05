@@ -2,6 +2,7 @@ package com.codeclan.betterbooks.models;
 
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.models.people.Illustrator;
+import com.codeclan.betterbooks.models.people.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -74,9 +75,12 @@ public class Book {
     private String isbn;
     @Column(name = "cover_url")
     private String coverUrl;
+    @ManyToOne
+    @JoinColumn(name = "bookshelf", nullable = false)
+    private Bookshelf bookshelf;
 
     public Book(String title, String synopsis, int lengthInPages, String format,
-                LocalDate datePublished, String publisher, String isbn, String coverUrl) {
+                LocalDate datePublished, String publisher, String isbn, String coverUrl, Bookshelf bookshelf) {
         this.title = title;
         this.authors = new ArrayList<>();
         this.illustrators = new ArrayList<>();
@@ -88,6 +92,7 @@ public class Book {
         this.publisher = publisher;
         this.isbn = isbn;
         this.coverUrl = coverUrl;
+        this.bookshelf = bookshelf;
     }
 
     public Book() {
@@ -200,9 +205,15 @@ public class Book {
         this.coverUrl = coverUrl;
     }
 
+    public Bookshelf getBookshelf() {
+        return bookshelf;
+    }
 
+    public void setBookshelf(Bookshelf bookshelf) {
+        this.bookshelf = bookshelf;
+    }
 
-//    public void deleteAuthorFromBook(){
+    //    public void deleteAuthorFromBook(){
 //
 //    }
 //

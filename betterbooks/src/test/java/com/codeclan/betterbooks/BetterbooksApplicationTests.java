@@ -61,7 +61,8 @@ class BetterbooksApplicationTests {
 		Author author = new Author("Sally", "Collins","url.com", "Sally is an author.");
 		Illustrator illustrator = new Illustrator("Quentin", "Blake","url.com", "Quentin is an artist.");
 		LocalDate date = LocalDate.of(1985, 4, 20);
-		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com");
+		Bookshelf allBooks = new Bookshelf("All Books");
+		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com", allBooks);
 		book.setDatePublished(date);
 		bookRepository.save(book);
 	}
@@ -71,7 +72,8 @@ class BetterbooksApplicationTests {
 		Author author = new Author("Sally", "Collins","url.com", "Sally is an author.");
 		Illustrator illustrator = new Illustrator("Quentin", "Blake","url.com", "Quentin is an artist.");
 		LocalDate date = LocalDate.of(1985, 4, 20);
-		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com");
+		Bookshelf allBooks = new Bookshelf("All Books");
+		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com", allBooks);
 		book.setDatePublished(date);
 		book.addAuthors(author);
 		book.addIllustrators(illustrator);
