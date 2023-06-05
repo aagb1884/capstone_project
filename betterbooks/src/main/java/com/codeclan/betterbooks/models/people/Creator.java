@@ -1,9 +1,15 @@
 package com.codeclan.betterbooks.models.people;
 
+import javax.persistence.*;
 import java.awt.print.Book;
 import java.util.ArrayList;
 
+
+
 public abstract class Creator extends Person{
+
+
+
 
     private ArrayList<Book> books;
 

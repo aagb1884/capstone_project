@@ -1,11 +1,20 @@
 package com.codeclan.betterbooks.models.people;
 
-public abstract class Person {
 
-private String firstname;
-private String lastname;
-private String imgUrl;
-private String bio;
+import javax.persistence.*;
+
+
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Entity
+public abstract class Person {
+//    @Id
+//    @GeneratedValue
+//    private Long id;
+
+    private String firstname;
+    private String lastname;
+    private String imgUrl;
+    private String bio;
 
     public Person(String firstname, String lastname, String imgUrl, String bio) {
         this.firstname = firstname;

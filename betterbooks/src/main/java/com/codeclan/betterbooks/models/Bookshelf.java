@@ -8,9 +8,9 @@ public class Bookshelf {
     private String name;
     private ArrayList<Book> books;
 
-    public Bookshelf(String name, ArrayList<Book> books) {
+    public Bookshelf(String name) {
         this.name = name;
-        this.books = books;
+        this.books = new ArrayList<>();
     }
 
     public String getName() {
@@ -27,5 +27,9 @@ public class Bookshelf {
 
     public void setBooks(ArrayList<Book> books) {
         this.books = books;
+    }
+
+    public void addBookToBookshelf(){
+
     }
 }

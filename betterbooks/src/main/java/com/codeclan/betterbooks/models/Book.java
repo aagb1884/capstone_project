@@ -1,35 +1,72 @@
 package com.codeclan.betterbooks.models;
 
-import com.codeclan.betterbooks.models.people.Creator;
+import com.codeclan.betterbooks.models.people.Author;
+import com.codeclan.betterbooks.models.people.Illustrator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.*;
 import java.time.LocalDate;
 
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
+@Table(name = "books")
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column
     private String title;
-    private ArrayList<Creator> creators;
+    @JsonIgnoreProperties({"book"})
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    private List<Author> authors;
+    @JsonIgnoreProperties({"book"})
+    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    private List<Illustrator> illustrators;
+    @Column
     private String synopsis;
+    @Column
     private ArrayList<DescriptiveTag> descriptions;
+    @Column(name = "length_in_pages")
     private int lengthInPages;
+    @Column
     private String format;
+    @Column(name = "date_published")
     private LocalDate datePublished;
+    @Column
     private String publisher;
-    private int isbn;
+    @Column
+    private String isbn;
+    @Column(name = "cover_url")
     private String coverUrl;
 
-    public Book(String title, ArrayList<Creator> creators, String synopsis, ArrayList<DescriptiveTag> descriptions,
-                int lengthInPages, String format, LocalDate datePublished, String publisher, int isbn, String coverUrl) {
+    public Book(String title, String synopsis, int lengthInPages, String format,
+                LocalDate datePublished, String publisher, String isbn, String coverUrl) {
         this.title = title;
-        this.creators = creators;
+        this.authors = new ArrayList<>();
+        this.illustrators = new ArrayList<>();
         this.synopsis = synopsis;
-        this.descriptions = descriptions;
+        this.descriptions = new ArrayList<>();
         this.lengthInPages = lengthInPages;
         this.format = format;
         this.datePublished = datePublished;
         this.publisher = publisher;
         this.isbn = isbn;
         this.coverUrl = coverUrl;
+    }
+
+    public Book() {
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -40,12 +77,20 @@ public class Book {
         this.title = title;
     }
 
-    public ArrayList<Creator> getCreators() {
-        return creators;
+    public List<Author> getAuthors() {
+        return authors;
     }
 
-    public void setCreators(ArrayList<Creator> creators) {
-        this.creators = creators;
+    public void setAuthors(List<Author> authors) {
+        this.authors = authors;
+    }
+
+    public List<Illustrator> getIllustrators() {
+        return illustrators;
+    }
+
+    public void setIllustrators(List<Illustrator> illustrators) {
+        this.illustrators = illustrators;
     }
 
     public String getSynopsis() {
@@ -60,6 +105,9 @@ public class Book {
         return descriptions;
     }
 
+    public void setDescriptions(ArrayList<DescriptiveTag> descriptions) {
+        this.descriptions = descriptions;
+    }
 
     public int getLengthInPages() {
         return lengthInPages;
@@ -93,11 +141,11 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public int getIsbn() {
+    public String getIsbn() {
         return isbn;
     }
 
-    public void setIsbn(int isbn) {
+    public void setIsbn(String isbn) {
         this.isbn = isbn;
     }
 
@@ -107,5 +155,21 @@ public class Book {
 
     public void setCoverUrl(String coverUrl) {
         this.coverUrl = coverUrl;
+    }
+
+    public void addAuthorToBook(){
+
+    }
+
+    public void deleteAuthorFromBook(){
+
+    }
+
+    public void addIllustratorToBook(){
+
+    }
+
+    public void deleteIllustratorFromBook(){
+        
     }
 }
