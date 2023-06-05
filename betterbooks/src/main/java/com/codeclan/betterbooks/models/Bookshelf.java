@@ -1,12 +1,18 @@
 package com.codeclan.betterbooks.models;
 
-import java.awt.print.Book;
+import com.codeclan.betterbooks.models.Book;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Bookshelf {
 
     private String name;
-    private ArrayList<Book> books;
+    @JsonIgnoreProperties({"bookshelf"})
+    @OneToMany(mappedBy = "bookshelf")
+    private List<Book> books;
 
     public Bookshelf(String name) {
         this.name = name;
@@ -21,15 +27,15 @@ public class Bookshelf {
         this.name = name;
     }
 
-    public ArrayList<Book> getBooks() {
+    public List<Book> getBooks() {
         return books;
     }
 
-    public void setBooks(ArrayList<Book> books) {
+    public void setBooks(List<Book> books) {
         this.books = books;
     }
 
-    public void addBookToBookshelf(){
-
+    public void addBookToBookshelf(Book book){
+        this.books.add(book);
     }
 }

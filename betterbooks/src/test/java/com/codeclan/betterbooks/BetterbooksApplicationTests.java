@@ -3,6 +3,7 @@ package com.codeclan.betterbooks;
 
 
 import com.codeclan.betterbooks.models.Bookshelf;
+import com.codeclan.betterbooks.models.DescriptiveTag;
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.models.people.Illustrator;
 import com.codeclan.betterbooks.models.people.User;
@@ -10,7 +11,6 @@ import com.codeclan.betterbooks.models.Book;
 
 
 import com.codeclan.betterbooks.repositories.*;
-import org.aspectj.lang.annotation.Before;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -73,8 +73,12 @@ class BetterbooksApplicationTests {
 		LocalDate date = LocalDate.of(1985, 4, 20);
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com");
 		book.setDatePublished(date);
-		bookRepository.save(book);book = new Book("The Lovely Horse", "Horse goes on adventure", 20, "Board Book", date, "HarperCollins", "9781233458756", "url.com");
-		Bookshelf bookshelf = new Bookshelf("Tim's Books", book);
+		book.addAuthors(author);
+		book.addIllustrators(illustrator);
+		book.addDescriptions(DescriptiveTag.LIGHTHEARTED);
+		bookRepository.save(book);
+		Bookshelf bookshelf = new Bookshelf("Tim's Books");
+		bookshelf.addBookToBookshelf(book);
 		bookshelfRepository.save(bookshelf);
 	}
 }

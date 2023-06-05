@@ -20,11 +20,43 @@ public class Book {
 
     @Column
     private String title;
-    @JsonIgnoreProperties({"book"})
-    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(
+            name = "authors_books",
+            joinColumns = {
+                    @JoinColumn(
+                            name = "book_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(
+                            name = "author_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            }
+    )
     private List<Author> authors;
-    @JsonIgnoreProperties({"book"})
-    @OneToMany(mappedBy = "book", fetch = FetchType.LAZY)
+    @ManyToMany
+    @JoinTable(
+            name = "illustrators_books",
+            joinColumns = {
+                    @JoinColumn(
+                            name = "book_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            },
+            inverseJoinColumns = {
+                    @JoinColumn(
+                            name = "illustrator_id",
+                            nullable = false,
+                            updatable = false
+                    )
+            }
+    )
     private List<Illustrator> illustrators;
     @Column
     private String synopsis;
@@ -85,6 +117,10 @@ public class Book {
         this.authors = authors;
     }
 
+   public void addAuthors(Author author){
+        this.authors.add(author);
+   }
+
     public List<Illustrator> getIllustrators() {
         return illustrators;
     }
@@ -93,6 +129,9 @@ public class Book {
         this.illustrators = illustrators;
     }
 
+    public void addIllustrators(Illustrator illustrator){
+        this.illustrators.add(illustrator);
+    }
     public String getSynopsis() {
         return synopsis;
     }
@@ -107,6 +146,10 @@ public class Book {
 
     public void setDescriptions(ArrayList<DescriptiveTag> descriptions) {
         this.descriptions = descriptions;
+    }
+
+    public void addDescriptions(DescriptiveTag descriptiveTag){
+        this.descriptions.add(descriptiveTag);
     }
 
     public int getLengthInPages() {
@@ -157,19 +200,13 @@ public class Book {
         this.coverUrl = coverUrl;
     }
 
-    public void addAuthorToBook(){
 
-    }
 
-    public void deleteAuthorFromBook(){
-
-    }
-
-    public void addIllustratorToBook(){
-
-    }
-
-    public void deleteIllustratorFromBook(){
-        
-    }
+//    public void deleteAuthorFromBook(){
+//
+//    }
+//
+//    public void deleteIllustratorFromBook(){
+//
+//    }
 }
