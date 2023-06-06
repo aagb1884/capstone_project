@@ -1,6 +1,8 @@
 package com.codeclan.betterbooks.models;
 
 
+import com.codeclan.betterbooks.models.people.User;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -16,22 +18,25 @@ public class BookEntry {
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
+
     @ManyToOne
-    @JoinColumn(name = "bookshelf_id", nullable = false)
-    private Bookshelf bookshelf;
-    private LocalDate startedReading;
-    private LocalDate finishedReading;
-    private double starRating;
+    @JoinColumn(name = "user_id", nullable = false)
+    private User user;
+    private String startedReading;
+    private String finishedReading;
+    private Integer starRating;
+    private Status status;
 
     public BookEntry() {
     }
 
-    public BookEntry(Book book, Bookshelf bookshelf, LocalDate startedReading, LocalDate finishedReading, double starRating) {
+    public BookEntry(Book book, User user, String startedReading, String finishedReading, Integer starRating, Status status) {
         this.book = book;
-        this.bookshelf = bookshelf;
+        this.user = user;
         this.startedReading = startedReading;
         this.finishedReading = finishedReading;
         this.starRating = starRating;
+        this.status = status;
     }
 
     public Long getId() {
@@ -50,37 +55,42 @@ public class BookEntry {
         this.book = book;
     }
 
-    public Bookshelf getBookshelf() {
-        return bookshelf;
-    }
-
-    public void setBookshelf(Bookshelf bookshelf) {
-        this.bookshelf = bookshelf;
-    }
-
-    public LocalDate getStartedReading() {
+    public String getStartedReading() {
         return startedReading;
     }
 
-    public void setStartedReading(LocalDate startedReading) {
+    public void setStartedReading(String startedReading) {
         this.startedReading = startedReading;
     }
 
-    public LocalDate getFinishedReading() {
+    public String getFinishedReading() {
         return finishedReading;
     }
 
-    public void setFinishedReading(LocalDate finishedReading) {
+    public void setFinishedReading(String finishedReading) {
         this.finishedReading = finishedReading;
     }
 
-    public double getStarRating() {
+    public Integer getStarRating() {
         return starRating;
     }
 
-    public void setStarRating(double starRating) {
+    public void setStarRating(Integer starRating) {
         this.starRating = starRating;
     }
 
+    public Status getStatus() {
+        return status;
+    }
+    public void setStatus(Status status) {
+        this.status = status;
+    }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 }

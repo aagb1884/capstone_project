@@ -102,4 +102,8 @@ public class Author{
     public void setBio(String bio) {
         this.bio = bio;
     }
+
+//    public void addAuthor(Author author){
+//        this.authors.add(author);
+//    }
 }

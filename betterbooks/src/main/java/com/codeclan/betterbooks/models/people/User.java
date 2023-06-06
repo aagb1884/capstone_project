@@ -1,6 +1,7 @@
 package com.codeclan.betterbooks.models.people;
 
-import com.codeclan.betterbooks.models.Bookshelf;
+import com.codeclan.betterbooks.models.BookEntry;
+import com.codeclan.betterbooks.models.Book;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -21,10 +22,9 @@ public class User {
     private String imgUrl;
     @Column
     private String bio;
-
     @JsonIgnoreProperties({"user"})
     @OneToMany(mappedBy = "user")
-    private List<Bookshelf> bookshelves;
+    private List<BookEntry> myBooks;
 
     public User() {
     }
@@ -34,7 +34,7 @@ public class User {
         this.lastname = lastname;
         this.imgUrl = imgUrl;
         this.bio = bio;
-        this.bookshelves = new ArrayList<Bookshelf>();
+        this.myBooks = new ArrayList<BookEntry>();
     }
 
     public Long getId() {
@@ -77,11 +77,14 @@ public class User {
         this.bio = bio;
     }
 
-    public List<Bookshelf> getBookshelves() {
-        return bookshelves;
+    public List<BookEntry> getMyBooks() {
+        return myBooks;
     }
 
-    public void setBookshelves(List<Bookshelf> bookshelves) {
-        this.bookshelves = bookshelves;
+    public void setMyBooks(List<BookEntry> myBooks) {
+        this.myBooks = myBooks;
+    }
+    public void addBookEntry(BookEntry bookEntry){
+        this.myBooks.add(bookEntry);
     }
 }

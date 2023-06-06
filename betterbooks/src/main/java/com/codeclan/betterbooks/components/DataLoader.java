@@ -1,10 +1,12 @@
 package com.codeclan.betterbooks.components;
 
 import com.codeclan.betterbooks.models.Book;
-import com.codeclan.betterbooks.models.Bookshelf;
+import com.codeclan.betterbooks.models.Format;
+import com.codeclan.betterbooks.models.Status;
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.models.people.Illustrator;
 import com.codeclan.betterbooks.models.people.User;
+import com.codeclan.betterbooks.models.BookEntry;
 import com.codeclan.betterbooks.repositories.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
@@ -30,7 +32,7 @@ import org.springframework.context.annotation.Profile;
         IllustratorRepository illustratorRepository;
 
         @Autowired
-        BookshelfRepository bookshelfRepository;
+        BookEntryRepository bookEntryRepository;
 
 
         public DataLoader() {
@@ -51,18 +53,20 @@ import org.springframework.context.annotation.Profile;
                     "He likes football, cricket, biscuits, music and drawing. He dislikes celery and changing nappies.");
             illustratorRepository.save(illustrator1);
 
-            Book book1 = new Book();
-            bookRepository.save(book1);
-//
-//            Book book2 = new Book();
-//            bookRepository.save(book2);
+            Book mrGum = new Book("You're a Bad Man Mr Gum", "Shabba me whiskers! It's one of those Mr Gum books by Andy Stanton. They're only the craziest, funnest most amazing books for children in the world. You're A Bad Man, Mr Gum! Good evening. Mr Gum is a complete horror who hates children, animals, fun and corn on the cob. This book's all about him. And an angry fairy who lives in his bathtub. And Jake the dog, and a little girl called Polly and an evil, stinky butcher all covered in guts. And there's heroes and sweets and adventures and EVERYTHING.", 192, Format.PAPERBACK, "2006/08/07", "Egmont UK Ltd", "9781405223102", "url.com", 0.0 );
+            bookRepository.save(mrGum);
+            Book otter = new Book("That's Not My Otter", "Meet five adorable otters in this charming addition to the much-loved That's not my... series. Babies love the best-selling That's not my... books with their bold illustrations, patches to stroke, and a mouse to spot on every page, all designed to develop sensory and language awareness.", 10, Format.BOARDBOOKFORMAT, "2017/04/06", "Usborne Publishing Ltd.", "9781474933759", "url.com", 0.0);
+            bookRepository.save(otter);
+            Book supertato = new Book("Three Epic Adventures of Supertato", "Meet Supertato! The much-loved supermarket superhero who's there to save the day when the chips are down stars in three epic adventures.", 80 , Format.PAPERBACK, "2023/01/05", "Simon & Schuster Ltd.", "9781398517783", "url.com", 0.0);
+            bookRepository.save(supertato);
 
-            Bookshelf wantToRead = new Bookshelf("Want To Read", andrewB);
-            bookshelfRepository.save(wantToRead);
-            Bookshelf currentlyReading = new Bookshelf("Currently Reading", andrewB);
-            bookshelfRepository.save(currentlyReading);
-            Bookshelf haveRead = new Bookshelf("Have Read", andrewB);
-            bookshelfRepository.save(haveRead);
+            BookEntry bookEntry1 = new BookEntry(mrGum, andrewB, null, null , null, Status.WANTTOREAD);
+            bookEntryRepository.save(bookEntry1);
+            BookEntry bookEntry2 = new BookEntry(otter, andrewB, "01/06/2023", null, 0, Status.CURRENTLYREADING);
+            bookEntryRepository.save(bookEntry2);
+            BookEntry bookEntry3 = new BookEntry(supertato, andrewB, "01/06/2023", "04/06/2023", 2, Status.HAVEREAD);
+            bookEntryRepository.save(bookEntry3);
+
 
 
 //            jack.addRaid(raid1);

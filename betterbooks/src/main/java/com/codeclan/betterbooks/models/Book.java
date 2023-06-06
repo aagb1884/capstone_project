@@ -6,7 +6,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,21 +65,23 @@ public class Book {
     @Column(name = "length_in_pages")
     private int lengthInPages;
     @Column
-    private String format;
+    private Format format;
     @Column(name = "date_published")
-    private LocalDate datePublished;
+    private String datePublished;
     @Column
     private String publisher;
     @Column
     private String isbn;
     @Column(name = "cover_url")
     private String coverUrl;
+    @Column(name = "average_rating")
+    private Double averageRating;
     @JsonIgnoreProperties({"book"})
     @OneToMany(mappedBy = "book")
     private List<BookEntry> bookEntries;
 
-    public Book(String title, String synopsis, int lengthInPages, String format,
-                LocalDate datePublished, String publisher, String isbn, String coverUrl) {
+    public Book(String title, String synopsis, int lengthInPages, Format format,
+                String datePublished, String publisher, String isbn, String coverUrl, Double averageRating) {
         this.title = title;
         this.authors = new ArrayList<>();
         this.illustrators = new ArrayList<>();
@@ -92,6 +93,7 @@ public class Book {
         this.publisher = publisher;
         this.isbn = isbn;
         this.coverUrl = coverUrl;
+        this.averageRating = averageRating;
         this.bookEntries = new ArrayList<>();
 
     }
@@ -166,19 +168,19 @@ public class Book {
         this.lengthInPages = lengthInPages;
     }
 
-    public String getFormat() {
+    public Format getFormat() {
         return format;
     }
 
-    public void setFormat(String format) {
+    public void setFormat(Format format) {
         this.format = format;
     }
 
-    public LocalDate getDatePublished() {
+    public String getDatePublished() {
         return datePublished;
     }
 
-    public void setDatePublished(LocalDate datePublished) {
+    public void setDatePublished(String datePublished) {
         this.datePublished = datePublished;
     }
 
@@ -214,11 +216,21 @@ public class Book {
         this.bookEntries = bookEntries;
     }
 
-    //    public void deleteAuthorFromBook(){
-//
-//    }
-//
-//    public void deleteIllustratorFromBook(){
-//
-//    }
+    public Double getAverageRating() {
+        return averageRating;
+    }
+
+    public void setAverageRating(Double averageRating) {
+        this.averageRating = averageRating;
+    }
+
+    public void addAuthor(Author author){
+        this.authors.add(author);
+    }
+    public void addIllustrator(Illustrator illustrator){
+        this.illustrators.add(illustrator);
+    }
+    public void addBookEntry(BookEntry bookEntry){
+        this.bookEntries.add(bookEntry);
+    }
 }
