@@ -4,7 +4,6 @@ package com.codeclan.betterbooks.models;
 import com.codeclan.betterbooks.models.people.User;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 
 
 @Entity

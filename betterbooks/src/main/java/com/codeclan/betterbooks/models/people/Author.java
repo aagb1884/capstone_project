@@ -55,6 +55,13 @@ public class Author{
     public Author() {
     }
 
+    public void addAuthorBook(Book book){
+        this.books.add(book);
+    }
+    public void removeAuthorBook(Book book){
+        this.books.remove(book);
+    }
+
     public List<Book> getBooks() {
         return books;
     }
@@ -103,7 +110,4 @@ public class Author{
         this.bio = bio;
     }
 
-//    public void addAuthor(Author author){
-//        this.authors.add(author);
-//    }
 }

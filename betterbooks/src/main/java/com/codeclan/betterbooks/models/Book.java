@@ -125,9 +125,11 @@ public class Book {
         this.authors = authors;
     }
 
-   public void addAuthors(Author author){
+   public void addAuthor(Author author){
         this.authors.add(author);
    }
+
+   public void removeAuthor(Author author){ this.authors.remove(author);}
 
     public List<Illustrator> getIllustrators() {
         return illustrators;
@@ -137,9 +139,11 @@ public class Book {
         this.illustrators = illustrators;
     }
 
-    public void addIllustrators(Illustrator illustrator){
+    public void addIllustrator(Illustrator illustrator){
         this.illustrators.add(illustrator);
     }
+
+    public void removeIllustrator(Illustrator illustrator){ this.illustrators.remove(illustrator);}
     public String getSynopsis() {
         return synopsis;
     }
@@ -156,10 +160,12 @@ public class Book {
         this.descriptions = descriptions;
     }
 
-    public void addDescriptions(DescriptiveTag descriptiveTag){
+    public void addDescription(DescriptiveTag descriptiveTag){
         this.descriptions.add(descriptiveTag);
     }
-
+    public void removeDescription(DescriptiveTag descriptiveTag){
+        this.descriptions.remove(descriptiveTag);
+    }
     public int getLengthInPages() {
         return lengthInPages;
     }
@@ -223,14 +229,10 @@ public class Book {
     public void setAverageRating(Double averageRating) {
         this.averageRating = averageRating;
     }
-
-    public void addAuthor(Author author){
-        this.authors.add(author);
-    }
-    public void addIllustrator(Illustrator illustrator){
-        this.illustrators.add(illustrator);
-    }
     public void addBookEntry(BookEntry bookEntry){
         this.bookEntries.add(bookEntry);
+    }
+    public void removeBookEntry(BookEntry bookEntry){
+        this.bookEntries.remove(bookEntry);
     }
 }

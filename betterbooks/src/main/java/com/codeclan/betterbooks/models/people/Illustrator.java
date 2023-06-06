@@ -54,6 +54,13 @@ public class Illustrator{
     public Illustrator(){
 
     }
+    public void addIllustratorBook(Book book){
+        this.books.add(book);
+    }
+
+    public void removeIllustratorBook(Book book){
+        this.books.remove(book);
+    }
 
     public List<Book> getBooks() {
         return books;

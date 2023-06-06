@@ -1,7 +1,6 @@
 package com.codeclan.betterbooks.models.people;
 
 import com.codeclan.betterbooks.models.BookEntry;
-import com.codeclan.betterbooks.models.Book;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
@@ -28,7 +27,6 @@ public class User {
 
     public User() {
     }
-
     public User(String firstname, String lastname, String imgUrl, String bio) {
         this.firstname = firstname;
         this.lastname = lastname;
@@ -84,7 +82,12 @@ public class User {
     public void setMyBooks(List<BookEntry> myBooks) {
         this.myBooks = myBooks;
     }
-    public void addBookEntry(BookEntry bookEntry){
+
+    public void addBookEntry(BookEntry bookEntry) {
         this.myBooks.add(bookEntry);
+    }
+
+    public void removeBookEntry(BookEntry bookEntry) {
+        this.myBooks.remove(bookEntry);
     }
 }
