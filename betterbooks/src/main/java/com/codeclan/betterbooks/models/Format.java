@@ -16,4 +16,4 @@ public enum Format {
         return this.value;
     }
 }
-}
+

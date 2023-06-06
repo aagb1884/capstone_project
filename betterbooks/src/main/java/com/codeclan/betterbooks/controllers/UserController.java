@@ -41,7 +41,6 @@ class UserController {
         updatedUser.setLastname(user.getLastname());
         updatedUser.setImgUrl(user.getImgUrl());
         updatedUser.setBio(user.getBio());
-        updatedUser.setBookshelves(user.getBookshelves());
 
         userRepository.save(updatedUser);
 
