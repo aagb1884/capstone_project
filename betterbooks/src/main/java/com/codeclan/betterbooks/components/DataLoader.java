@@ -67,6 +67,9 @@ import org.springframework.context.annotation.Profile;
 
             Illustrator mOrdonez = new Illustrator("Miguel", "Ordonez", "imgurl", "Miguel Ordóñez has had two of his books in the New York Times bestsellers list and his illustrations for Jimmy Fallon’s Your Baby’s First Word Will Be Dada have been honoured by the American Society of Illustrators. He lives in Madrid and works in his own studio, where he combines graphic design with illustrating projects as well as teaching visual communication and creativity.");
 
+            Author lPearson = new Author("Luke", "Pearson", "imgurl", "Luke Pearson is a British writer, illustrator and cartooonist.");
+            Illustrator iLPearson = new Illustrator("Luke", "Pearson", "imgurl", "Luke Pearson is a British writer, illustrator and cartooonist.");
+
             Book mrGum = new Book("You're a Bad Man Mr Gum", "Shabba me whiskers! It's one of those Mr Gum books by Andy Stanton. They're only the craziest, funnest most amazing books for children in the world. You're A Bad Man, Mr Gum! Good evening. Mr Gum is a complete horror who hates children, animals, fun and corn on the cob. This book's all about him. And an angry fairy who lives in his bathtub. And Jake the dog, and a little girl called Polly and an evil, stinky butcher all covered in guts. And there's heroes and sweets and adventures and EVERYTHING.", 192, Format.PAPERBACK, "2006/08/07", "Egmont UK Ltd", "9781405223102", "url.com", null);
             mrGum.addAuthor(stanton);
             mrGum.addIllustrator(tazzyman);
@@ -121,6 +124,12 @@ import org.springframework.context.annotation.Profile;
             goingVolcano.addDescription(DescriptiveTag.PICTUREBOOK);
             goingVolcano.addDescription(DescriptiveTag.SILLY);
 
+            Book hildaMidnightGiant = new Book("Hilda and the Midnight Giant", "Hilda sets out to learn the secrets of the Midnight Giant in this brand new edition of the bestselling classic! When creatures bombard Hilda's house with eviction notices, she has to think twice before making their acquaintance. Come to think of it, who is this giant who only appears at midnight, and why is Hilda the only person who can see him?", 48, Format.PAPERBACK, "2016/02/01", "Flying Eye Books", "9781909263796", "url"  , null);
+            hildaMidnightGiant.addAuthor(lPearson);
+            hildaMidnightGiant.addIllustrator(iLPearson);
+            hildaMidnightGiant.addDescription(DescriptiveTag.COMIC);
+            hildaMidnightGiant.addDescription(DescriptiveTag.ADVENTURE);
+            hildaMidnightGiant.addDescription(DescriptiveTag.FANTASY);
 
             BookEntry bookEntry1 = new BookEntry(mrGum, andrewB, null, null , null, Status.WANTTOREAD);
             bookEntryRepository.save(bookEntry1);
@@ -128,33 +137,11 @@ import org.springframework.context.annotation.Profile;
             bookEntryRepository.save(bookEntry2);
             BookEntry bookEntry3 = new BookEntry(supertato, andrewB, "01/06/2023", "04/06/2023", 2, Status.HAVEREAD);
             bookEntryRepository.save(bookEntry3);
-
-
-
-//            jack.addRaid(raid1);
-//            jack.addRaid(raid2);
-//            pirateRepository.save(jack);
-//
-//            raid2.addPirate(john);
-//            raidRepository.save(raid2);
-//
-//            raid3.addPirate(pugwash);
-//            raid3.addPirate(maggie);
-//            raidRepository.save(raid3);
-//
-//            raid4.addPirate(pugwash);
-//            raid3.addPirate(jack);
-//            raidRepository.save(raid4);
-//
-//            blackbeard.addRaid(raid5);
-//            blackbeard.addRaid(raid6);
-//            pirateRepository.save(blackbeard);
-//
-//            raid5.addPirate(william);
-//            raidRepository.save(raid5);
-//
-//            raid6.addPirate(henry);
-//            raidRepository.save(raid6);
-
+            BookEntry bookEntry4 = new BookEntry(hatback, andrewB, "01/06/2023", "04/06/2023", null, Status.WANTTOREAD);
+            bookEntryRepository.save(bookEntry4);
+            BookEntry bookEntry5 = new BookEntry(goingVolcano, andrewB, "01/06/2023", "04/06/2023", null, Status.CURRENTLYREADING);
+            bookEntryRepository.save(bookEntry5);
+            BookEntry bookEntry6 = new BookEntry(hildaMidnightGiant, andrewB, "01/06/2023", "04/06/2023", 4, Status.HAVEREAD);
+            bookEntryRepository.save(bookEntry6);
         }
     }
