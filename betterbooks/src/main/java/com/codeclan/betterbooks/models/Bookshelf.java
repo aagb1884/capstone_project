@@ -1,30 +1,33 @@
 package com.codeclan.betterbooks.models;
 
-import com.codeclan.betterbooks.models.Book;
 import com.codeclan.betterbooks.models.people.User;
+import com.codeclan.betterbooks.models.Book;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Bookshelf {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     private String name;
-    @JsonIgnoreProperties({"bookshelf"})
-    @OneToMany(mappedBy = "bookshelf")
-    private List<Book> books;
 
     @ManyToOne
     @JoinColumn(name = "user", nullable = false)
     private User user;
 
-    public Bookshelf(String name) {
+    @JsonIgnoreProperties({"bookself"})
+    @OneToMany(mappedBy = "bookshelf")
+    private List<BookEntry> bookEntries;
+
+    public Bookshelf(String name, User user) {
         this.name = name;
-        this.books = new ArrayList<>();
         this.user = user;
+        this.bookEntries = new ArrayList<>();
     }
 
     public String getName() {
@@ -35,15 +38,35 @@ public class Bookshelf {
         this.name = name;
     }
 
-    public List<Book> getBooks() {
-        return books;
+    public Long getId() {
+        return id;
     }
 
-    public void setBooks(List<Book> books) {
-        this.books = books;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void addBookToBookshelf(Book book){
-        this.books.add(book);
+    public List<BookEntry> getBookEntries() {
+        return bookEntries;
+    }
+
+    public void setBookEntries(List<BookEntry> bookEntries) {
+        this.bookEntries = bookEntries;
+    }
+
+    public void addBookEntry(BookEntry bookEntry){
+        this.bookEntries.add(bookEntry);
+    }
+
+//    public void setBookEntry(BookEntry bookEntry){
+//        this.bookEntries = bookEntries;
+//    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

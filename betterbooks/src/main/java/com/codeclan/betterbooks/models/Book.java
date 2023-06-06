@@ -2,8 +2,8 @@ package com.codeclan.betterbooks.models;
 
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.models.people.Illustrator;
-import com.codeclan.betterbooks.models.people.User;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 import javax.persistence.*;
 import java.time.LocalDate;
@@ -75,12 +75,12 @@ public class Book {
     private String isbn;
     @Column(name = "cover_url")
     private String coverUrl;
-    @ManyToOne
-    @JoinColumn(name = "bookshelf", nullable = false)
-    private Bookshelf bookshelf;
+    @JsonIgnoreProperties({"book"})
+    @OneToMany(mappedBy = "book")
+    private List<BookEntry> bookEntries;
 
     public Book(String title, String synopsis, int lengthInPages, String format,
-                LocalDate datePublished, String publisher, String isbn, String coverUrl, Bookshelf bookshelf) {
+                LocalDate datePublished, String publisher, String isbn, String coverUrl) {
         this.title = title;
         this.authors = new ArrayList<>();
         this.illustrators = new ArrayList<>();
@@ -92,7 +92,8 @@ public class Book {
         this.publisher = publisher;
         this.isbn = isbn;
         this.coverUrl = coverUrl;
-        this.bookshelf = bookshelf;
+        this.bookEntries = new ArrayList<>();
+
     }
 
     public Book() {
@@ -205,12 +206,12 @@ public class Book {
         this.coverUrl = coverUrl;
     }
 
-    public Bookshelf getBookshelf() {
-        return bookshelf;
+    public List<BookEntry> getBookEntries() {
+        return bookEntries;
     }
 
-    public void setBookshelf(Bookshelf bookshelf) {
-        this.bookshelf = bookshelf;
+    public void setBookEntries(List<BookEntry> bookEntries) {
+        this.bookEntries = bookEntries;
     }
 
     //    public void deleteAuthorFromBook(){

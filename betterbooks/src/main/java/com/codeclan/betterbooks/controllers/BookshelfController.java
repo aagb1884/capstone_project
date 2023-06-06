@@ -40,7 +40,8 @@ class BookshelfController {
             @PathVariable Long id) {
         Bookshelf updatedBookshelf = bookshelfRepository.findById(id).get();
         updatedBookshelf.setName(bookshelf.getName());
-        updatedBookshelf.setBooks(bookshelf.getBooks());
+        updatedBookshelf.setBookEntries(bookshelf.getBookEntries());
+        updatedBookshelf.setUser(bookshelf.getUser());
 
         bookshelfRepository.save(updatedBookshelf);
 
