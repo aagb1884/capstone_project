@@ -1,0 +1,72 @@
+Book supertato = new Book("Three Epic Adventures of Supertato", "Meet Supertato! The much-loved supermarket superhero who's there to save the day when the chips are down stars in three epic adventures.", 80 , Format.PAPERBACK, "2023/01/05", "Simon & Schuster Ltd.", "9781398517783", "url.com", null);
+
+Illustrator iLPearson = new Illustrator("Luke", "Pearson", "imgurl", "Luke Pearson is a British writer, illustrator and cartooonist.");
+
+Author lPearson = new Author("Luke", "Pearson", "imgurl", "Luke Pearson is a British writer, illustrator and cartooonist.");
+
+Author name = new Author (″first″, ″second″, ″imgurl″, ″bio″);
+
+Illustrator name = new Illustrator(″first″, ″second″, ″imgurl″, ″bio″);
+
+
+
+Author eCarle = new Author (″Eric″, ″Carle″, ″imgurl″, ″Eric Carle is a writer and illustrator.″);
+
+Illustrator iECarle = new Illustrator(″Eric″, ″Carle″, ″imgurl″, ″Eric Carle is a writer and illustrator.″);
+
+Author aAhlberg = new Author (″Alan″, ″Ahlberg″, ″imgurl″, ″Alan Ahlberg is a writer.″);
+
+Author jAhlberg = new Author (″Janet″, ″Ahlberg″, ″imgurl″, ″Janet Ahlberg is a writer and illustrator.″);
+Illustrator iJAhlberg = new Illustrator(″Janet″, ″Ahlberg″, ″imgurl″, ″Janet Ahlberg is a writer and illustrator.″);
+
+Author sMcBratney = new Author (″Sam″, ″McBratney″, ″imgurl″, ″Sam McBratney is a writer.″);
+
+Illustrator aJeram = new Illustrator(″Anita″, ″Jeram″, ″imgurl″, ″Anita Jeram is an illustrator.″);
+
+Author lDodd = new Author (″Lynley″, ″Dodd″, ″imgurl″, ″Lynley Dodd is a writer and illustrator.″);
+
+Illustrator iLDodd = new Illustrator(″Lynley″, ″Dodd″, ″imgurl″, ″Lynley Dodd is a writer and illustrator.″);
+
+Author ladybird = new Author (″Ladybird″, ″″, ″″, ″″);
+
+Illustrator lemonRibbonStudio = new Illustrator(″Lemon Ribbon″, ″Studio″, ″″, ″″);
+
+
+Author oJeffers = new Author (″Oliver″, ″Jeffers″, ″imgurl″, ″Oliver Jeffers is a writer and illustrator.″);
+
+Illustrator iOJeffers = new Illustrator(″Oliver″, ″Jeffers″, ″imgurl″, ″Oliver Jeffers is a writer and illustrator.″);
+
+Author mHood = new Author (″Morag″, ″Hood″, ″imgurl″, ″Morag Hood is a writer and illustrator.″);
+
+Illustrator iMHood = new Illustrator(″Morag″, ″Hood″, ″imgurl″, ″Morag Hood is a writer and illustrator.″);
+
+Author drSeuss = new Author (″Dr.″, ″Seuss″, ″imgurl″, ″Dr Seuss is Dr Seuss.″);
+
+Illustrator iDrSeuss = new Illustrator(″Dr.″, ″Seuss″, ″imgurl″, ″Dr Seuss is Dr Seuss.″);
+
+
+Author iEagleton = new Author (″Ian″, ″Eagleton″, ″imgurl″, ″Ian Eagleton is a writer.″);
+
+Illustrator jMayhew = new Illustrator(″James″, ″Mayhew″, ″imgurl″, ″James Mayhew is an illustrator.″);
+
+Author rPlummer = new Author (″Rachel″, ″Plummer″, ″imgurl″, ″Rachel Plummer is a poet living in Edinburgh, Scotland.″);
+
+Illustrator hBoppert = new Illustrator(″Helene″, ″Boppert″, ″imgurl″, ″Helene Boppert is an artist.″);
+
+Author jDonaldson = new Author (″Julia″, ″Donaldson″, ″imgurl″, ″Oh you know. Julia Donaldson.″);
+
+Illustrator aScheffler = new Illustrator(″Axel″, ″Scheffler″, ″imgurl″, ″The artist Axel Scheffler has his fingers in many pies.″);
+
+
+Author dAtta = new Author (″Dean″, ″Atta″, ″imgurl″, ″Dean Atta is a writer, performer and poet.″);
+
+Illustrator aKhullar = new Illustrator(″Anshika″, ″Khullar″, ″imgurl″, ″Anshika Kullar is an illustrator.″);
+
+Author tDicks = new Author (″Terrance″, ″Dicks″, ″imgurl″, ″Terrance Dicks wrote bloody hundreds of Doctor Who novels and Script Edited the show in the Seventies, then repeated the same anecdotes at conventions for decades and wrote some hilariously bad spin-off novels.″);
+
+Author eMcNicoll = new Author (″Elle″, ″McNicoll″, ″imgurl″, ″Elle McNicoll is a writer.″);
+
+Author aThomas = new Author (″Angie″, ″Thomas″, ″imgurl″, ″Angie Thomas is a writer.″);
+
+
+Author eAcevedo = new Author (″Elizabeth″, ″Acevedo″, ″imgurl″, ″Elizabetht Acevedo is a writer, performer and poet.″);
