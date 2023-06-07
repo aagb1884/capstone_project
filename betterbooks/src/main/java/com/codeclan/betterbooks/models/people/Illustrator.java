@@ -19,7 +19,7 @@ public class Illustrator{
     private String lastname;
     @Column
     private String imgUrl;
-    @Column
+    @Column(length = 500)
     private String bio;
 
     @JsonIgnoreProperties({"illustrators"})

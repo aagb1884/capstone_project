@@ -50,7 +50,7 @@ class BetterbooksApplicationTests {
 	public void canAddAndRemoveBookEntry(){
 		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
-		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD);
+		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD, "Good.");
 		user.addBookEntry(bookEntry);
 		assertEquals(1, user.getMyBooks().size());
 		user.removeBookEntry(bookEntry);
@@ -63,7 +63,7 @@ class BetterbooksApplicationTests {
 		bookRepository.save(book);
 		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
 		userRepository.save(user);
-		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD);
+		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD, "yeah decent");
 		bookEntryRepository.save(bookEntry);
 	}
 	@Test

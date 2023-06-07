@@ -21,21 +21,28 @@ public class BookEntry {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+    @Column(name = "started_reading")
     private String startedReading;
+    @Column(name = "finished_reading")
     private String finishedReading;
+    @Column(name = "star_rating")
     private Integer starRating;
+    @Column
     private Status status;
+    @Column(length = 500)
+    private String review;
 
     public BookEntry() {
     }
 
-    public BookEntry(Book book, User user, String startedReading, String finishedReading, Integer starRating, Status status) {
+    public BookEntry(Book book, User user, String startedReading, String finishedReading, Integer starRating, Status status, String review) {
         this.book = book;
         this.user = user;
         this.startedReading = startedReading;
         this.finishedReading = finishedReading;
         this.starRating = starRating;
         this.status = status;
+        this.review = review;
     }
 
     public Long getId() {
@@ -91,5 +98,13 @@ public class BookEntry {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
     }
 }

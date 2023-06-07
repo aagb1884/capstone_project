@@ -58,7 +58,7 @@ public class Book {
             }
     )
     private List<Illustrator> illustrators;
-    @Column
+    @Column(length = 500)
     private String synopsis;
     @Column
     private ArrayList<DescriptiveTag> descriptions;
