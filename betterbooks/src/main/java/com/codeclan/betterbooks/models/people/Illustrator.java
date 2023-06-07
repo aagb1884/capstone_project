@@ -22,7 +22,7 @@ public class Illustrator{
     @Column(length = 500)
     private String bio;
 
-    @JsonIgnoreProperties({"illustrators"})
+    @JsonIgnoreProperties({"illustrators", "authors"})
     @ManyToMany
     @JoinTable(
             name = "illustrators_books",

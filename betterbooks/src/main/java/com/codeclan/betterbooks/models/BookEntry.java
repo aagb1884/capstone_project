@@ -2,6 +2,7 @@ package com.codeclan.betterbooks.models;
 
 
 import com.codeclan.betterbooks.models.people.User;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
 
@@ -14,10 +15,12 @@ public class BookEntry {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
     private Book book;
 
+    @JsonIgnoreProperties({"myBooks"})
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;

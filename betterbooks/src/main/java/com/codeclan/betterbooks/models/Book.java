@@ -20,6 +20,9 @@ public class Book {
 
     @Column
     private String title;
+
+
+    @JsonIgnoreProperties({"books"})
     @ManyToMany
     @JoinTable(
             name = "authors_books",
@@ -39,6 +42,7 @@ public class Book {
             }
     )
     private List<Author> authors;
+    @JsonIgnoreProperties({"books"})
     @ManyToMany
     @JoinTable(
             name = "illustrators_books",
@@ -76,7 +80,7 @@ public class Book {
     private String coverUrl;
     @Column(name = "average_rating")
     private Double averageRating;
-    @JsonIgnoreProperties({"book"})
+    @JsonIgnoreProperties({"user", "book"})
     @OneToMany(mappedBy = "book")
     private List<BookEntry> bookEntries;
 
