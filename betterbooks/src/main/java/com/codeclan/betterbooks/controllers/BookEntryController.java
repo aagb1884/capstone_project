@@ -2,6 +2,7 @@ package com.codeclan.betterbooks.controllers;
 
 import com.codeclan.betterbooks.models.Book;
 import com.codeclan.betterbooks.models.BookEntry;
+import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.repositories.BookEntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -44,9 +45,26 @@ class BookEntryController {
         updatedBookEntry.setStartedReading(bookEntry.getStartedReading());
         updatedBookEntry.setFinishedReading(bookEntry.getFinishedReading());
         updatedBookEntry.setStarRating(bookEntry.getStarRating());
+        updatedBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(updatedBookEntry);
 
         return new ResponseEntity<>(updatedBookEntry, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/bookentries")
+    public ResponseEntity<BookEntry> createBookEntry(@RequestBody BookEntry bookEntry) {
+        BookEntry newBookEntry = new BookEntry();
+        newBookEntry.setBook(bookEntry.getBook());
+        newBookEntry.setUser(bookEntry.getUser());
+        newBookEntry.setStatus(bookEntry.getStatus());
+        newBookEntry.setStartedReading(bookEntry.getStartedReading());
+        newBookEntry.setFinishedReading(bookEntry.getFinishedReading());
+        newBookEntry.setStarRating(bookEntry.getStarRating());
+        newBookEntry.setReview(bookEntry.getReview());
+
+        bookEntryRepository.save(newBookEntry);
+
+        return new ResponseEntity<>(newBookEntry, HttpStatus.CREATED);
     }
 }

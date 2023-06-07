@@ -1,5 +1,6 @@
 package com.codeclan.betterbooks.controllers;
 
+import com.codeclan.betterbooks.models.BookEntry;
 import com.codeclan.betterbooks.models.people.Illustrator;
 import com.codeclan.betterbooks.repositories.IllustratorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,20 @@ import java.util.Optional;
             illustratorRepository.save(updatedIllustrator);
 
             return new ResponseEntity<>(updatedIllustrator, HttpStatus.OK);
+        }
+
+
+        @PostMapping(value = "/illustrators")
+        public ResponseEntity<Illustrator> createIllustrator(@RequestBody Illustrator illustrator) {
+            Illustrator newIllustrator = new Illustrator();
+            newIllustrator.setFirstname(illustrator.getFirstname());
+            newIllustrator.setLastname(illustrator.getLastname());
+            newIllustrator.setBio(illustrator.getBio());
+            newIllustrator.setBooks(illustrator.getBooks());
+            newIllustrator.setImgUrl(illustrator.getImgUrl());
+
+            illustratorRepository.save(newIllustrator);
+
+            return new ResponseEntity<>(newIllustrator, HttpStatus.CREATED);
         }
 }

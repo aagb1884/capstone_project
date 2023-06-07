@@ -1,6 +1,7 @@
 package com.codeclan.betterbooks.controllers;
 
 import com.codeclan.betterbooks.models.Book;
+import com.codeclan.betterbooks.models.people.Illustrator;
 import com.codeclan.betterbooks.models.people.User;
 import com.codeclan.betterbooks.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,5 +46,18 @@ class UserController {
         userRepository.save(updatedUser);
 
         return new ResponseEntity<>(updatedUser, HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/users")
+    public ResponseEntity<User> createUsers(@RequestBody User user) {
+        User newUser = new User();
+        newUser.setFirstname(user.getFirstname());
+        newUser.setLastname(user.getLastname());
+        newUser.setImgUrl(user.getImgUrl());
+        newUser.setBio(user.getBio());
+
+        userRepository.save(newUser);
+
+        return new ResponseEntity<>(newUser, HttpStatus.CREATED);
     }
 }

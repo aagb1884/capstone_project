@@ -46,4 +46,19 @@ class AuthorController {
 
         return new ResponseEntity<>(updatedAuthor, HttpStatus.OK);
     }
+
+    @PostMapping(value = "/authors")
+    public ResponseEntity<Author> createAuthor(@RequestBody Author author) {
+        Author newAuthor = new Author();
+        newAuthor.setFirstname(author.getFirstname());
+        newAuthor.setLastname(author.getLastname());
+        newAuthor.setBio(author.getBio());
+        newAuthor.setBooks(author.getBooks());
+        newAuthor.setImgUrl(author.getImgUrl());
+
+        authorRepository.save(newAuthor);
+
+        return new ResponseEntity<>(newAuthor, HttpStatus.CREATED);
+    }
+
 }
