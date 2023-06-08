@@ -30,6 +30,7 @@ public class BookEntry {
     private String finishedReading;
     @Column(name = "star_rating")
     private Integer starRating;
+    @Enumerated(EnumType.STRING)
     @Column
     private Status status;
     @Column(length = 500)

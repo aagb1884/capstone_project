@@ -2,6 +2,7 @@ package com.codeclan.betterbooks.controllers;
 
 import com.codeclan.betterbooks.models.Book;
 import com.codeclan.betterbooks.models.BookEntry;
+import com.codeclan.betterbooks.models.Status;
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.repositories.BookEntryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,6 +32,20 @@ class BookEntryController {
     public ResponseEntity<List<BookEntry>> findBookEntryByUserId(
             @RequestParam(name="id") Long id){
         return new ResponseEntity<>(bookEntryRepository.findByUserId(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/bookentries/users/{id}/wanttoread")
+    public ResponseEntity<List<BookEntry>> findBookEntryByUserIdAndWantToRead(
+            @PathVariable Long id){
+        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.WANTTOREAD), HttpStatus.OK);
+    } @GetMapping(value = "/bookentries/users/{id}/currentlyreading")
+    public ResponseEntity<List<BookEntry>> findBookEntryByUserIdAndCurrentlyRead(
+            @PathVariable Long id){
+        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.CURRENTLYREADING), HttpStatus.OK);
+    } @GetMapping(value = "/bookentries/users/{id}/haveread")
+    public ResponseEntity<List<BookEntry>> findBookEntryByUserIdAndHaveRead(
+            @PathVariable Long id){
+        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.WANTTOREAD), HttpStatus.OK);
     }
 
     @GetMapping(value = "/bookentries/books")
