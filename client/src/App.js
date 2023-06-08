@@ -1,21 +1,12 @@
 import './App.css';
-import { useState, useEffect } from "react";
+import Container from './Containers/container';
 
-function App() {
 
-  const [bookData, setBookData] = useState(null)
-
-  useEffect(() => {
-    fetch("http://localhost:8080/books")
-    .then(res => res.json())
-    .then(data => setBookData(data))
-  }, [])
-
- 
+function App(){
 
   return (
     <div className="App">
-  
+  <Container />
   </div>
   );
 }
