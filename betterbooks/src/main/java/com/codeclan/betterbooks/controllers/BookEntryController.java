@@ -27,6 +27,17 @@ class BookEntryController {
     public ResponseEntity getSingleBookEntry(@PathVariable Long id) {
         return new ResponseEntity(bookEntryRepository.findById(id), HttpStatus.OK);
     }
+    @GetMapping(value = "/bookentries/users")
+    public ResponseEntity<List<BookEntry>> findBookEntryByUserId(
+            @RequestParam(name="id") Long id){
+        return new ResponseEntity<>(bookEntryRepository.findByUserId(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/bookentries/books")
+    public ResponseEntity<List<BookEntry>> findBookEntryByBookId(
+            @RequestParam(name="id") Long id){
+        return new ResponseEntity<>(bookEntryRepository.findByBookId(id), HttpStatus.OK);
+    }
 
     @DeleteMapping(value = "/bookentries/{id}")
     public ResponseEntity<Optional> deleteBookEntry(@PathVariable Long id){

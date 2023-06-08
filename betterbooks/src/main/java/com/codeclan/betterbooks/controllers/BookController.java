@@ -1,5 +1,6 @@
 package com.codeclan.betterbooks.controllers;
 
+import com.codeclan.betterbooks.models.BookEntry;
 import com.codeclan.betterbooks.models.people.Author;
 import com.codeclan.betterbooks.repositories.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +23,23 @@ class BookController {
         return new ResponseEntity<>(bookRepository.findAll(), HttpStatus.OK);
     }
 
+    @GetMapping(value = "/books/authors")
+    public ResponseEntity<List<Book>> findBookByAuthorId(
+            @RequestParam(name="id") Long id){
+        return new ResponseEntity<>(bookRepository.findByAuthorsId(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/books/illustrators")
+    public ResponseEntity<List<Book>> findBookByIllustratorId(
+            @RequestParam(name="id") Long id){
+        return new ResponseEntity<>(bookRepository.findByIllustratorsId(id), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/books/bookentries")
+    public ResponseEntity<List<Book>> findBookByBookEntryId(
+            @RequestParam(name="id") Long id){
+        return new ResponseEntity<>(bookRepository.findByBookEntriesId(id), HttpStatus.OK);
+    }
     @GetMapping(value = "/books/{id}")
     public ResponseEntity getSingleBook(@PathVariable Long id) {
         return new ResponseEntity(bookRepository.findById(id), HttpStatus.OK);

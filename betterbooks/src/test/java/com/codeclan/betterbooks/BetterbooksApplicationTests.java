@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.time.LocalDate;
+import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
@@ -42,13 +43,14 @@ class BetterbooksApplicationTests {
 
 
 	@Test
-	public void canSaveUser(){
-		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
+	public void canSaveUser() {
+		User user = new User("Tim", "Collis", "timC", "imgurl", "I am a man called Tim.");
 		userRepository.save(user);
 	}
+
 	@Test
-	public void canAddAndRemoveBookEntry(){
-		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
+	public void canAddAndRemoveBookEntry() {
+		User user = new User("Tim", "Collis", "timC", "imgurl", "I am a man called Tim.");
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
 		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD, "Good.");
 		user.addBookEntry(bookEntry);
@@ -58,52 +60,55 @@ class BetterbooksApplicationTests {
 	}
 
 	@Test
-	public void canAddBookEntryToDb(){
+	public void canAddBookEntryToDb() {
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
 		bookRepository.save(book);
-		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
+		User user = new User("Tim", "Collis", "timC", "imgurl", "I am a man called Tim.");
 		userRepository.save(user);
 		BookEntry bookEntry = new BookEntry(book, user, "01/06/2023", "04/06/2023", 5, Status.HAVEREAD, "yeah decent");
 		bookEntryRepository.save(bookEntry);
 	}
+
 	@Test
-	public void canSaveIllustratorToDb(){
-		Illustrator illustrator = new Illustrator("Quentin", "Blake","url.com", "Quentin is an artist.");
+	public void canSaveIllustratorToDb() {
+		Illustrator illustrator = new Illustrator("Quentin", "Blake", "url.com", "Quentin is an artist.");
 		illustratorRepository.save(illustrator);
 	}
 
 	@Test
-	public void canAddAndRemoveBookIllustrator(){
-		Illustrator illustrator = new Illustrator("Quentin", "Blake","url.com", "Quentin is an artist.");
+	public void canAddAndRemoveBookIllustrator() {
+		Illustrator illustrator = new Illustrator("Quentin", "Blake", "url.com", "Quentin is an artist.");
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
 		book.addIllustrator(illustrator);
 		assertEquals(1, book.getIllustrators().size());
 		book.removeIllustrator(illustrator);
 		assertEquals(0, book.getIllustrators().size());
 	}
+
 	@Test
 	public void canSaveAuthor() {
 		Author author = new Author("Sally", "Collins", "url.com", "Sally is an author.");
 		authorRepository.save(author);
 	}
-	@Test
-	public void canAddAndRemoveAuthorBook(){
-			Author author = new Author("Sally", "Collins","url.com", "Sally is an author.");
-			Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
-			author.addAuthorBook(book);
-			assertEquals(1, author.getBooks().size());
-			author.removeAuthorBook(book);
-			assertEquals(0, author.getBooks().size());
-		}
 
 	@Test
-	public void canSaveBookToDb(){
-		Author author = new Author("Sally", "Collins","url.com", "Sally is an author.");
-		Illustrator illustrator = new Illustrator("Quentin", "Blake","url.com", "Quentin is an artist.");
-		User user = new User("Tim", "Collis", "imgurl", "I am a man called Tim.");
+	public void canAddAndRemoveAuthorBook() {
+		Author author = new Author("Sally", "Collins", "url.com", "Sally is an author.");
+		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
+		author.addAuthorBook(book);
+		assertEquals(1, author.getBooks().size());
+		author.removeAuthorBook(book);
+		assertEquals(0, author.getBooks().size());
+	}
+
+	@Test
+	public void canSaveBookToDb() {
+		Author author = new Author("Sally", "Collins", "url.com", "Sally is an author.");
+		Illustrator illustrator = new Illustrator("Quentin", "Blake", "url.com", "Quentin is an artist.");
+		User user = new User("Tim", "Collis", "timC", "imgurl", "I am a man called Tim.");
 		Book book = new Book("The Lovely Horse", "Horse goes on adventure", 20, Format.BOARDBOOKFORMAT, "20/01/2020", "HarperCollins", "9781233458756", "url.com", null);
 		bookRepository.save(book);
 	}
 
-	}
+}
 

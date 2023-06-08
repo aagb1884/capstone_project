@@ -18,6 +18,8 @@ public class User {
     @Column
     private String lastname;
     @Column
+    private String username;
+    @Column
     private String imgUrl;
     @Column(length = 500)
     private String bio;
@@ -27,9 +29,10 @@ public class User {
 
     public User() {
     }
-    public User(String firstname, String lastname, String imgUrl, String bio) {
+    public User(String firstname, String lastname, String username, String imgUrl, String bio) {
         this.firstname = firstname;
         this.lastname = lastname;
+        this.username = username;
         this.imgUrl = imgUrl;
         this.bio = bio;
         this.myBooks = new ArrayList<BookEntry>();

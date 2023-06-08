@@ -38,10 +38,10 @@ import org.springframework.stereotype.Component;
 
         public void run(ApplicationArguments args) {
 
-            User andrewB = new User("Andrew","Blair","imgurl","Dad to two large adult sons who love fart jokes and pathos.");
+            User andrewB = new User("Andrew","Blair", "aagb", "imgurl","Dad to two large adult sons who love fart jokes and pathos.");
             userRepository.save(andrewB);
 
-            User jazzyJeff = new User("Jazzy", "Jeff", "imgurl", "Do any of you kids remember the Fresh Prince of Bel Air?");
+            User jazzyJeff = new User("Jazzy", "Jeff", "jazzyJeff","imgurl", "Do any of you kids remember the Fresh Prince of Bel Air?");
             userRepository.save(jazzyJeff);
 
             Author stanton = new Author("Andy", "Stanton", "imgurl", "Andy Stanton lives in North London. He studied English at Oxford but they kicked him out. He has many interests, but best of all he likes cartoons, books and music (even jazz).");
