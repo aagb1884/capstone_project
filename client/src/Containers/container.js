@@ -47,6 +47,7 @@ const Container = () => {
 
 
     return  <>
+    <div className='flex-wrapper'>
       <Header />
          <Router>
             <Routes>
@@ -67,14 +68,15 @@ const Container = () => {
                 element={< SearchContainer/>} />
               <Route 
                 path="/bookentries" 
-                element={< BookEntriesContainer/>} />
+                element={< BookEntriesContainer bookEntryData={bookEntries}/>} />
               <Route 
                 path="*" 
                 element={< ErrorPage/>} />
             </Routes>
          </Router>
       <Footer />
-    </>
+      </div>
+   </>
     
 }
  
