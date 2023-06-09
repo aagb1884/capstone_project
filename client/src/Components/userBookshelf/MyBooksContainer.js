@@ -2,12 +2,12 @@ import React from "react";
 import BookEntryList from "./BookEntryList";
 import Footer from "../Footer";
 
-const MyBooksContainer = ({bookData}) => {
+const MyBooksContainer = ({bookEntryData}) => {
 
     return ( 
 <>
         <h3>books container</h3>
-        <BookEntryList bookData={bookData} />
+        <BookEntryList bookEntryData={bookEntryData} />
         <Footer />
 </>
      );

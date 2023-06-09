@@ -1,9 +1,9 @@
-const BookEntryItem = ({book}) => {
+const BookEntryItem = ({bookEntry}) => {
     
     return (  
         <>
         <p>book item</p>
-        {book.title}
+        {bookEntry.title}
         </>
     );
 }
