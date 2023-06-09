@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import MyBooksContainer from "../Components/userBookshelves/MyBooksContainer";
 import Footer from "../Components/Footer/Footer";
+import HomePage from "../Components/Homepage/HomePage";
+import UserContainer from '../Components/UserProfile/UserContainer';
 
 const Container = () => {
-  const [bookEntryData, setBookEntryData] = useState([]);
+  const [bookEntries, setBookEntries] = useState([]);
   const [books, setBooks] = useState([]);
   const [users, setUsers] = useState([]);
-
-  //   const [bookEntryData, setBookEntryData] = useState([])
-
-  // useEffect(() => {
-  //   fetch("http://localhost:8080/bookentries")
-  //   .then(res => res.json())
-  //   .then(data => setBookEntryData(data))
-  // }, [])
-
-  
 
   useEffect(() => {
     const urls = [
@@ -34,7 +27,7 @@ const Container = () => {
 
     Promise.all(urls.map(url => fetchData(url)))
       .then(dataArray => {
-        setBookEntryData(dataArray[0]);
+        setBookEntries(dataArray[0]);
         setBooks(dataArray[1]);
         setUsers(dataArray[2]);
       })
@@ -43,36 +36,31 @@ const Container = () => {
       });
   }, []);
 
-  // Rest of your component code
 
-//   return (
-//     <div>
-//       {/* Render the fetched data */}
-//       <h2>Book Entries</h2>
-//       {bookEntries.map(entry => (
-//         <div key={entry.id}>{entry.title}</div>
-//       ))}
+const userData = ({users}) => {
+    return <UserContainer userData={userData}/>
+}
 
-//       <h2>Books</h2>
-//       {books.map(book => (
-//         <div key={book.id}>{book.title}</div>
-//       ))}
+// const BookData = ({books}) => {
+//   return <UserContainer BookData={BookData}/>
+// }
 
-//       <h2>Users</h2>
-//       {users.map(user => (
-//         <div key={user.id}>{user.name}</div>
-//       ))}
-//     </div>
-//   );
-// };
+const bookEntryData= ({bookEntries}) => {
+  return <MyBooksContainer bookEntryData={bookEntryData}/>
+}
 
-    return ( 
-    <>
-        <h2>container</h2>
-        <MyBooksContainer bookEntryData={bookEntryData}/>
-        <Footer />
+
+    return  <>
+         <Router>
+            <Routes>
+              <Route path="/" element={< HomePage/>} />
+
+
+            </Routes>
+         </Router>
+          <Footer />
     </>
-    );
+    
 }
  
 export default Container;

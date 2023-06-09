@@ -6,7 +6,7 @@ const MyBooksContainer = ({bookEntryData}) => {
 
     return ( 
 <>
-        <h3>books container</h3>
+        <h1>My Bookshelf</h1>
         <BookEntryList bookEntryData={bookEntryData} />
 </>
      );
