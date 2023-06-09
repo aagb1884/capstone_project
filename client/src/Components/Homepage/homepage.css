@@ -8,3 +8,41 @@
     top: 50%;
     transform: translate(-50%, -50%);
   }
+
+  .homepage > h2 {
+    font-family: 'Mr Dafoe';
+    margin: 0;
+    font-size: 5.5em;
+    margin-top: -0.6em;
+    margin-bottom: -1.1em;
+    color: white;
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe05e1, 0 0 0.3em #fe05e1;
+    transform: rotate(-7deg);
+    font-stretch: expanded;
+  }
+
+.better-reads {
+    position: relative;
+    font-family: 'Exo';
+    font-size: 3em;
+    margin: 0;
+    transform: skew(-15deg);
+    letter-spacing: 0.03em;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: -0.1em;
+      right: 0.05em;
+      width: 0.4em;
+      height: 0.4em;
+      background: 
+        radial-gradient(white 3%, rgba(white, 0.3) 15%, rgba(white, 0.05) 60%, transparent 80%),
+        radial-gradient(rgba(white, 0.2) 50%, transparent 60%) 50% 50% / 5% 100%,
+        radial-gradient(rgba(white, 0.2) 50%, transparent 60%) 50% 50% / 70% 5%;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');

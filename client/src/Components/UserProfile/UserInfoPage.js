@@ -2,9 +2,7 @@ import UserInfoBooks from "./UserInfoBooks";
 
 const UserInfoPage = ({user}) => {
 
-    const userBook = user.myBooks.map((book, index) => {
-        return <UserInfoBooks key={index} book={book}/>
-    })
+    
    
 
     return ( 
@@ -13,7 +11,7 @@ const UserInfoPage = ({user}) => {
             <h2>{user.firstname} {user.lastname}</h2>
             <p>{user.bio}</p>
                 <div className="user-books">
-                   <UserInfoBooks />
+                   <UserInfoBooks user={user}/>
                 </div>
         </div>
      );
