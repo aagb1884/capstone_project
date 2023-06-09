@@ -1,6 +1,5 @@
 import React from "react";
 import BookEntryList from "./BookEntryList";
-import Footer from "../Footer/Footer";
 
 const MyBooksContainer = ({bookEntryData}) => {
 
