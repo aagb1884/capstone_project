@@ -188,7 +188,7 @@ import org.springframework.stereotype.Component;
             goingVolcano.addDescription(DescriptiveTag.SILLY);
             bookRepository.save(goingVolcano);
 
-            Book hildaMidnightGiant = new Book("Hilda and the Midnight Giant", "When creatures bombard Hilda's house with eviction notices, she has to think twice before making their acquaintance. Come to think of it, who is this giant who only appears at midnight, and why is Hilda the only person who can see him?", 48, Format.PAPERBACK, "01/02/2016", "Flying Eye Books", "9781909263796", "public/images/hilda_midnight_giant.jpeg"  , null);
+            Book hildaMidnightGiant = new Book("Hilda and the Midnight Giant", "When creatures bombard Hilda's house with eviction notices, she has to think twice before making their acquaintance. Come to think of it, who is this giant who only appears at midnight, and why is Hilda the only person who can see him?", 48, Format.PAPERBACK, "01/02/2016", "Flying Eye Books", "9781909263796", "images/hilda_midnight_giant.jpeg"  , null);
             hildaMidnightGiant.addAuthor(lPearson);
             hildaMidnightGiant.addIllustrator(iLPearson);
             hildaMidnightGiant.addDescription(DescriptiveTag.COMIC);
