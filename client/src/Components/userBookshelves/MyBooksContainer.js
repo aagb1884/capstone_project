@@ -8,7 +8,6 @@ const MyBooksContainer = ({bookEntryData}) => {
 <>
         <h3>books container</h3>
         <BookEntryList bookEntryData={bookEntryData} />
-        <Footer />
 </>
      );
 }
