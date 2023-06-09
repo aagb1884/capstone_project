@@ -1,8 +1,9 @@
 .header{
-    background-color: rgb(176, 130, 130);
+    background-color: #fec805;
     min-height: 50px;
     /* position: fixed;
     top: 0;
     left: 0; */
     width: 100%;
+    font-family: 'Exo';
 }
