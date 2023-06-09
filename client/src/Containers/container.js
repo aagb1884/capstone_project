@@ -8,6 +8,7 @@ import UserContainer from '../Components/UserProfile/UserContainer';
 import BooksContainer from '../Components/BooksPage/BooksContainer'
 import SearchContainer from '../Components/SearchPage/SearchContainer';
 import BookEntriesContainer from '../Components/BookEntriesPage/BookEntriesContainer';
+import ErrorPage from '../Components/ErrorPage';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -41,29 +42,35 @@ const Container = () => {
   }, []);
 
 
-const userData = ({users}) => {
-    return <UserContainer userData={userData}/>
-}
 
-// const BookData = ({books}) => {
-//   return <UserContainer BookData={BookData}/>
-// }
 
-const bookEntryData= ({bookEntries}) => {
-  return <MyBooksContainer bookEntryData={bookEntryData}/>
-}
 
 
     return  <>
       <Header />
          <Router>
             <Routes>
-              <Route path="/" element={< HomePage/>} />
-              <Route path="/mybooks" element={< MyBooksContainer/>} />
-              <Route path="/books" element={< BooksContainer/>} />
-              <Route path="/profile" element={< UserContainer/>} />
-              <Route path="/search" element={< SearchContainer/>} />
-              <Route path="/bookentries" element={< BookEntriesContainer/>} />
+              <Route 
+                path="/" 
+                element={< HomePage/>} />
+              <Route 
+                path="/mybooks" 
+                element={< MyBooksContainer bookEntryData={bookEntries}/>} />
+              <Route 
+                path="/books" 
+                element={< BooksContainer bookData={books}/>} />
+              <Route 
+                path="/profile" 
+                element={< UserContainer />} userData={users} />
+              <Route 
+                path="/search" 
+                element={< SearchContainer/>} />
+              <Route 
+                path="/bookentries" 
+                element={< BookEntriesContainer/>} />
+              <Route 
+                path="*" 
+                element={< ErrorPage/>} />
             </Routes>
          </Router>
       <Footer />
