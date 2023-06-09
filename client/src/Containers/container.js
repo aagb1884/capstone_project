@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from '../Components/Header/Header';
 import Footer from "../Components/Footer/Footer";
 import HomePage from "../Components/Homepage/HomePage";
 import MyBooksContainer from "../Components/userBookshelves/MyBooksContainer";
@@ -54,7 +55,7 @@ const bookEntryData= ({bookEntries}) => {
 
 
     return  <>
-    <h1>Header</h1>
+      <Header />
          <Router>
             <Routes>
               <Route path="/" element={< HomePage/>} />
@@ -65,7 +66,7 @@ const bookEntryData= ({bookEntries}) => {
               <Route path="/bookentries" element={< BookEntriesContainer/>} />
             </Routes>
          </Router>
-          <Footer />
+      <Footer />
     </>
     
 }
