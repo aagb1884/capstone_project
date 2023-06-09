@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MyBooksContainer from "../Components/userBookshelves/MyBooksContainer";
 import Footer from "../Components/Footer/Footer";
 import HomePage from "../Components/Homepage/HomePage";
+import MyBooksContainer from "../Components/userBookshelves/MyBooksContainer";
 import UserContainer from '../Components/UserProfile/UserContainer';
+import BooksContainer from '../Components/BooksPage/BooksContainer'
+import SearchContainer from '../Components/SearchPage/SearchContainer';
+import BookEntriesContainer from '../Components/BookEntriesPage/BookEntriesContainer';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -51,11 +54,15 @@ const bookEntryData= ({bookEntries}) => {
 
 
     return  <>
+    <h1>Header</h1>
          <Router>
             <Routes>
               <Route path="/" element={< HomePage/>} />
-
-
+              <Route path="/mybooks" element={< MyBooksContainer/>} />
+              <Route path="/books" element={< BooksContainer/>} />
+              <Route path="/profile" element={< UserContainer/>} />
+              <Route path="/search" element={< SearchContainer/>} />
+              <Route path="/bookentries" element={< BookEntriesContainer/>} />
             </Routes>
          </Router>
           <Footer />
