@@ -9,6 +9,11 @@ import BooksContainer from '../Components/BooksPage/BooksContainer'
 import SearchContainer from '../Components/SearchPage/SearchContainer';
 import BookEntriesContainer from '../Components/BookEntriesPage/BookEntriesContainer';
 import ErrorPage from '../Components/ErrorPage';
+import { createBookEntry, getBookEntries } from '../Services/BookEntryServices';
+import { getBooks } from '../Services/BookServices';
+import { getUsers } from '../Services/UserServices';
+import { getAuthors } from '../Services/AuthorServices';
+import { getIllustrators } from '../Services/IllustratorServices';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -18,39 +23,35 @@ const Container = () => {
   const [illustrators, setIllustrators] = useState([]);
 
   useEffect(() => {
-    const urls = [
-      'http://localhost:8080/bookentries',
-      'http://localhost:8080/books',
-      'http://localhost:8080/users',
-      'http://localhost:8080/authors',
-      'http://localhost:8080/illustrators',
-    ];
-
-    const fetchData = url => {
-      return fetch(url)
-        .then(response => response.json())
-        .catch(error => {
-          console.error(error);
-        });
-    };
-
-    Promise.all(urls.map(url => fetchData(url)))
-      .then(dataArray => {
-        setBookEntries(dataArray[0]);
-        setBooks(dataArray[1]);
-        setUsers(dataArray[2]);
-        setAuthors(dataArray[3]);
-        setIllustrators(dataArray[4]);
-      })
-      .catch(error => {
-        console.error(error);
-      });
+    fetchData()
   }, []);
+  
+    const fetchData = () => {
+      Promise.all([getBookEntries(), getBooks(), getUsers(), 
+                  getAuthors(), getIllustrators()])
+                  .then(([bookEntriesData, booksData, usersData, 
+                    authorsData, illustratorsData]) => {
+                      setBookEntries(bookEntriesData);
+                      setBooks(booksData);
+                      setUsers(usersData);
+                      setAuthors(authorsData);
+                      setIllustrators(illustratorsData);
+                    })
+                  }
 
+    const addBookEntry = (newBookEntry) => {
+      createBookEntry(newBookEntry).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
+    }
 
-
-
-
+    // const updateBookEntry= async (id, updatedBookEntry) => {
+    //   await updateBookEntry(id, updatedBookEntry)
+    //   const bookEntryToEdit = bookEntries.find((bookEntry) => bookEntry._id === id)
+    //   const bookEntryIndex = bookEntries.indexOf(bookEntryToEdit)
+    //   bookEntryToEdit.name = updatedFrogProfile.name
+    //   frogToEdit.image_url = updatedFrogProfile.image_url
+    //   const newBookEntryArray = bookEntries.toSpliced(bookEntryIndex, 1, bookEntryToEdit)
+    //   setBookEntries(newBookEntryArray)
+    // }
 
     return  <>
     <div className='flex-wrapper'>
