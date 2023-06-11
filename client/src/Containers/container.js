@@ -14,6 +14,7 @@ import { getBooks } from '../Services/BookServices';
 import { getUsers } from '../Services/UserServices';
 import { getAuthors } from '../Services/AuthorServices';
 import { getIllustrators } from '../Services/IllustratorServices';
+import NewBookEntry from '../Components/Forms/NewBookEntry';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -64,6 +65,9 @@ const Container = () => {
               <Route 
                 path="/mybooks" 
                 element={< MyBooksContainer bookEntryData={bookEntries}/>} />
+              <Route 
+                path="/newbookentry" 
+                element={< NewBookEntry addBookEntry={addBookEntry} fetchData={fetchData} bookEntries={bookEntries} />} />
               <Route 
                 path="/books" 
                 element={< BooksContainer bookData={books}/>} />

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import './forms.css'
 
-const NewBookEntry = () => {
+const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
 
 
     const [book, setBook] = useState("");
@@ -27,11 +28,11 @@ const NewBookEntry = () => {
     };
 
     const handleStarRatingChange = (e) => {
-      setStarRating.target.value);
+      setStarRating(e.target.value);
     };
 
     const handleReviewChange = (e) => {
-      setReview.target.value);
+      setReview(e.target.value);
     };
   
     const handleSubmit = e => {
@@ -40,15 +41,15 @@ const NewBookEntry = () => {
       addBookEntry({
         book: book,
         shelf: shelf,
-        startedReading: started-reading,
-        finishedReading: finished-reading,
-        starRating: star-rating,
+        startedReading: startedReading,
+        finishedReading: finishedReading,
+        starRating: starRating,
         review: review
       });
       setBook("");
       setShelf("");
-      setStarted_Reading("");
-      setFinished_Reading("");
+      setStartedReading("");
+      setFinishedReading("");
       setStarRating("");
       setReview("");
       fetchData()    
@@ -73,20 +74,26 @@ const NewBookEntry = () => {
         <div>
           <label htmlFor="shelf">Shelf</label>
           <br/>
-          <input
-          type="text"
+          <select 
           id="shelf"
           name="shelf"
           value={shelf}
           onChange={handleShelfChange}
-          required
-            />
+          required>
+          {/* {bookEntries.map((bookEntry) => (
+            <option key={bookEntry.status} >
+             {bookEntry.status}
+            </option> */}
+    {/* this is pulling through the wronog data - 6 items for the 6 book entries, i need the three actual enum values */}
+          {/* ))} */}
+        </select>
           </div>
         <div>
-          <label htmlFor="started-reading">Date Started Reading (dd-mm-yyyy)</label>
+          <label htmlFor="started-reading">Date Started Reading</label>
           <br/>
           <input
           type="text"
+          placeholder="dd-mm-yyyy"
           id="started-reading"
           name="started-reading"
           value={startedReading}
@@ -94,27 +101,37 @@ const NewBookEntry = () => {
             />
           </div>
         <div>
-          <label htmlFor="finished-reading">Date Finished Reading (dd-mm-yyyy)</label>
+          <label htmlFor="finished-reading">Date Finished Reading</label>
           <br/>
           <input
           type="text"
           id="finished-reading"
+          placeholder="dd-mm-yyyy"
           name="finished-reading"
           value={finishedReading}
           onChange={handleFinishedReadingChange}
             />
           </div>
-        <div>
           <label htmlFor="star-rating">Star Rating</label>
-          <br/>
-          <input
-          type="text"
-          id="star-rating"
-          name="star-rating"
-          value={starRating}
-          onChange={handleStarRatingChange}
-            />
-          </div>
+          <br />
+        <div className="star-rating">
+          <input type="radio" id="star5" name="star-rating" value="5"
+          onChange={handleStarRatingChange}/>
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="star-rating" value="4"
+          onChange={handleStarRatingChange}/>
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="star-rating" value="3"
+          onChange={handleStarRatingChange} />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="star-rating" value="2" 
+          onChange={handleStarRatingChange}/>
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="star-rating" value="1"
+          onChange={handleStarRatingChange} />
+          <label for="star1" title="text">1 star</label>
+        </div>
+          <br />
         <div>
           <label htmlFor="review">Your Review</label>
           <br/>
@@ -124,9 +141,10 @@ const NewBookEntry = () => {
           name="review"
           value={review}
           onChange={handleReviewChange}
+          className="review"
             />
           </div>
-        <btn type="submit">Add Book</btn>
+        <button type="submit">Add Book</button>
       </form>
     );
   }
