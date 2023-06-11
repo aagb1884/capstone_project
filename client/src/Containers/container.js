@@ -14,12 +14,16 @@ const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
   const [books, setBooks] = useState([]);
   const [users, setUsers] = useState([]);
+  const [authors, setAuthors] = useState([]);
+  const [illustrators, setIllustrators] = useState([]);
 
   useEffect(() => {
     const urls = [
       'http://localhost:8080/bookentries',
       'http://localhost:8080/books',
       'http://localhost:8080/users',
+      'http://localhost:8080/authors',
+      'http://localhost:8080/illustrators',
     ];
 
     const fetchData = url => {
@@ -35,6 +39,8 @@ const Container = () => {
         setBookEntries(dataArray[0]);
         setBooks(dataArray[1]);
         setUsers(dataArray[2]);
+        setAuthors(dataArray[3]);
+        setIllustrators(dataArray[4]);
       })
       .catch(error => {
         console.error(error);
