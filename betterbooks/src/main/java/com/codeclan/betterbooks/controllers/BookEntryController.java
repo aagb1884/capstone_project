@@ -45,7 +45,7 @@ class BookEntryController {
     } @GetMapping(value = "/bookentries/users/{id}/haveread")
     public ResponseEntity<List<BookEntry>> findBookEntryByUserIdAndHaveRead(
             @PathVariable Long id){
-        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.WANTTOREAD), HttpStatus.OK);
+        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.HAVEREAD), HttpStatus.OK);
     }
 
     @GetMapping(value = "/bookentries/books")
