@@ -1,4 +1,4 @@
-import BookEntriesContainer from "../BookEntriesPage/BookEntriesContainer";
+import BookEntriesContainer from "../Components/BookEntriesPage/BookEntriesContainer";
 
 const BookEntryList = ({bookEntryData}) => {
   
@@ -6,7 +6,7 @@ const BookEntryList = ({bookEntryData}) => {
 
     return (
         <>
-        <h2>book entry list</h2>
+        <h2>Books I Want To Read</h2>
      
         </>
       );

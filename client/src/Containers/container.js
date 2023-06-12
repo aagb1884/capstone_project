@@ -36,29 +36,32 @@ const Container = () => {
   }, []);
   
     const fetchData = () => {
-      Promise.all([getBookEntries(), getBooks(), getUsers(), 
-                  getAuthors(), getIllustrators(), getBookEntriesWantToRead(),
-                getBookEntriesCurrentlyReading(), getBookEntriesHaveRead(),
-              getBookEntriesByUserId(), getBookEntriesByBookId()])
-                  .then(([bookEntriesData, booksData, usersData, 
-                    authorsData, illustratorsData, wantToReadData,
-                  currentlyReadingData, haveReadData, bookEntriesByUserData, 
-                  bookEntriesByBookData, booksBySameAuthorData, 
-                  booksBySameIllustratorData, booksInBookEntryData]) => {
-                      setBookEntries(bookEntriesData);
-                      setBooks(booksData);
-                      setUsers(usersData);
-                      setAuthors(authorsData);
-                      setIllustrators(illustratorsData);
-                      setBookEntriesByWantToRead(wantToReadData);
-                      setBookEntriesByCurrentlyReading(currentlyReadingData);
-                      setBookEntriesByHaveRead(haveReadData);
-                      setBookEntriesByUserId(bookEntriesByUserData);
-                      setBookEntriesByBookId(bookEntriesByBookData);
-                      setBooksBySameAuthor(booksBySameAuthorData);
-                      setBooksBySameIllustrator(booksBySameIllustratorData);
-                      setBooksInBookEntry(booksInBookEntryData);
-                    })
+      getUsers()
+        .then(users => {
+          const userId = users[0].id
+        Promise.all([getBookEntries(), getBooks(), 
+            getAuthors(), getIllustrators(), getBookEntriesWantToRead(userId),
+          getBookEntriesCurrentlyReading(userId), getBookEntriesHaveRead(userId),
+        getBookEntriesByUserId(userId)])
+            .then(([bookEntriesData, booksData, usersData, 
+              authorsData, illustratorsData, wantToReadData,
+            currentlyReadingData, haveReadData, bookEntriesByUserData, booksBySameAuthorData, 
+            booksBySameIllustratorData, booksInBookEntryData]) => {
+                setBookEntries(bookEntriesData);
+                setBooks(booksData);
+                setUsers(usersData);
+                setAuthors(authorsData);
+                setIllustrators(illustratorsData);
+                setBookEntriesByWantToRead(wantToReadData);
+                setBookEntriesByCurrentlyReading(currentlyReadingData);
+                setBookEntriesByHaveRead(haveReadData);
+                setBookEntriesByUserId(bookEntriesByUserData);
+                setBooksBySameAuthor(booksBySameAuthorData);
+                setBooksBySameIllustrator(booksBySameIllustratorData);
+                setBooksInBookEntry(booksInBookEntryData);
+              })
+        })
+      
                   }
 
     const addBookEntry = (newBookEntry) => {
@@ -86,12 +89,10 @@ const Container = () => {
               <Route 
                 path="/mybooks" 
                 element={< MyBooksContainer
-                bookEntryData={bookEntries} 
+                // bookEntryData={bookEntries} 
                 wantToRead={bookEntriesByWantToRead}
                 currentlyReading={bookEntriesByCurrentlyReading}
                 haveRead={bookEntriesbyHaveRead}
-                byBookId={bookEntriesbyBookId}
-                byUserId={bookEntriesbyUserId}
                 />} />
               <Route 
                 path="/newbookentry" 
@@ -118,6 +119,14 @@ const Container = () => {
                   authors={authors}
                   illustrators={illustrators}
                   users={users}
+                  wantToRead={bookEntriesByWantToRead}
+                  currentlyReading={bookEntriesByCurrentlyReading}
+                  haveRead={bookEntriesbyHaveRead}
+                  byBookId={bookEntriesbyBookId}
+                  byUserId={bookEntriesbyUserId}
+                  booksBySameAuthor={booksBySameAuthor}
+                  booksBySameIllustrator={booksBySameIllustrator}
+                  booksInBookEntry={booksInBookEntry}
                 />} />
               <Route 
                 path="/bookentries" 

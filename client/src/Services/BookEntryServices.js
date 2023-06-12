@@ -37,19 +37,19 @@
             }
         })
     }
-
+  
     export const getBookEntriesByUserId =  (userId) => {
         return fetch(baseURL + "users?id=" + userId).then(res => res.json())};
     
     export const getBookEntriesWantToRead = (userId) => {
-        return fetch(baseURL + userId + "/wanttoread")
+        return fetch(baseURL + "users/" + userId + "/wanttoread")
           .then(res => res.json())};
   
     export const getBookEntriesCurrentlyReading = (userId) => {
-        return fetch(baseURL + userId + "/currentlyreading").then(res => res.json())};
+        return fetch(baseURL + "users/" + userId + "/currentlyreading").then(res => res.json())};
      
     export const getBookEntriesHaveRead = (userId) => {
-        return fetch(baseURL + userId + "/haveread").then(res => res.json())};
+        return fetch(baseURL + "users/" + userId + "/haveread").then(res => res.json())};
   
     export const getBookEntriesByBookId =  (bookId) => {
         return fetch(baseURL + "books?id=" + bookId).then(res => res.json())};
