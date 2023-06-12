@@ -1,3 +1,5 @@
+import './bookitem.css'
+
 const BookItem = ({book}) => {
 
     const authorInfo = book.authors.map((author, index) => {
@@ -15,20 +17,31 @@ const BookItem = ({book}) => {
     
     return ( 
         <div className="book-item">
+            <div className='content'>
         <ul>
-            <li><img src={book.coverUrl} alt="Book cover" width="175" height="200"/></li>
-            <li>{book.title}</li>
-            <li>Written by {authorInfo}</li>
-            <li>Illustrated by {illustratorInfo}</li>
-            <li>Synopsis: {book.synopsis}</li>
-            <li>No. Pages: {book.lengthInPages}</li>
-            <li>Format: {book.format}</li>
-            <li>Tags: {descriptiveTags}</li>
-            <li>Date Published: {book.datePublished}</li>
-            <li>Publisher: {book.publisher}</li>
-            <li>ISBN: {book.isbn}</li>
-            <li>Average Rating: {book.averageRating}</li>
+            <div className='image-container'>
+                <li><img src={book.coverUrl} alt="Book cover" width="260px" height="390px"/></li>
+            </div>
+            <br />
+            <div className='text-container'>
+                <li><b>{book.title}</b></li>
+                <li>Written by {authorInfo}</li>
+                <li>Illustrated by {illustratorInfo}</li>
+                <br />
+                <li>{book.synopsis}</li>
+                <br />
+                <li>Pages: {book.lengthInPages}</li>
+                <div className='change-caps'>
+                <li>Format: {book.format}</li>
+                <li>Tags: {descriptiveTags}</li>
+                </div>
+                <li>Date Published: {book.datePublished}</li>
+                <li>Publisher: {book.publisher}</li>
+                <li>ISBN: {book.isbn}</li>
+                <li>Average Rating: {book.averageRating}</li>
+            </div>
         </ul>
+        </div>
         </div>
      );
 }
