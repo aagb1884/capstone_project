@@ -1,4 +1,4 @@
-    const baseURL = "http://localhost:8080/bookentries";
+    const baseURL = "http://localhost:8080/bookentries/";
 
     export const getBookEntries = () => {
       return fetch(baseURL).then((res) => res.json());
@@ -38,20 +38,21 @@
         })
     }
 
-    export const fetchBookEntriesByUserId =  (userId) => {
-        return fetch(baseURL + "/users?id=" + userId.then(res => res.json()))};
-
-    export const fetchBookEntriesWantToRead = (userId) => {
-        return fetch(baseURL + userId + "/wanttoread".then(res => res.json()))};
+    export const getBookEntriesByUserId =  (userId) => {
+        return fetch(baseURL + "users?id=" + userId).then(res => res.json())};
+    
+    export const getBookEntriesWantToRead = (userId) => {
+        return fetch(baseURL + userId + "/wanttoread")
+          .then(res => res.json())};
   
-    export const fetchBookEntriesCurrentlyReading = (userId) => {
-        return fetch(baseURL + userId + "/currentlyreading".then(res => res.json()))};
+    export const getBookEntriesCurrentlyReading = (userId) => {
+        return fetch(baseURL + userId + "/currentlyreading").then(res => res.json())};
      
-    export const fetchBookEntriesHaveRead = (userId) => {
-        return fetch(baseURL + userId + "/haveread".then(res => res.json()))};
+    export const getBookEntriesHaveRead = (userId) => {
+        return fetch(baseURL + userId + "/haveread").then(res => res.json())};
   
-    export const fetchBookEntriesByBookId =  (bookId) => {
-        return fetch(baseURL + "/books?id=" + bookId.then(res => res.json()))};
+    export const getBookEntriesByBookId =  (bookId) => {
+        return fetch(baseURL + "books?id=" + bookId).then(res => res.json())};
 
 
   

@@ -9,7 +9,7 @@ import BooksContainer from '../Components/BooksPage/BooksContainer'
 import SearchContainer from '../Components/SearchPage/SearchContainer';
 import BookEntriesContainer from '../Components/BookEntriesPage/BookEntriesContainer';
 import ErrorPage from '../Components/ErrorPage';
-import { createBookEntry, getBookEntries } from '../Services/BookEntryServices';
+import { createBookEntry, getBookEntries, getBookEntriesByBookId, getBookEntriesByUserId, getBookEntriesCurrentlyReading, getBookEntriesHaveRead, getBookEntriesWantToRead } from '../Services/BookEntryServices';
 import { getBooks } from '../Services/BookServices';
 import { getUsers } from '../Services/UserServices';
 import { getAuthors } from '../Services/AuthorServices';
@@ -18,7 +18,15 @@ import NewBookEntry from '../Components/Forms/NewBookEntry';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
+  const [bookEntriesByWantToRead, setBookEntriesByWantToRead] = useState([]);
+  const [bookEntriesByCurrentlyReading, setBookEntriesByCurrentlyReading] = useState([]);
+  const [bookEntriesbyHaveRead, setBookEntriesByHaveRead] = useState([]);
+  const [bookEntriesbyUserId, setBookEntriesByUserId] = useState([]);
+  const [bookEntriesbyBookId, setBookEntriesByBookId] = useState([]);
   const [books, setBooks] = useState([]);
+  const [booksBySameAuthor, setBooksBySameAuthor] = useState([]);
+  const [booksBySameIllustrator, setBooksBySameIllustrator] = useState([]);
+  const [booksInBookEntry, setBooksInBookEntry] = useState([]);
   const [users, setUsers] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
@@ -29,14 +37,27 @@ const Container = () => {
   
     const fetchData = () => {
       Promise.all([getBookEntries(), getBooks(), getUsers(), 
-                  getAuthors(), getIllustrators()])
+                  getAuthors(), getIllustrators(), getBookEntriesWantToRead(),
+                getBookEntriesCurrentlyReading(), getBookEntriesHaveRead(),
+              getBookEntriesByUserId(), getBookEntriesByBookId()])
                   .then(([bookEntriesData, booksData, usersData, 
-                    authorsData, illustratorsData]) => {
+                    authorsData, illustratorsData, wantToReadData,
+                  currentlyReadingData, haveReadData, bookEntriesByUserData, 
+                  bookEntriesByBookData, booksBySameAuthorData, 
+                  booksBySameIllustratorData, booksInBookEntryData]) => {
                       setBookEntries(bookEntriesData);
                       setBooks(booksData);
                       setUsers(usersData);
                       setAuthors(authorsData);
                       setIllustrators(illustratorsData);
+                      setBookEntriesByWantToRead(wantToReadData);
+                      setBookEntriesByCurrentlyReading(currentlyReadingData);
+                      setBookEntriesByHaveRead(haveReadData);
+                      setBookEntriesByUserId(bookEntriesByUserData);
+                      setBookEntriesByBookId(bookEntriesByBookData);
+                      setBooksBySameAuthor(booksBySameAuthorData);
+                      setBooksBySameIllustrator(booksBySameIllustratorData);
+                      setBooksInBookEntry(booksInBookEntryData);
                     })
                   }
 
@@ -48,8 +69,8 @@ const Container = () => {
     //   await updateBookEntry(id, updatedBookEntry)
     //   const bookEntryToEdit = bookEntries.find((bookEntry) => bookEntry._id === id)
     //   const bookEntryIndex = bookEntries.indexOf(bookEntryToEdit)
-    //   bookEntryToEdit.name = updatedFrogProfile.name
-    //   frogToEdit.image_url = updatedFrogProfile.image_url
+    //   bookEntryToEdit.name = updatedBookEntry.name
+    //   bookToEdit.image_url = updatedBookEntry.image_url
     //   const newBookEntryArray = bookEntries.toSpliced(bookEntryIndex, 1, bookEntryToEdit)
     //   setBookEntries(newBookEntryArray)
     // }

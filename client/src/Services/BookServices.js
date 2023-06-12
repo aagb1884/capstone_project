@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8080/books";
+const baseURL = "http://localhost:8080/books/";
 
 export const getBooks = () => {
   return fetch(baseURL).then((res) => res.json());
@@ -39,10 +39,10 @@ export const createBook = (newBook) => {
 }
 
 export const fetchAllBooksBySameAuthor = (authorId) => {
-    return fetch(baseURL + "/author?id=" + authorId.then(res => res.json()))};
+    return fetch(baseURL + "author?id=" + authorId.then(res => res.json()))};
 
 export const fetchAllBooksBySameIllustrator =  (illustratorId) => {
-    return fetch(baseURL + "/illustrator?id=" + illustratorId.then(res => res.json()))};
+    return fetch(baseURL + "illustrator?id=" + illustratorId.then(res => res.json()))};
 
 export const fetchBookInBookEntry =  (bookEntryId) => {
-    return fetch(baseURL + "/bookentry?id=" + bookEntryId.then(res => res.json()))};
+    return fetch(baseURL + "bookentry?id=" + bookEntryId.then(res => res.json()))};

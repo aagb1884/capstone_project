@@ -1,5 +1,9 @@
 const ExpandedShelf = () => {
-    return (  );
+    return ( 
+        <>
+        
+        </>
+     );
 }
  
 export default ExpandedShelf;

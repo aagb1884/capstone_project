@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8080/authors";
+const baseURL = "http://localhost:8080/authors/";
 
 export const getAuthors = () => {
   return fetch(baseURL).then((res) => res.json());

@@ -1,4 +1,4 @@
-const baseURL = "http://localhost:8080/illustrators";
+const baseURL = "http://localhost:8080/illustrators/";
 
 export const getIllustrators = () => {
   return fetch(baseURL).then((res) => res.json());
