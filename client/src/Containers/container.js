@@ -85,19 +85,40 @@ const Container = () => {
                 element={< HomePage/>} />
               <Route 
                 path="/mybooks" 
-                element={< MyBooksContainer bookEntryData={bookEntries}/>} />
+                element={< MyBooksContainer
+                bookEntryData={bookEntries} 
+                wantToRead={bookEntriesByWantToRead}
+                currentlyReading={bookEntriesByCurrentlyReading}
+                haveRead={bookEntriesbyHaveRead}
+                byBookId={bookEntriesbyBookId}
+                byUserId={bookEntriesbyUserId}
+                />} />
               <Route 
                 path="/newbookentry" 
-                element={< NewBookEntry addBookEntry={addBookEntry} fetchData={fetchData} bookEntries={bookEntries} />} />
+                element={< NewBookEntry addBookEntry={addBookEntry} 
+                fetchData={fetchData} 
+                bookEntries={bookEntries} 
+                books={books} />} />
               <Route 
                 path="/books" 
-                element={< BooksContainer bookData={books}/>} />
+                element={< BooksContainer 
+                bookData={books}
+                booksBySameAuthor={booksBySameAuthor}
+                booksBySameIllustrator={booksBySameIllustrator}
+                booksInBookEntry={booksInBookEntry}
+                />} />
               <Route 
                 path="/profile" 
                 element={< UserContainer userData={users}/>}  />
               <Route 
                 path="/search" 
-                element={< SearchContainer/>} />
+                element={< SearchContainer
+                  bookEntries={bookEntries} 
+                  books={books}
+                  authors={authors}
+                  illustrators={illustrators}
+                  users={users}
+                />} />
               <Route 
                 path="/bookentries" 
                 element={< BookEntriesContainer bookEntryData={bookEntries}/>} />
