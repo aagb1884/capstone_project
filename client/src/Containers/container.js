@@ -43,13 +43,13 @@ const Container = () => {
             getAuthors(), getIllustrators(), getBookEntriesWantToRead(userId),
           getBookEntriesCurrentlyReading(userId), getBookEntriesHaveRead(userId),
         getBookEntriesByUserId(userId)])
-            .then(([bookEntriesData, booksData, usersData, 
+            .then(([bookEntriesData, booksData,
               authorsData, illustratorsData, wantToReadData,
             currentlyReadingData, haveReadData, bookEntriesByUserData, booksBySameAuthorData, 
             booksBySameIllustratorData, booksInBookEntryData]) => {
                 setBookEntries(bookEntriesData);
                 setBooks(booksData);
-                setUsers(usersData);
+                setUsers(users);
                 setAuthors(authorsData);
                 setIllustrators(illustratorsData);
                 setBookEntriesByWantToRead(wantToReadData);
@@ -110,7 +110,10 @@ const Container = () => {
                 />} />
               <Route 
                 path="/profile" 
-                element={< UserContainer userData={users}/>}  />
+                element={< UserContainer 
+                userData={users}
+                userBooks={bookEntriesbyUserId}
+                />}  />
               <Route 
                 path="/search" 
                 element={< SearchContainer
