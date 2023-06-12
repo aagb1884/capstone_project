@@ -5,5 +5,31 @@
     top: 0;
     left: 0; */
     width: 100%;
-    font-family: 'Exo';
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
 }
+
+.better-reads-header {
+    position: relative;
+    font-family: 'Exo';
+    font-size: 1em;
+    
+    /* transform: skew(-15deg); */
+    letter-spacing: 0.03em;
+}
+.header > h2 {
+    font-family: 'Mr Dafoe';
+    margin: 0;
+    font-size: 2em;
+    margin-top: 0.7em;
+    margin-right: -0.01em;
+    color: white;
+    text-shadow: 0 0 0.05em #fff, 0 0 0.2em #fe4705, 0 0 0.3em #fe4705;
+    transform: rotate(-7deg);
+    font-stretch: expanded;
+    z-index: 2;
+  }
