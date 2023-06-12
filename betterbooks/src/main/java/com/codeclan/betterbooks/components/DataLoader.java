@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 
 @Profile("!test")
-//    @Component //Comment this out if you do not to run the data loader.
+    @Component //Comment this out if you do not to run the data loader.
     public class DataLoader implements ApplicationRunner {
 
         @Autowired
@@ -196,7 +196,7 @@ import org.springframework.stereotype.Component;
             hildaMidnightGiant.addDescription(DescriptiveTag.FANTASY);
             bookRepository.save(hildaMidnightGiant);
 
-            Book hungryCaterpillar = new Book	("The Very Hungry Caterpillar", "Eric Carle's The Very Hungry Caterpillar is a perennial favourite with children and adults alike. Its imaginative illustration and clever cut-out detail charts the progress of a very hungry caterpillar as he eats his way through the week.",	24,	Format.BOARDBOOKFORMAT,	"29/09/1994",	"Penguin Random House",	"9780241003008", "imgurl", null);
+            Book hungryCaterpillar = new Book	("The Very Hungry Caterpillar", "Eric Carle's The Very Hungry Caterpillar is a perennial favourite with children and adults alike. Its imaginative illustration and clever cut-out detail charts the progress of a very hungry caterpillar as he eats his way through the week.",	24,	Format.BOARDBOOKFORMAT,	"29/09/1994",	"Penguin Random House",	"9780241003008", "images/very_hungry_caterpilla.jpeg", null);
             hungryCaterpillar.addAuthor(eCarle);
             hungryCaterpillar.addIllustrator(iECarle);
             hungryCaterpillar.addDescription(DescriptiveTag.BOARDBOOK);
@@ -204,7 +204,7 @@ import org.springframework.stereotype.Component;
             hungryCaterpillar.addDescription(DescriptiveTag.ANIMALS);
             bookRepository.save(hungryCaterpillar);
 
-            Book each_peach	= new Book	("Each Peach Pear Plum",	"Each Peach Pear Plum introduces characters from well-known nursery stories and encourages children to participate and to find the characters hidden in the pictures. The text is perfect to read aloud to very young children.",	34,	Format.BOARDBOOKFORMAT,"06/04/2017",	"Penguin Random House",	"9780141379524",	"imgurl",	null);
+            Book each_peach	= new Book	("Each Peach Pear Plum",	"Each Peach Pear Plum introduces characters from well-known nursery stories and encourages children to participate and to find the characters hidden in the pictures. The text is perfect to read aloud to very young children.",	34,	Format.BOARDBOOKFORMAT,"06/04/2017",	"Penguin Random House",	"9780141379524",	"images/each_peach_pear_plum.jpeg",	null);
             each_peach.addAuthor(aAhlberg);
             each_peach.addAuthor(jAhlberg);
             each_peach.addIllustrator(iJAhlberg);
@@ -213,7 +213,7 @@ import org.springframework.stereotype.Component;
             each_peach.addDescription(DescriptiveTag.NURSERYRHYMES);
             bookRepository.save(each_peach);
 
-            Book guessHowMuchLoveYou = new Book	("Guess How Much I Love You", "Sometimes, when you love someone very, very much, you want to find a way of describing how much you treasure them. But, as Little Nutbrown Hare and Big Nutbrown Hare discover, love is not always an easy thing to measure.", 32, Format.BOARDBOOKFORMAT, "02/10/2014",	"Walker Books Ltd",	"9781406358780", "img.url", null);
+            Book guessHowMuchLoveYou = new Book	("Guess How Much I Love You", "Sometimes, when you love someone very, very much, you want to find a way of describing how much you treasure them. But, as Little Nutbrown Hare and Big Nutbrown Hare discover, love is not always an easy thing to measure.", 32, Format.BOARDBOOKFORMAT, "02/10/2014",	"Walker Books Ltd",	"9781406358780", "images/guess_how_much_love_you.jpeg", null);
             guessHowMuchLoveYou.addAuthor(sMcBratney);
             guessHowMuchLoveYou.addIllustrator(aJeram);
             guessHowMuchLoveYou.addDescription(DescriptiveTag.BOARDBOOK);
@@ -221,7 +221,7 @@ import org.springframework.stereotype.Component;
             guessHowMuchLoveYou.addDescription(DescriptiveTag.BEDTIME);
             bookRepository.save(guessHowMuchLoveYou);
 
-            Book hairyMacLary1 = new Book	("Hairy Maclary from Donaldson’s Dairy",	"Hairy Maclary goes off for a walk in town, followed by a few friends - and comes up against a nasty surprise in the shape of Scarface Claw!  Discover the lovable rogue, Hairy Maclary, and his four-footed friends in this hilarious classic tale.", 36,	Format.BOARDBOOKFORMAT,	"04/07/2002",	"Penguin Random House",	"9780670913503",	"imgurl",	null);
+            Book hairyMacLary1 = new Book	("Hairy Maclary from Donaldson’s Dairy",	"Hairy Maclary goes off for a walk in town, followed by a few friends - and comes up against a nasty surprise in the shape of Scarface Claw!  Discover the lovable rogue, Hairy Maclary, and his four-footed friends in this hilarious classic tale.", 36,	Format.BOARDBOOKFORMAT,	"04/07/2002",	"Penguin Random House",	"9780670913503",	"images/hairy_maclary_donaldsons_dairy.jpeg",	null);
             hairyMacLary1.addAuthor(lDodd);
             hairyMacLary1.addIllustrator(iLDodd);
             hairyMacLary1.addDescription(DescriptiveTag.BOARDBOOK);
@@ -229,7 +229,7 @@ import org.springframework.stereotype.Component;
             hairyMacLary1.addDescription(DescriptiveTag.ANIMALS);
             bookRepository.save(hairyMacLary1);
 
-            Book babyTouchPlaybook = new Book	("Baby Touch: Playbook",	"Parent and child can explore the world together with this multi-sensory book from the innvoative Baby Touch range. This bright and bold book features flaps to lift and die-cut pieces on each spread, all perfectly designed for first discovery and experience.",		12,	Format.BOARDBOOKFORMAT	, "13/06/2019",	"Penguin Random House",	"9780241379134",	"imgurl",	null);
+            Book babyTouchPlaybook = new Book	("Baby Touch: Playbook",	"Parent and child can explore the world together with this multi-sensory book from the innvoative Baby Touch range. This bright and bold book features flaps to lift and die-cut pieces on each spread, all perfectly designed for first discovery and experience.",		12,	Format.BOARDBOOKFORMAT	, "13/06/2019",	"Penguin Random House",	"9780241379134",	"images/baby_touch_playbook.jpeg",	null);
             babyTouchPlaybook.addAuthor(ladybird);
             babyTouchPlaybook.addIllustrator(lemonRibbonStudio);
             babyTouchPlaybook.addDescription(DescriptiveTag.BOARDBOOK);
@@ -239,7 +239,7 @@ import org.springframework.stereotype.Component;
             babyTouchPlaybook.addDescription(DescriptiveTag.TEXTURES);
             bookRepository.save(babyTouchPlaybook);
 
-            Book aLittleStuck = new Book	("A Little Stuck",	"Floyd gets his kite stuck up a tree. He throws up his shoe to shift it, but that gets stuck too. So he throws up his other shoe and that gets stuck. Will Floyd ever get his kite back?",		30,	Format.BOARDBOOKFORMAT,	"02/06/2016",	"HarperCollins Publishers",	"9780008170868",	"imgurl",	null);
+            Book aLittleStuck = new Book	("A Little Stuck",	"Floyd gets his kite stuck up a tree. He throws up his shoe to shift it, but that gets stuck too. So he throws up his other shoe and that gets stuck. Will Floyd ever get his kite back?",		30,	Format.BOARDBOOKFORMAT,	"02/06/2016",	"HarperCollins Publishers",	"9780008170868",	"images/a_little_stuck.jpeg",	null);
             aLittleStuck.addAuthor(oJeffers);
             aLittleStuck.addIllustrator(iOJeffers);
             aLittleStuck.addDescription(DescriptiveTag.BOARDBOOK);
@@ -247,14 +247,14 @@ import org.springframework.stereotype.Component;
             aLittleStuck.addDescription(DescriptiveTag.SILLY);
             bookRepository.save(aLittleStuck);
 
-            Book whenGrandadPenguin	= new Book	("When Grandad Was a Penguin", "What do you do when your Grandad starts acting VERY much like a penguin? Boys and girls alike will love the witty, sweet and brilliantly surreal depiction of everyday settings and situations in this fish-out-of-water story with a difference.",	32,	Format.PAPERBACK,	"05/04/2018",	"Pan Macmillan",	"9781509850976",	"imgurl",	null);
+            Book whenGrandadPenguin	= new Book	("When Grandad Was a Penguin", "What do you do when your Grandad starts acting VERY much like a penguin? Boys and girls alike will love the witty, sweet and brilliantly surreal depiction of everyday settings and situations in this fish-out-of-water story with a difference.",	32,	Format.PAPERBACK,	"05/04/2018",	"Pan Macmillan",	"9781509850976",	"images/when_grandad_was_penguin.jpeg",	null);
             whenGrandadPenguin.addAuthor(mHood);
             whenGrandadPenguin.addIllustrator(iMHood);
             whenGrandadPenguin.addDescription(DescriptiveTag.PICTUREBOOK);
             whenGrandadPenguin.addDescription(DescriptiveTag.SILLY);
             bookRepository.save(whenGrandadPenguin);
 
-            Book drSeussSleepBook = new Book	("Dr Seuss’s Sleep Book",	"This book is the original (and the best) remedy for children who don't want to go to sleep.  Sleep thoughts are spreading Throughout the whole land The time for night-brushing of teeth is at hand!",		64,	Format.PAPERBACK,	"04/05/2017",	"HarperCollins Publishers",	"9780008236069",	"imgurl",	null);
+            Book drSeussSleepBook = new Book	("Dr Seuss’s Sleep Book",	"This book is the original (and the best) remedy for children who don't want to go to sleep.  Sleep thoughts are spreading Throughout the whole land The time for night-brushing of teeth is at hand!",		64,	Format.PAPERBACK,	"04/05/2017",	"HarperCollins Publishers",	"9780008236069",	"images/dr_seuss_sleep_book.jpeg",	null);
             drSeussSleepBook.addAuthor(drSeuss);
             drSeussSleepBook.addIllustrator(iDrSeuss);
             drSeussSleepBook.addDescription(DescriptiveTag.PICTUREBOOK);
@@ -262,7 +262,7 @@ import org.springframework.stereotype.Component;
             drSeussSleepBook.addDescription(DescriptiveTag.BEDTIME);
             bookRepository.save(drSeussSleepBook);
 
-            Book nenLonelyFisherman	= new Book	("Nen and the Lonely Fisherman",	"Far out to sea and deep below the whispering waves lives a merman called Nen. Nen spends his days exploring his underwater kingdom, but something is missing: his heart is empty. So, Nen ventures to the forbidden world above.",	32,	Format.PAPERBACK,	"01/06/2021",	"Owlet Press", "9781913339098",	"imgurl",	null);
+            Book nenLonelyFisherman	= new Book	("Nen and the Lonely Fisherman",	"Far out to sea and deep below the whispering waves lives a merman called Nen. Nen spends his days exploring his underwater kingdom, but something is missing: his heart is empty. So, Nen ventures to the forbidden world above.",	32,	Format.PAPERBACK,	"01/06/2021",	"Owlet Press", "9781913339098",	"images/nen_lonely_fisherman.jpeg",	null);
             nenLonelyFisherman.addAuthor(iEagleton);
             nenLonelyFisherman.addIllustrator(jMayhew);
             nenLonelyFisherman.addDescription(DescriptiveTag.PICTUREBOOK);
@@ -270,7 +270,7 @@ import org.springframework.stereotype.Component;
             nenLonelyFisherman.addDescription(DescriptiveTag.LGBTQ);
             bookRepository.save(nenLonelyFisherman);
 
-            Book	wain	= new Book	("Wain: LGBT reimaginings of Scottish folktales",	"Wain is a collection of LGBT themed children's poetry based on retellings of Scottish myths. These poems immerse readers in an enriching vision of contemporary life.",		88,	Format.PAPERBACK,	"29/02/2019",	"The Emma Press",	"9781910139479",	"imgurl",	null);
+            Book	wain	= new Book	("Wain: LGBT reimaginings of Scottish folktales",	"Wain is a collection of LGBT themed children's poetry based on retellings of Scottish myths. These poems immerse readers in an enriching vision of contemporary life.",		88,	Format.PAPERBACK,	"29/02/2019",	"The Emma Press",	"9781910139479",	"images/wain.jpeg",	null);
             wain.addAuthor(rPlummer);
             wain.addIllustrator(hBoppert);
             wain.addDescription(DescriptiveTag.POETRY);
@@ -280,7 +280,7 @@ import org.springframework.stereotype.Component;
             bookRepository.save(wain);
 
 
-            Book gruffalo		= new Book	("The Gruffalo",		"This award-winning rhyming story of a mouse and a monster has found its way into the hearts and bedtimes of an entire generation of children. No home should be without The Gruffalo!",		24,	Format.BOARDBOOKFORMAT, "06/04/2017",	"Pan Macmillan",	"9781509830398",	"imgurl",	null);
+            Book gruffalo		= new Book	("The Gruffalo",		"This award-winning rhyming story of a mouse and a monster has found its way into the hearts and bedtimes of an entire generation of children. No home should be without The Gruffalo!",		24,	Format.BOARDBOOKFORMAT, "06/04/2017",	"Pan Macmillan",	"9781509830398",	"images/gruffalo.jpeg",	null);
             gruffalo.addAuthor(jDonaldson);
             gruffalo.addIllustrator(aScheffler);
             gruffalo.addDescription(DescriptiveTag.PICTUREBOOK);
@@ -289,7 +289,7 @@ import org.springframework.stereotype.Component;
             gruffalo.addDescription(DescriptiveTag.SCARY);
             bookRepository.save(gruffalo);
 
-            Book drWhoAutonInvasion		= new Book	("Doctor Who and the Auton Invasion",	"The Doctor is exiled to Earth in the 20th century, his appearance once again changed. His arrival coincides with a meteorite shower. But these are no ordinary meteorites...",		192,	Format.PAPERBACK,	"07/07/2011",	"Ebury Publishing",	"9781849901932",	"imgurl",	null);
+            Book drWhoAutonInvasion		= new Book	("Doctor Who and the Auton Invasion",	"The Doctor is exiled to Earth in the 20th century, his appearance once again changed. His arrival coincides with a meteorite shower. But these are no ordinary meteorites...",		192,	Format.PAPERBACK,	"07/07/2011",	"Ebury Publishing",	"9781849901932",	"images/dr_who_auton_invasion.jpeg",	null);
             drWhoAutonInvasion.addAuthor(tDicks);
             drWhoAutonInvasion.addDescription(DescriptiveTag.FICTION);
             drWhoAutonInvasion.addDescription(DescriptiveTag.SCARY);
@@ -298,25 +298,25 @@ import org.springframework.stereotype.Component;
             bookRepository.save(drWhoAutonInvasion);
 
 
-            Book kindOfSpark	= new Book	("A Kind of Spark",			"A Kind of Spark tells the story of 11-year-old Addie as she campaigns for a memorial in memory of the witch trials that took place in her Scottish hometown. Addie knows there's more to the story of these 'witches', just like there is more to hers.",	192,	Format.PAPERBACK,	"04/06/2020",	"Knights of Media","9781913311223",	"imgurl",	null);
+            Book kindOfSpark	= new Book	("A Kind of Spark",			"A Kind of Spark tells the story of 11-year-old Addie as she campaigns for a memorial in memory of the witch trials that took place in her Scottish hometown. Addie knows there's more to the story of these 'witches', just like there is more to hers.",	192,	Format.PAPERBACK,	"04/06/2020",	"Knights of Media","9781913311223",	"images/kind_of_spark.jpeg",	null);
             kindOfSpark.addAuthor(eMcNicoll);
             kindOfSpark.addDescription(DescriptiveTag.FICTION);
             kindOfSpark.addDescription(DescriptiveTag.MIDDLEGRADE);
             bookRepository.save(kindOfSpark);
 
-            Book pet	= new Book	("Pet",	"How do you save the world from monsters if no one will admit they exist?",	208,	Format.PAPERBACK,	"07/11/2019",	"Faber & Faber", "9780571355112",	"imgurl", null);
+            Book pet	= new Book	("Pet",	"How do you save the world from monsters if no one will admit they exist?",	208,	Format.PAPERBACK,	"07/11/2019",	"Faber & Faber", "9780571355112",	"images/pet.jpeg", null);
             pet.addAuthor(aEmezi);
             pet.addDescription(DescriptiveTag.FICTION);
             pet.addDescription(DescriptiveTag.YA);
             bookRepository.save(pet);
 
-            Book hateUGive	= new Book	("The Hate U Give",			"My parents didn’t raise me to fear the police, just to be smart around them. They told me it’s not smart to move whilst a cop has his back to you. Khalil does.",	464,	Format.PAPERBACK,	"06/04/2017",	"Walker Books Ltd",	"9781406372151",	"imgurl",	null);
+            Book hateUGive	= new Book	("The Hate U Give",			"My parents didn’t raise me to fear the police, just to be smart around them. They told me it’s not smart to move whilst a cop has his back to you. Khalil does.",	464,	Format.PAPERBACK,	"06/04/2017",	"Walker Books Ltd",	"9781406372151",	"images/the_hate_u_give.jpeg",	null);
             hateUGive.addAuthor(aThomas);
             hateUGive.addDescription(DescriptiveTag.FICTION);
             hateUGive.addDescription(DescriptiveTag.YA);
             bookRepository.save(hateUGive);
 
-            Book poetX	= new Book	("The Poet X",	"Xiomara has secrets - her feelings for a boy in her bio class, and the notebook full of poems that she keeps under her bed. And a slam poetry club that will pull those secrets into the spotlight.",	368,	Format.PAPERBACK,	"03/05/2018",	"HarperCollins Publishers",	"9781405291460",	"imgurl", null);
+            Book poetX	= new Book	("The Poet X",	"Xiomara has secrets - her feelings for a boy in her bio class, and the notebook full of poems that she keeps under her bed. And a slam poetry club that will pull those secrets into the spotlight.",	368,	Format.PAPERBACK,	"03/05/2018",	"HarperCollins Publishers",	"9781405291460",	"images/poet_x.jpeg", null);
             poetX.addAuthor(eAcevedo);
             poetX.addDescription(DescriptiveTag.FICTION);
             poetX.addDescription(DescriptiveTag.POETRY);
@@ -324,7 +324,7 @@ import org.springframework.stereotype.Component;
             poetX.addDescription(DescriptiveTag.ROMANCE);
             bookRepository.save(poetX);
 
-            Book blackFlamingo	= new Book	("The Black Flamingo",	"Michael waits in the stage wings, wearing a pink wig, pink fluffy coat and black heels.  One more step will see him illuminated by spotlight...Can he emerge as The Black Flamingo?",	368,	Format.PAPERBACK,	"05/03/2020",	"Hachette Children’s Group", "9781444948608",	"imgurl",	null);
+            Book blackFlamingo	= new Book	("The Black Flamingo",	"Michael waits in the stage wings, wearing a pink wig, pink fluffy coat and black heels.  One more step will see him illuminated by spotlight...Can he emerge as The Black Flamingo?",	368,	Format.PAPERBACK,	"05/03/2020",	"Hachette Children’s Group", "9781444948608",	"images/black_flamingo.jpeg",	null);
             blackFlamingo.addAuthor(dAtta);
             blackFlamingo.addIllustrator(aKhullar);
             blackFlamingo.addDescription(DescriptiveTag.IDENTITY);
