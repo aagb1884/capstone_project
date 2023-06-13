@@ -30,6 +30,7 @@ const Container = () => {
   const [users, setUsers] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
+  const [ searchInput, setSearchInput] = useState('')
 
   useEffect(() => {
     fetchData()
@@ -130,6 +131,7 @@ const Container = () => {
                   booksBySameAuthor={booksBySameAuthor}
                   booksBySameIllustrator={booksBySameIllustrator}
                   booksInBookEntry={booksInBookEntry}
+                  handleSearchChange={setSearchInput}
                 />} />
               <Route 
                 path="/bookentries" 
