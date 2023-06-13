@@ -82,10 +82,12 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
           required>
           {/* {bookEntries.map((bookEntry) => (
             <option key={bookEntry.status} >
-             {bookEntry.status}
-            </option> */}
-    {/* this is pulling through the wronog data - 6 items for the 6 book entries, i need the three actual enum values */}
-          {/* ))} */}
+             {bookEntry.status} */}
+            <option value="">Please choose one</option>
+            <option value="want-to-read">WANTTOREAD</option>
+            <option value="currently-reading">CURRENTLYREADING</option>
+            <option value="have-read">HAVEREAD</option>
+          
         </select>
           </div>
         <div>
@@ -152,7 +154,6 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
   
  
 export default NewBookEntry;
-
 
 
 
