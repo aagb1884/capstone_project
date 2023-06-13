@@ -82,7 +82,7 @@ class BookEntryController {
     public ResponseEntity<BookEntry> createBookEntry(@RequestBody BookEntry bookEntry) {
         BookEntry newBookEntry = new BookEntry();
         newBookEntry.setBook(bookEntry.getBook());
-//        newBookEntry.setUser(bookEntry.getUser());
+        newBookEntry.setUser(bookEntry.getUser());
         newBookEntry.setStatus(bookEntry.getStatus());
         newBookEntry.setStartedReading(bookEntry.getStartedReading());
         newBookEntry.setFinishedReading(bookEntry.getFinishedReading());
@@ -90,7 +90,8 @@ class BookEntryController {
         newBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(newBookEntry);
+        BookEntry createdBookEntry = bookEntryRepository.findById(newBookEntry.getId()).get();
 
-        return new ResponseEntity<>(newBookEntry, HttpStatus.CREATED);
+        return new ResponseEntity<>(createdBookEntry, HttpStatus.CREATED);
     }
 }

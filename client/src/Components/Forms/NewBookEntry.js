@@ -9,19 +9,19 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
     { label: 'Currently Reading', value: 'CURRENTLYREADING' },
   ];
 
-    const [book, setBook] = useState("");
-    const [shelf, setShelf] = useState("");
+    const [bookId, setBookId] = useState("");
+    const [status, setStatus] = useState("");
     const [startedReading, setStartedReading] = useState("");
     const [finishedReading, setFinishedReading] = useState("");
     const [starRating, setStarRating] = useState(0);
     const [review, setReview] = useState("");
   
     const handleBookChange = (e) => {
-      setBook(e.target.value);
+      setBookId(e.target.value);
     };
   
-    const handleShelfChange = (e) => {
-      setShelf(e.target.value);
+    const handleStatusChange = (e) => {
+      setStatus(e.target.value);
     };
 
     const handleStartedReadingChange = (e) => {
@@ -44,15 +44,17 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
       e.preventDefault();
       
       addBookEntry({
-        book: book,
-        shelf: shelf,
+        book: {id:bookId},
+        status: status,
+        user: {id:1},
+        // this will need changed when there is more than one user
         startedReading: startedReading,
         finishedReading: finishedReading,
         starRating: starRating,
         review: review
       });
-      setBook("");
-      setShelf("");
+      setBookId("");
+      setStatus("");
       setStartedReading("");
       setFinishedReading("");
       setStarRating(0);
@@ -70,12 +72,12 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
           <select
             id="book"
             name="book"
-            value={book}
+            value={bookId}
             onChange={handleBookChange}
             required>
               <option value=""></option>
                 {books.map((book)=> (
-                <option key={book.title} value={book.title}>
+                <option key={book.id} value={book.id}>
                   {book.title}
               </option>
     ))}
@@ -85,10 +87,10 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
           <label htmlFor="shelf">Select Bookshelf</label>
           <br/>
           <select 
-          id="shelf"
-          name="shelf"
-          value={shelf}
-          onChange={handleShelfChange}
+          id="status"
+          name="status"
+          value={status}
+          onChange={handleStatusChange}
           required>
             <option value=""></option>
         {statusOptions.map((option) => (

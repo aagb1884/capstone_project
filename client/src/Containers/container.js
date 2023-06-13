@@ -28,6 +28,7 @@ const Container = () => {
   const [booksBySameIllustrator, setBooksBySameIllustrator] = useState([]);
   const [booksInBookEntry, setBooksInBookEntry] = useState([]);
   const [users, setUsers] = useState([]);
+  const [loggedInUser, setLoggedInUser] = useState(null)
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
   const [searchTerm, setSearchTerm] = useState('')
@@ -39,6 +40,7 @@ const Container = () => {
     const fetchData = () => {
       getUsers()
         .then(users => {
+          setLoggedInUser(users[0])
           const userId = users[0].id
         Promise.all([getBookEntries(), getBooks(), 
             getAuthors(), getIllustrators(), getBookEntriesWantToRead(userId),
@@ -66,7 +68,7 @@ const Container = () => {
                   }
 
     const addBookEntry = (newBookEntry) => {
-      createBookEntry(newBookEntry).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
+      createBookEntry(newBookEntry, loggedInUser).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
     }
 
     const lowerSearch = searchTerm.toLowerCase();
