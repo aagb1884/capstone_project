@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './forms.css'
 
-const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
+const NewBookEntry = ({addBookEntry, fetchData, books}) => {
 
   const statusOptions = [
     { label: 'Want to Read', value: 'WANTTOREAD' },
@@ -65,19 +65,24 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
       
       <h2>Enter book details:</h2>
         <div>
-          <label htmlFor="book">Book</label>
+          <label htmlFor="book">Select Book</label>
           <br/>
-          <input
-            type="text"
+          <select
             id="book"
             name="book"
             value={book}
             onChange={handleBookChange}
-            required
-          />
-        </div>
+            required>
+              <option value=""></option>
+                {books.map((book)=> (
+                <option key={book.title} value={book.title}>
+                  {book.title}
+              </option>
+    ))}
+        </select>
+            </div>
         <div>
-          <label htmlFor="shelf">Shelf</label>
+          <label htmlFor="shelf">Select Bookshelf</label>
           <br/>
           <select 
           id="shelf"
@@ -85,7 +90,7 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
           value={shelf}
           onChange={handleShelfChange}
           required>
-            <option value="">Select Bookshelf</option>
+            <option value=""></option>
         {statusOptions.map((option) => (
           <option key={option.value} value={option.value}>
             {option.label}
@@ -136,7 +141,6 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
           onChange={handleStarRatingChange} />
           <label for="star1" title="text">1 star</label>
         </div>
-          <br />
         <div>
           <label htmlFor="review">Your Review</label>
           <br/>
@@ -149,7 +153,9 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
           className="review"
             />
           </div>
+          <div className="form-button">
         <button type="submit">Add Book</button>
+        </div>
       </form>
     );
   }

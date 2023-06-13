@@ -3,6 +3,11 @@
     padding: 0;
     line-height: 1.5;
 } */
+
+.form-button{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
 ::placeholder {
     text-align: center; 
  }

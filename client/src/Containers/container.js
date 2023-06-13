@@ -30,7 +30,7 @@ const Container = () => {
   const [users, setUsers] = useState([]);
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
-  const [ searchTerm, setSearchTerm] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetchData()
