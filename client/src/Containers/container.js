@@ -31,7 +31,7 @@ const Container = () => {
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
-  const [searchTerm, setSearchTerm] = useState('')
+  // const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     fetchData()
@@ -71,10 +71,10 @@ const Container = () => {
       createBookEntry(newBookEntry, loggedInUser).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
     }
 
-    const lowerSearch = searchTerm.toLowerCase();
-  const filteredBooks = books.filter((book) => {
-    return book.title.toLowerCase().indexOf(lowerSearch) > -1;
-  });
+  //   const lowerSearch = searchTerm.toLowerCase();
+  // const filteredBooks = books.filter((book) => {
+  //   return book.title.toLowerCase().indexOf(lowerSearch) > -1;
+  // });
 
     // const updateBookEntry= async (id, updatedBookEntry) => {
     //   await updateBookEntry(id, updatedBookEntry)
@@ -138,8 +138,8 @@ const Container = () => {
                   booksBySameAuthor={booksBySameAuthor}
                   booksBySameIllustrator={booksBySameIllustrator}
                   booksInBookEntry={booksInBookEntry}
-                  onChange={setSearchTerm}
-                  bookList={filteredBooks}
+                  // onChange={setSearchTerm}
+                  // bookList={filteredBooks}
                 />} />
               <Route 
                 path="/bookentries" 
