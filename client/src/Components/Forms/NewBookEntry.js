@@ -3,6 +3,11 @@ import './forms.css'
 
 const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
 
+  const statusOptions = [
+    { label: 'Want to Read', value: 'WANTTOREAD' },
+    { label: 'Have Read', value: 'HAVEREAD' },
+    { label: 'Currently Reading', value: 'CURRENTLYREADING' },
+  ];
 
     const [book, setBook] = useState("");
     const [shelf, setShelf] = useState("");
@@ -80,15 +85,13 @@ const NewBookEntry = ({addBookEntry, fetchData, bookEntries}) => {
           value={shelf}
           onChange={handleShelfChange}
           required>
-          {/* {bookEntries.map((bookEntry) => (
-            <option key={bookEntry.status} >
-             {bookEntry.status} */}
-            <option value="">Please choose one</option>
-            <option value="want-to-read">WANTTOREAD</option>
-            <option value="currently-reading">CURRENTLYREADING</option>
-            <option value="have-read">HAVEREAD</option>
-          
-        </select>
+            <option value="">Select Bookshelf</option>
+        {statusOptions.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
+      </select>          
           </div>
         <div>
           <label htmlFor="started-reading">Date Started Reading</label>
