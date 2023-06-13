@@ -12,8 +12,10 @@
     text-align: center; 
  }
 .review{
-    width: 400px;
-    height: 200px;
+    width: 145px;
+    vertical-align: top;
+    padding-bottom: 80px;
+    word-wrap: break-word;
 }
 .star-rating {
     display: inline-block;

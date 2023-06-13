@@ -146,7 +146,7 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
         <div>
           <label htmlFor="review">Your Review</label>
           <br/>
-          <input
+          <textarea
           type="text"
           id="review"
           name="review"

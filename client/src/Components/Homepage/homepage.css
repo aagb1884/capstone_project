@@ -28,6 +28,7 @@
     font-family: 'Exo';
     font-size: 3em;
     margin: 0;
+    text-shadow: 10px 10px #fe4705;
     /* transform: skew(-15deg); */
     letter-spacing: 0.03em;
     z-index: -1;

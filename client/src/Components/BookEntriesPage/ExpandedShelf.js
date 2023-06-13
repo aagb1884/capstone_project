@@ -22,7 +22,7 @@ const ExpandedShelf = ({bookEntry}) => {
         <div className='expanded-shelf'>
         <ul>
             <div className='book-image-container'>
-            <li><img src={bookEntry.book.coverUrl} alt="Book cover" width="260" height="390"/></li>
+            <li><img src={bookEntry.book.coverUrl} alt="Book cover" width="312px" height="390px"/></li>
             </div>
             <div className='book-text-container'>
             <li>{bookEntry.book.title}</li>

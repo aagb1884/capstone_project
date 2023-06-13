@@ -20,7 +20,7 @@ const BookItem = ({book}) => {
             <div className='content'>
         <ul>
             <div className='image-container'>
-                <li><img src={book.coverUrl} alt="Book cover" width="260px" height="390px"/></li>
+                <li><img src={book.coverUrl} alt="Book cover" width="312px" height="390px"/></li>
             </div>
             <br />
             <div className='text-container'>
