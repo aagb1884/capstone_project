@@ -2,11 +2,24 @@ ul{
     list-style-type: none;
 }
 
-.expanded-shelf > ul {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: space-around;
-    justify-content: space-between;
-    align-items: flex-start; */
+.expanded-shelf{
+    display: flex;
+    flex-direction: grid;
+    grid-template-columns: auto auto;
+    border-style: double;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1px;
+    
+}
+
+.book-image-container{
+    width: 25%;
+    float: left;
+}
+.book-text-container{
+   width: 74%;
+   font-size: larger;
+   line-height: 1.3;
 }
