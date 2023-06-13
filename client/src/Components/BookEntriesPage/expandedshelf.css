@@ -10,8 +10,10 @@ ul{
     width: 90%;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 2px;
+    margin-bottom: 2px;
     padding: 1px;
-    
+    background-color: rgb(245, 245, 245, 0.5);
 }
 
 .book-image-container{

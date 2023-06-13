@@ -5,4 +5,9 @@
     align-content: center;
     justify-content: space-around;
     align-items: center;
+    background-color: rgb(245, 245, 245, 0.5);
+}
+
+.user-profile{
+    background-color: rgb(245, 245, 245, 0.5);
 }
