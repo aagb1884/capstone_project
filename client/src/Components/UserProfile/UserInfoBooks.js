@@ -1,7 +1,7 @@
+import './userprofile.css'
+
 const UserInfoBooks = ({userBooks}) => {
 
-    
-    
     const userBookInfo = userBooks.map((bookEntry, index) => {
         const authorInfo = bookEntry.book.authors.map((author, index) => {
             return <span>{author.firstname} {author.lastname}
