@@ -7,13 +7,12 @@ const UserContainer = ({userData, userBooks}) => {
         return < UserInfoPage key={index} user={user}/>
     })
 
-    const userBookInfo = userBooks.map((bookEntry, index) => {
-        return <UserInfoBooks key={index} bookEntry={bookEntry}/>
-    })
+   
 
     return ( 
     <div className="user-container">
-       {userInfo}{userBookInfo}
+       {userInfo}
+       <UserInfoBooks userBooks={userBooks} />
     </div> );
 }
  

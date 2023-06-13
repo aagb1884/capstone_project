@@ -14,7 +14,7 @@ const UserInfoPage = ({user}) => {
             <p>{user.bio}</p>
                 <div className="user-books">
                     <h3>{user.firstname}'s Books</h3>
-                   <UserInfoBooks />
+                   
                 </div>
         </div>
         </>
