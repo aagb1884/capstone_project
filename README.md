@@ -58,7 +58,7 @@ Moving to the front end, I made a basic container/component structure and tested
 
 So the data was pulling through and I could set up the rest of my fetch requests/services pages/associated functions.
 
-<p align="center"> <img src="https://github.com/aagb1884/capstone_project/assets/113289014/387bf08a-94e7-4bb0-b151-1992446795ca" >
+<p align="center"> <img height="300" src="https://github.com/aagb1884/capstone_project/assets/113289014/387bf08a-94e7-4bb0-b151-1992446795ca" >
 </p>
 
 I then had to refactor the fetch request so I could provide a userId for several queries, which made a few things work but also had a knock on effect elsewhere.
