@@ -8,7 +8,7 @@ const SearchContainer = ({books}) => {
       onchange(searchTerm);
     }, [searchTerm]);
 
-   const handleChange = (event) => {
+   const handleSearch = (event) => {
       event.preventDefault();
       setSearchTerm(event.target.value);
     };
@@ -29,7 +29,7 @@ const SearchContainer = ({books}) => {
             {/* <form id="form" onSubmit={handleSubmit}>  */}
                <input  id="search" 
                 placeholder="Search..." 
-                onchange={handleChange}
+                onchange={handleSearch}
                 type="text"
                 name="searchTerm"
                 value={searchTerm}/>

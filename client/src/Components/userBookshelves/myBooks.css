@@ -9,7 +9,7 @@ ul{
     align-content: center;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(245, 245, 245, 0.5);
+    background-color: rgb(245, 245, 245, 0.55);
 }
 .have-read{
     display: flex;
@@ -18,7 +18,7 @@ ul{
     align-content: center;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(245, 245, 245, 0.5);
+    background-color: rgb(245, 245, 245, 0.55);
 }
 .currently-reading{
     display: flex;
@@ -27,7 +27,7 @@ ul{
     align-content: center;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(245, 245, 245, 0.5);
+    background-color: rgb(245, 245, 245, 0.55);
 }
 /* 
 .star-rating2 {
