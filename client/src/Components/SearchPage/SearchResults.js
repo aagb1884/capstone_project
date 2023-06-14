@@ -1,9 +1,10 @@
 import React from "react";
+import BookItem from "../BooksPage/BookItem";
 
-const SearchResults = ({books}) => {
+const SearchResults = ({filteredBooks}) => {
 
-   const bookList = books.map((book, index) => {
-    return <span>book.title</span>})
+   const bookList = filteredBooks.map((filteredBook, index) => {
+    return <BookItem book={filteredBook} />})
 
     return ( 
         <div className="search-results">

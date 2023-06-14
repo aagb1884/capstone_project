@@ -32,7 +32,7 @@ const Container = () => {
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
-  // const [searchTerm, setSearchTerm] = useState('')
+
 
   useEffect(() => {
     fetchData()
@@ -126,20 +126,19 @@ const Container = () => {
               <Route 
                 path="/search" 
                 element={< SearchContainer
-                  bookEntries={bookEntries} 
+                  // bookEntries={bookEntries} 
                   books={books}
-                  authors={authors}
-                  illustrators={illustrators}
-                  users={users}
-                  wantToRead={bookEntriesByWantToRead}
-                  currentlyReading={bookEntriesByCurrentlyReading}
-                  haveRead={bookEntriesbyHaveRead}
-                  byBookId={bookEntriesbyBookId}
-                  byUserId={bookEntriesbyUserId}
-                  booksBySameAuthor={booksBySameAuthor}
-                  booksBySameIllustrator={booksBySameIllustrator}
-                  booksInBookEntry={booksInBookEntry}
-                  // onChange={setSearchTerm}
+                  // authors={authors}
+                  // illustrators={illustrators}
+                  // users={users}
+                  // wantToRead={bookEntriesByWantToRead}
+                  // currentlyReading={bookEntriesByCurrentlyReading}
+                  // haveRead={bookEntriesbyHaveRead}
+                  // byBookId={bookEntriesbyBookId}
+                  // byUserId={bookEntriesbyUserId}
+                  // booksBySameAuthor={booksBySameAuthor}
+                  // booksBySameIllustrator={booksBySameIllustrator}
+                  // booksInBookEntry={booksInBookEntry}
                   // bookList={filteredBooks}
                 />} />
               <Route 

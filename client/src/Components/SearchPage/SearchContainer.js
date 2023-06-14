@@ -3,24 +3,21 @@ import SearchResults from './SearchResults';
 
 const SearchContainer = ({books}) => {
    const [searchTerm, setSearchTerm] = useState("");
-   
-   useEffect(() => {
-      onchange(searchTerm);
-    }, [searchTerm]);
+
 
    const handleSearch = (event) => {
       event.preventDefault();
       setSearchTerm(event.target.value);
     };
 
+    let filteredBooks = books;
     if (searchTerm.length > 0) {
-      books.filter((book) => {
-         return book.title.match(searchTerm)
-      })
-    }
+      filteredBooks = books.filter((book) => {
+        return book.title.toLowerCase().match(searchTerm.toLowerCase());
+      });
+   }
 
-
-    
+   
   
    
     return ( 
@@ -29,16 +26,17 @@ const SearchContainer = ({books}) => {
             {/* <form id="form" onSubmit={handleSubmit}>  */}
                <input  id="search" 
                 placeholder="Search..." 
-                onchange={handleSearch}
+                onChange={handleSearch}
                 type="text"
                 name="searchTerm"
                 value={searchTerm}/>
                {/* <button>Search</button> */}
-               <SearchResults books={books}/>
+               <SearchResults filteredBooks={filteredBooks}/>
             {/* </form> */}
         </div>
      );
 }
+
  
 export default SearchContainer
 ;
