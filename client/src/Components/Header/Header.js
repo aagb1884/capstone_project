@@ -22,6 +22,7 @@ const Header = () => {
                             <li><a rel='noopener' href="/search" >Search</a></li>
                             <li><a rel='noopener' href="/profile" >User Profile</a></li>
                             <li><a rel='noopener' href="/newbookentry">Add Book to Shelf</a></li>
+                            <li><a rel='noopener' href="/about">About</a></li>
                             </ul>
                         </div>
                 </div>

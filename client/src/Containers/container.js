@@ -15,6 +15,7 @@ import { getUsers } from '../Services/UserServices';
 import { getAuthors } from '../Services/AuthorServices';
 import { getIllustrators } from '../Services/IllustratorServices';
 import NewBookEntry from '../Components/Forms/NewBookEntry';
+import AboutPage from '../About';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -144,6 +145,9 @@ const Container = () => {
               <Route 
                 path="/bookentries" 
                 element={< BookEntriesContainer bookEntryData={bookEntries}/>} />
+                <Route
+                path='/about'
+                element={< AboutPage />}/>
               <Route 
                 path="*" 
                 element={< ErrorPage/>} />

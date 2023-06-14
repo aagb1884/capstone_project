@@ -3,6 +3,18 @@
   font-family: 'Exo';
 }
 
+.about{
+  background-color: rgb(245, 245, 245, 0.5);
+  width: 75%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: none;
+  justify-content: space-around;
+  align-items: center;
+  align-content:center;
+}
 h1 {
   color:rgb(10, 9, 9);
   text-shadow: 1px 1px #fe4705;
