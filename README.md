@@ -11,7 +11,7 @@ This was a solo project that I worked on for two weeks as part of my [CodeClan](
 ## MVP
 
 1. A working app where users can log in, search for a book, rate it out of five on a number of criteria, and add a book to the database.
-2. An above average README on my Github repo so that anyone can download and run it (including clear description, screenshot, step-by-step installing instructions) - NB. This step very much a work in progress.
+2. An above average README on my Github repo so that anyone can download and run it (including clear description, screenshot, step-by-step installing instructions).
 
 ## What I achieved
 
