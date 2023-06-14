@@ -52,17 +52,38 @@ I investigated existing book APIs but they were either tied to large corporation
 
 Moving to the front end, I made a basic container/component structure and tested the information coming through from one endpoint. Lo and behold, the simplest version of this app.
 
-![The simplest version of this app](https://previews.dropbox.com/p/thumb/AB7O59zmLxHiANFsvnvOlxifgG5gxHUtqc9H-5lKa6iUX7rfMKkzPRT4qZmhO4Naok9ThhlcsPrZLasmimrhBa2lPfUAheG3Xq3JQr2VFIQvtsZ-T1VCMWLCPyELFAzhVHHdAYZK5h7n7o_BmOfP7I52vwZE_DDby-A5wY7JMo30L5dOiNf0yodncnH_7giuuF3uXOsVrlHk2MIcH-R9qFcBnCD85QIWOmpOduxklwiWr53IlYZT8dAKFI3saeUjiFR1kwCo0SQZisCejoJy73m4CTbZ4bU-EteUhhF1SZoW4e3XGxUY_jaCpmaI-KKgJpRxXbWP1RFiUKRJKKNVfwgpX2Fgre7oMegaCTr00TqjV34ISWoQLoeVg1cziFQM9dc/p.jpeg)
+![The simplest version of this app](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/basic_version.png?raw=true)
+
+So the data was pulling through and I could set up the rest of my fetch requests/services pages/associated functions.
+![which was nice](https://media.tenor.com/oTZe_zHlwhcAAAAC/fast-show-which-was-nice.gif)
+
+I then had to refactor the fetch request so I could provide a userId for several queries, which made a few things work but also had a knock on effect elsewhere.
+
+![See if you can spot what′s wrong](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/this_is_fine.png?raw=true)
+
+You may be able to spot the problem. I only realised it once I went to the User page and found a long list of authors (which, to be fair, did look pretty good and made me want to add it in). Refactoring to get the userId meant that I had an extra piece of data set in state and it meant my requests were all getting knocked along one, so they would actually get the data for the next class in the list.
+
+With help from the instructors I managed to get a simple Add Book to Shelf function working (I′d reached for the user ID in the wrong way), and given the time constraints I decided to lock this in as a basis for extending the app.
 
 ## BUT ANDREW, HOW DOES IT WORK?
 
 I get that you′re excited but please stop shouting. 
 
+At the backend we have User, Book, Author, Illustrator and BookEntry classes, with enums for specific properties (the book′s format, it′s status as read, adjectives that can be used as descriptive tags for the book). The BookEntry class is actually the join table between the Book and User classes, essentially it′s what the User makes to put the book on their shelf (with optional properties of reviews and ratings).
 
+A Book has at least one Author, and some have at least one Illustrator.  They can have as many descriptive tags as necessary (Extensions include setting up authorisation so users can log in – the current version only has one user – which could include an Administrator and User classes where Administrators would be able to edit/approve edits to a book′s data. Also I′d like to add additional creative roles such as Editor or Audiobook reader to the book′s data). 
 
-##Acknowledgements
+A user has a profile page with a list of all the books on their shelf. These are categories by ′Want to Read′, ′Currently Reading′ and ′Have Read′ - the idea here is that friends and relatives will be able to refer to this bookshelf and categorisation when it comes to gift giving.
+
+The header has a burger menu with links to every page. The footer has icons for the user profile, bookshelf and search page. The search page is, at the time of writing, still in development.
+
+The app is not currently responsive.
+
+## Acknowledgements
 
 Here are some people and resources that helped me make the app:
 
 * [Team Scuba Squirrel](https://github.com/GPSPic/Scuba_Squirrel) – another group on the CodeClan course, who allowed me to join their morning stand-ups and offered advice and support throughout.
 * [Icons8.com](https://icons8.com/icons)
+* The instructors and staff at CodeClan.
+* All the artists involved in the songs on [this playlist](https://music.apple.com/gb/playlist/june-2023/pl.u-GgA5e66sd2rL2q)
