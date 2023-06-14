@@ -40,11 +40,11 @@ I started by building the backend first. My reasons for doing so were:
 And so the first few days were spent making notes and designs. 
 
 
-<img src="https://github.com/aagb1884/capstone_project/assets/113289014/b8d68fa2-7e76-48e6-a91f-4630b6de4ee4" width="100">
+<img src="https://github.com/aagb1884/capstone_project/assets/113289014/b8d68fa2-7e76-48e6-a91f-4630b6de4ee4" width="200">
 
-![Photo 1 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true)
-![Photo 2 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes2.jpeg?raw=true)
-![Photo 3 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes3.jpeg?raw=true)
+<img src="https://github.com/aagb1884/capstone_project/assets/113289014/4aacc598-8087-4b97-a02b-19d2d0fd3776" width="200">
+
+<img src="https://github.com/aagb1884/capstone_project/assets/113289014/e6687004-b1d4-49b5-90bf-70b8850f7ebf" width="200">
 
 The initial design was refactored to make it simpler, then the refactored design was refactored, and then my instructor′s feedback simplified things further. I then wrote restful routes and derived queries for some of the information I would need, and tested them using [Insomnia](https://insomnia.rest/).
 
