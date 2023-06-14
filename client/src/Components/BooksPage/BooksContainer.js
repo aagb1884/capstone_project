@@ -1,9 +1,9 @@
 import BookItem from "./BookItem"
 
-const BooksContainer = ({bookData}) => {
+const BooksContainer = ({bookData, onSelectBook}) => {
 
     const bookInfo = bookData.map((book, index) => {
-        return <BookItem key={index} book={book}/>
+        return <BookItem key={index} book={book} onSelectBook={onSelectBook}/>
     })
 
     return ( 

@@ -23,7 +23,7 @@ const Container = () => {
   const [bookEntriesByCurrentlyReading, setBookEntriesByCurrentlyReading] = useState([]);
   const [bookEntriesbyHaveRead, setBookEntriesByHaveRead] = useState([]);
   const [bookEntriesbyUserId, setBookEntriesByUserId] = useState([]);
-  const [bookEntriesbyBookId, setBookEntriesByBookId] = useState([]);
+  // const [bookEntriesbyBookId, setBookEntriesByBookId] = useState([]);
   const [books, setBooks] = useState([]);
   const [booksBySameAuthor, setBooksBySameAuthor] = useState([]);
   const [booksBySameIllustrator, setBooksBySameIllustrator] = useState([]);
@@ -32,6 +32,7 @@ const Container = () => {
   const [loggedInUser, setLoggedInUser] = useState(null)
   const [authors, setAuthors] = useState([]);
   const [illustrators, setIllustrators] = useState([]);
+  const [selectedBook, setSelectedBook] = useState(null);
 
 
   useEffect(() => {
@@ -67,6 +68,10 @@ const Container = () => {
         })
       
                   }
+
+        const handleSelectBook = (book) => {
+          setSelectedBook(book);
+        };
 
     const addBookEntry = (newBookEntry) => {
       createBookEntry(newBookEntry, loggedInUser).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
@@ -108,14 +113,16 @@ const Container = () => {
                 element={< NewBookEntry addBookEntry={addBookEntry} 
                 fetchData={fetchData} 
                 bookEntries={bookEntries} 
-                books={books} />} />
+                books={books}
+                selectedBook={selectedBook}/>} />
               <Route 
                 path="/books" 
                 element={< BooksContainer 
                 bookData={books}
-                booksBySameAuthor={booksBySameAuthor}
-                booksBySameIllustrator={booksBySameIllustrator}
-                booksInBookEntry={booksInBookEntry}
+                onSelectBook={handleSelectBook}
+                // booksBySameAuthor={booksBySameAuthor}
+                // booksBySameIllustrator={booksBySameIllustrator}
+                // booksInBookEntry={booksInBookEntry}
                 />} />
               <Route 
                 path="/profile" 

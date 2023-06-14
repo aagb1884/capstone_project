@@ -1,6 +1,10 @@
 import './bookitem.css'
 
-const BookItem = ({book}) => {
+const BookItem = ({book, onSelectBook}) => {
+
+    const handleAddBook = () => {
+        onSelectBook(book);
+    };
 
     const authorInfo = book.authors.map((author, index) => {
         return <span>{author.firstname} {author.lastname}
@@ -41,6 +45,9 @@ const BookItem = ({book}) => {
                 <li>ISBN: {book.isbn}</li>
                 <li>Average Rating: {book.averageRating}</li>
                 </ul>
+                <div className='add-book-to-shelf'>
+                <button onClick={handleAddBook}>Add Book to Bookshelf</button>
+                </div>
             </div>
         
         

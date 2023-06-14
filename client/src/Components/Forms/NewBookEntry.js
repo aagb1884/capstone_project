@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import './forms.css'
 
-const NewBookEntry = ({addBookEntry, fetchData, books}) => {
+const NewBookEntry = ({addBookEntry, fetchData, books, selectedBook}) => {
 
   const statusOptions = [
     { label: 'Want to Read', value: 'WANTTOREAD' },
@@ -16,6 +16,13 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
     const [childRating, setChildRating] = useState(0);
     const [adultRating, setAdultRating] = useState(0);
     const [review, setReview] = useState("");
+    const [bookData, setBookData] = useState({
+      title: selectedBook?.title || ""
+    });
+
+    const handleDataChange = (e) => {
+      setBookData({...bookData, [e.target.name]: e.target.value })
+    }
   
     const handleBookChange = (e) => {
       setBookId(e.target.value);
@@ -58,6 +65,7 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
         adultRating: adultRating,
         review: review
       });
+      setBookData("");
       setBookId("");
       setStatus("");
       setStartedReading("");
@@ -79,7 +87,7 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
             id="book"
             name="book"
             value={bookId}
-            onChange={handleBookChange}
+            onChange={handleDataChange}
             required>
               <option value=""></option>
                 {books.map((book)=> (
