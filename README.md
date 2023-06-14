@@ -39,7 +39,8 @@ I started by building the backend first. My reasons for doing so were:
 
 And so the first few days were spent making notes and designs. 
 
-<img src="https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true" width="200" height="400/>
+
+<img src="https://github.com/aagb1884/capstone_project/assets/113289014/b8d68fa2-7e76-48e6-a91f-4630b6de4ee4" width="100">
 
 ![Photo 1 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true)
 ![Photo 2 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes2.jpeg?raw=true)
