@@ -28,6 +28,23 @@ Here′s what you need to run it.
 * [React Router](https://reactrouter.com/en/main)
 * [Font Awesome](https://fontawesome.com/v5/docs/web/use-with/react)
 
+* [Spring](https://spring.io/)
+
+## How did you build it?
+
+I started by building the backend first. My reasons for doing so were:
+
+1. I felt like I knew what I was doing in terms of design and layout, and had built solo React apps before, but I wanted to build an API myself and improve my knowledge of backend structures which I felt had been a weakpoint for me during the course.
+2. It made sense to me for this project to establish what data I′d be working from when building the front end, rather than determining the data through front end design.
+3. We′d just done three weeks on Java so it was fresh in my mind.
+
+And so the first few days were spent making notes and designs. 
+
+
+The initial design was refactored to make it simpler, then the refactored design was refactored, and then my instructor′s feedback simplified things further.
+![Photo 1 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true)
+![Photo 2 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes2.jpeg?raw=true)
+![Photo 3 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes3.jpeg?raw=true)
 
 
 ## BUT ANDREW, HOW DOES IT WORK?
