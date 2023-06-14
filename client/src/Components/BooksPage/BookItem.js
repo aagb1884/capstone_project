@@ -17,13 +17,14 @@ const BookItem = ({book}) => {
     
     return ( 
         <div className="book-item">
-            <div className='content'>
-        <ul>
+         
+        
             <div className='image-container'>
-                <li><img src={book.coverUrl} alt="Book cover" width="312px" height="390px"/></li>
+                <img src={book.coverUrl} alt="Book cover" />
             </div>
             <br />
             <div className='text-container'>
+                <ul>
                 <li><b>{book.title}</b></li>
                 <li>Written by {authorInfo}</li>
                 <li>Illustrated by {illustratorInfo}</li>
@@ -39,9 +40,10 @@ const BookItem = ({book}) => {
                 <li>Publisher: {book.publisher}</li>
                 <li>ISBN: {book.isbn}</li>
                 <li>Average Rating: {book.averageRating}</li>
+                </ul>
             </div>
-        </ul>
-        </div>
+        
+        
         </div>
      );
 }
