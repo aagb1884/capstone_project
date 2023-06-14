@@ -42,11 +42,11 @@ And so the first few days were spent making notes and designs.
 
 <img align="left" src="https://github.com/aagb1884/capstone_project/assets/113289014/b8d68fa2-7e76-48e6-a91f-4630b6de4ee4" width="200">
 
-<img align="center" src="https://github.com/aagb1884/capstone_project/assets/113289014/e6687004-b1d4-49b5-90bf-70b8850f7ebf" width="200">
-
 <img align="right" src="https://github.com/aagb1884/capstone_project/assets/113289014/4aacc598-8087-4b97-a02b-19d2d0fd3776" width="200">
 
 The initial design was refactored to make it simpler, then the refactored design was refactored, and then my instructor′s feedback simplified things further. I then wrote restful routes and derived queries for some of the information I would need, and tested them using [Insomnia](https://insomnia.rest/).
+
+<img align="center" src="https://github.com/aagb1884/capstone_project/assets/113289014/e6687004-b1d4-49b5-90bf-70b8850f7ebf" width="200">
 
 I investigated existing book APIs but they were either tied to large corporation′s bookselling infrastructure – something I wanted to avoid for moral (and, if I′m honest, also aesthetic) reasons – or such sprawling and large bodies of data that it would take to long to sift through them for what I needed (specifically children′s books). As a result I added the data manually, which gave me a database table of 25 books with data specific to my needs.
 
