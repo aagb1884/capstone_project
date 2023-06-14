@@ -27,7 +27,6 @@ Here′s what you need to run it.
 * [React](https://react.dev/)
 * [React Router](https://reactrouter.com/en/main)
 * [Font Awesome](https://fontawesome.com/v5/docs/web/use-with/react)
-
 * [Spring](https://spring.io/)
 
 ## How did you build it?
@@ -40,12 +39,20 @@ I started by building the backend first. My reasons for doing so were:
 
 And so the first few days were spent making notes and designs. 
 
-
-The initial design was refactored to make it simpler, then the refactored design was refactored, and then my instructor′s feedback simplified things further.
 ![Photo 1 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true)
 ![Photo 2 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes2.jpeg?raw=true)
 ![Photo 3 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes3.jpeg?raw=true)
 
+The initial design was refactored to make it simpler, then the refactored design was refactored, and then my instructor′s feedback simplified things further. I then wrote restful routes and derived queries for some of the information I would need, and tested them using [Insomnia](https://insomnia.rest/).
+
+I investigated existing book APIs but they were either tied to large corporation′s bookselling infrastructure – something I wanted to avoid for moral (and, if I′m honest, also aesthetic) reasons – or such sprawling and large bodies of data that it would take to long to sift through them for what I needed (specifically children′s books). As a result I added the data manually, which gave me a database table of 25 books with data specific to my needs.
+
+![Data Entry](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/data_entry.jpeg?raw=true)
+
+
+Moving to the front end, I made a basic container/component structure and tested the information coming through from one endpoint. Lo and behold, the simplest version of this app.
+
+![The simplest version of this app](https://previews.dropbox.com/p/thumb/AB7O59zmLxHiANFsvnvOlxifgG5gxHUtqc9H-5lKa6iUX7rfMKkzPRT4qZmhO4Naok9ThhlcsPrZLasmimrhBa2lPfUAheG3Xq3JQr2VFIQvtsZ-T1VCMWLCPyELFAzhVHHdAYZK5h7n7o_BmOfP7I52vwZE_DDby-A5wY7JMo30L5dOiNf0yodncnH_7giuuF3uXOsVrlHk2MIcH-R9qFcBnCD85QIWOmpOduxklwiWr53IlYZT8dAKFI3saeUjiFR1kwCo0SQZisCejoJy73m4CTbZ4bU-EteUhhF1SZoW4e3XGxUY_jaCpmaI-KKgJpRxXbWP1RFiUKRJKKNVfwgpX2Fgre7oMegaCTr00TqjV34ISWoQLoeVg1cziFQM9dc/p.jpeg)
 
 ## BUT ANDREW, HOW DOES IT WORK?
 
