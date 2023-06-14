@@ -1,6 +1,31 @@
 .App {
   text-align: center;
-  
+  font-family: 'Exo';
+}
+
+.search-page input{
+  margin-bottom: 5px;
+}
+
+.about{
+  background-color: rgb(245, 245, 245, 0.5);
+  width: 75%;
+  margin: auto;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: none;
+  justify-content: space-around;
+  align-items: center;
+  align-content:center;
+}
+h1 {
+  color:rgb(10, 9, 9);
+  text-shadow: 1px 1px #fe4705;
+}
+h2 {
+  color:rgb(10, 9, 9);
+  text-shadow: 1px 1px #fe4705;
 }
 
 .App-link {
@@ -29,4 +54,5 @@
 
 
 @import url('https://fonts.googleapis.com/css2?family=Mr+Dafoe&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Exo:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@400&display=swap');
+

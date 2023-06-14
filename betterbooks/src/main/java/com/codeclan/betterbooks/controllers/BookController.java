@@ -23,6 +23,16 @@ class BookController {
         return new ResponseEntity<>(bookRepository.findAll(), HttpStatus.OK);
     }
 
+//    @GetMapping(value = "/books/{title}")
+//    public ResponseEntity<Book> getBookByTitle(@PathVariable String title){
+//        List<Book> book = bookRepository.findByTitle(title);
+//        if (book.isPresent()) {
+//            return new ResponseEntity<>(book.get(), HttpStatus.OK);
+//        } else {
+//            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+//        }
+//    }
+
     @GetMapping(value = "/books/authors")
     public ResponseEntity<List<Book>> findBookByAuthorId(
             @RequestParam(name="id") Long id){

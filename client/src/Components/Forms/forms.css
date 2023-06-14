@@ -1,0 +1,95 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+} */
+
+form {
+    background-color: rgb(245, 245, 245, 0.55);
+}
+
+.form-button{
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+::placeholder {
+    text-align: center; 
+ }
+.review{
+    width: 145px;
+    vertical-align: top;
+    padding-bottom: 80px;
+    word-wrap: break-word;
+}
+.child-rating {
+    display: inline-block;
+    height: 46px;
+    justify-content: center;
+}
+.child-rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.child-rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.child-rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.child-rating > input:checked ~ label {
+    color: #ffc700;    
+}
+.child-rating:not(:checked) > label:hover,
+.child-rating:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.child-rating > input:checked + label:hover,
+.child-rating > input:checked + label:hover ~ label,
+.child-rating > input:checked ~ label:hover,
+.child-rating > input:checked ~ label:hover ~ label,
+.child-rating > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.adult-rating {
+    display: inline-block;
+    height: 46px;
+    justify-content: center;
+}
+.adult-rating:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.adult-rating:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.adult-rating:not(:checked) > label:before {
+    content: '★ ';
+}
+.adult-rating > input:checked ~ label {
+    color: #ffc700;    
+}
+.adult-rating:not(:checked) > label:hover,
+.adult-rating:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.adult-rating > input:checked + label:hover,
+.adult-rating > input:checked + label:hover ~ label,
+.adult-rating > input:checked ~ label:hover,
+.adult-rating > input:checked ~ label:hover ~ label,
+.adult-rating > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+/* Modified from: https://github.com/mukulkant/Star-rating-using-pure-css */

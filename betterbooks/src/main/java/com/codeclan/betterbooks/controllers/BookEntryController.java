@@ -45,7 +45,7 @@ class BookEntryController {
     } @GetMapping(value = "/bookentries/users/{id}/haveread")
     public ResponseEntity<List<BookEntry>> findBookEntryByUserIdAndHaveRead(
             @PathVariable Long id){
-        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.WANTTOREAD), HttpStatus.OK);
+        return new ResponseEntity<>(bookEntryRepository.findByUserIdAndStatus(id, Status.HAVEREAD), HttpStatus.OK);
     }
 
     @GetMapping(value = "/bookentries/books")
@@ -70,7 +70,8 @@ class BookEntryController {
         updatedBookEntry.setStatus(bookEntry.getStatus());
         updatedBookEntry.setStartedReading(bookEntry.getStartedReading());
         updatedBookEntry.setFinishedReading(bookEntry.getFinishedReading());
-        updatedBookEntry.setStarRating(bookEntry.getStarRating());
+        updatedBookEntry.setChildRating(bookEntry.getChildRating());
+        updatedBookEntry.setAdultRating(bookEntry.getAdultRating());
         updatedBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(updatedBookEntry);
@@ -86,11 +87,13 @@ class BookEntryController {
         newBookEntry.setStatus(bookEntry.getStatus());
         newBookEntry.setStartedReading(bookEntry.getStartedReading());
         newBookEntry.setFinishedReading(bookEntry.getFinishedReading());
-        newBookEntry.setStarRating(bookEntry.getStarRating());
+        newBookEntry.setChildRating(bookEntry.getChildRating());
+        newBookEntry.setAdultRating(bookEntry.getAdultRating());
         newBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(newBookEntry);
+        BookEntry createdBookEntry = bookEntryRepository.findById(newBookEntry.getId()).get();
 
-        return new ResponseEntity<>(newBookEntry, HttpStatus.CREATED);
+        return new ResponseEntity<>(createdBookEntry, HttpStatus.CREATED);
     }
 }

@@ -1,13 +1,23 @@
 import React from "react";
-import BookEntryList from "./BookEntryList";
+import WantToReadList from "./WantToRead/WantToReadList";
+import CurrentlyReadingList from "./CurrentlyReading/CurrentlyReadingList";
+import HaveReadList from "./HaveRead/HaveReadList";
+import './myBooks.css';
 
-const MyBooksContainer = ({bookEntryData}) => {
+const MyBooksContainer = ({wantToRead, currentlyReading, haveRead}) => {
 
     return ( 
-<>
+<div className ='my-bookshelf'>
         <h1>My Bookshelf</h1>
-        <BookEntryList bookEntryData={bookEntryData} />
-</>
+        <WantToReadList
+        wantToRead={wantToRead} 
+        />
+        <CurrentlyReadingList
+        currentlyReading={currentlyReading} />
+        <HaveReadList
+        haveRead={haveRead}
+         />
+</div>
      );
 }
  
