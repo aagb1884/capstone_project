@@ -39,6 +39,8 @@ I started by building the backend first. My reasons for doing so were:
 
 And so the first few days were spent making notes and designs. 
 
+<img src="https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true" width="200" height="400/>
+
 ![Photo 1 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes1.jpeg?raw=true)
 ![Photo 2 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes2.jpeg?raw=true)
 ![Photo 3 of some of my notes](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/notes3.jpeg?raw=true)
@@ -55,6 +57,7 @@ Moving to the front end, I made a basic container/component structure and tested
 ![The simplest version of this app](https://github.com/aagb1884/capstone_project/blob/adding_services/client/public/README_images/basic_version.png?raw=true)
 
 So the data was pulling through and I could set up the rest of my fetch requests/services pages/associated functions.
+
 ![which was nice](https://media.tenor.com/oTZe_zHlwhcAAAAC/fast-show-which-was-nice.gif)
 
 I then had to refactor the fetch request so I could provide a userId for several queries, which made a few things work but also had a knock on effect elsewhere.
