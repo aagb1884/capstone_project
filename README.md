@@ -15,7 +15,7 @@ This was a solo project that I worked on for two weeks as part of my [CodeClan](
 
 ## What I achieved
 
-1. A working app where users can add a book to their bookshelf, rating it out of five on one criteria.
+1. A working app where users can add a book to their bookshelf, rating it out of five on two criteria, and search for a book.
 2. This README.
 
 I am pleased with the results. My initial ideas were – I thought – quite scaled down in terms of what I wanted to achieve (there are a *lot* of possible extensions on the project′s Trello board), but still turned out to be overambitious. I am sanguine about this. This was a solo project that I worked on during office hours, with limited time spent on it during evenings and weekends as I have a young family. The intention was always to provide a starting point that could be expanded in terms of functionality, and I have definitely achieved that. 
@@ -79,9 +79,9 @@ A Book has at least one Author, and some have at least one Illustrator.  They ca
 
 A user has a profile page with a list of all the books on their shelf. These are categories by ′Want to Read′, ′Currently Reading′ and ′Have Read′ - the idea here is that friends and relatives will be able to refer to this bookshelf and categorisation when it comes to gift giving.
 
-The header has a burger menu with links to every page. The footer has icons for the user profile, bookshelf and search page. The search page is, at the time of writing, still in development.
+The header has a burger menu with links to every page. The footer has icons for the user profile, bookshelf and search page. 
 
-The app is not currently responsive.
+The app is not currently responsive, but it's on the To Do column on the Trello board.
 
 ## Acknowledgements
 
