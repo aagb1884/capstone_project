@@ -135,6 +135,17 @@ import org.springframework.stereotype.Component;
             authorRepository.save(eAcevedo);
             Author aEmezi = new Author ("Akwaeke", "Emezi", "images/blank_avatar.png", "Akwaeke Emezi is a writer.");
             authorRepository.save(aEmezi);
+            Author mBarnett = new Author("Mac", "Barnett","images/blank_avatar.png", "Mac Barnett is a writer." );
+            authorRepository.save(mBarnett);
+            Author hMcKinnon = new Author("Heidi", "McKinnon", "images/blank_avatar.png", "Heidi McKinnon is a writer and illustrator.");
+            authorRepository.save(hMcKinnon);
+            Illustrator iHMcKinnon = new Illustrator("Heidi", "McKinnon", "images/blank_avatar.png", "Heidi McKinnon is a writer and illustrator.");
+            illustratorRepository.save(iHMcKinnon);
+            Author kBeaton = new Author("Kate", "Beaton", "images/blank_avatar.png", "Kathryn Moira Beaton is a Canadian comics artist best known as the creator of the comic strip Hark! A Vagrant, which ran from 2007 to 2018. Her other major works include the children's books The Princess and the Pony and King Baby, published in 2015 and 2016 respectively." );
+            authorRepository.save(kBeaton);
+            Illustrator iKBeaton = new Illustrator("Kate", "Beaton", "images/blank_avatar.png", "Kathryn Moira Beaton is a Canadian comics artist best known as the creator of the comic strip Hark! A Vagrant, which ran from 2007 to 2018. Her other major works include the children's books The Princess and the Pony and King Baby, published in 2015 and 2016 respectively." );
+            illustratorRepository.save(iKBeaton);
+
 
             Book mrGum = new Book("You're a Bad Man Mr Gum", "Mr Gum is a complete horror who hates children, animals, fun and corn on the cob. This book's all about him, an angry fairy who lives in his bathtub, Jake the dog, and a little girl called Polly and an evil, stinky butcher all covered in guts.", 192, Format.PAPERBACK, "07/08/2006", "Egmont UK Ltd", "9781405223102", "images/yr_a_bad_man_mr_gum.jpeg", null);
             mrGum.addAuthor(stanton);
@@ -334,17 +345,45 @@ import org.springframework.stereotype.Component;
             blackFlamingo.addDescription(DescriptiveTag.YA);
             bookRepository.save(blackFlamingo);
 
-            BookEntry bookEntry1 = new BookEntry(mrGum, andrewB, null, null , null, Status.WANTTOREAD, "");
+            Book wolfDuckMouse = new Book ("The Wolf, the Duck and the Mouse", "When a woeful mouse is swallowed up by a wolf, he quickly learns he is not alone: a duck has already set up digs and, boy, has that duck got it figured out!", 40,Format.PAPERBACK, "04/10/2018", "Walker Books Ltd", "9781406379761", "images/wolf_duck_mouse.jpeg", null);
+            wolfDuckMouse.addAuthor(mBarnett);
+            wolfDuckMouse.addIllustrator(iKlassen);
+            wolfDuckMouse.addDescription(DescriptiveTag.ANIMALS);
+            wolfDuckMouse.addDescription(DescriptiveTag.PICTUREBOOK);
+            wolfDuckMouse.addDescription(DescriptiveTag.FUNNY);
+            bookRepository.save(wolfDuckMouse);
+
+            Book justAteFriend = new Book("I Just Ate My Friend", "A little creature is looking for a new friend, but he’s not having any luck.\n" +
+                    "\n" +
+                    "Why is he looking for a new friend?\n" +
+                    "\n" +
+                    "Because he ate his old one.", 32, Format.HARDBACK, "02/05/2019", "Allen & Unwin", "9781911631576", "images/just_ate_my_friend.jpeg", null);
+            justAteFriend.addAuthor(hMcKinnon);
+            justAteFriend.addIllustrator(iHMcKinnon);
+            justAteFriend.addDescription(DescriptiveTag.FUNNY);
+            justAteFriend.addDescription(DescriptiveTag.SCARY);
+            justAteFriend.addDescription(DescriptiveTag.PICTUREBOOK);
+            bookRepository.save(justAteFriend);
+
+            Book kingBaby = new Book("King Baby", "All hail King Baby! He greets his adoring public with giggles and wiggles and coos, posing for photos and allowing hugs and kisses. But this royal ruler also has many demands, and when his subjects can't quite keep up, King Baby takes matters into his own tiny hands.", 40, Format.PAPERBACK, "01/09/2016", "Walker Books Ltd", "9781406371758", "images/king_baby.jpeg", null);
+            kingBaby.addAuthor(kBeaton);
+            kingBaby.addIllustrator(iKBeaton);
+            kingBaby.addDescription(DescriptiveTag.PICTUREBOOK);
+            kingBaby.addDescription(DescriptiveTag.FUNNY);
+            kingBaby.addDescription(DescriptiveTag.FIRSTEXPERIENCES);
+            bookRepository.save(kingBaby);
+
+            BookEntry bookEntry1 = new BookEntry(mrGum, andrewB, null, null , null, null, Status.WANTTOREAD, "");
             bookEntryRepository.save(bookEntry1);
-            BookEntry bookEntry2 = new BookEntry(otter, andrewB, "01/06/2023", null, null, Status.CURRENTLYREADING, "");
+            BookEntry bookEntry2 = new BookEntry(otter, andrewB, "01/06/2023", null, null, null, Status.CURRENTLYREADING, "");
             bookEntryRepository.save(bookEntry2);
-            BookEntry bookEntry3 = new BookEntry(supertato, andrewB, "01/06/2023", "04/06/2023", 2, Status.HAVEREAD, "alright, kid likes it more than i do");
+            BookEntry bookEntry3 = new BookEntry(supertato, andrewB, "01/06/2023", "04/06/2023", 4,2, Status.HAVEREAD, "alright, kid likes it more than i do");
             bookEntryRepository.save(bookEntry3);
-            BookEntry bookEntry4 = new BookEntry(hatback, andrewB, "01/06/2023", "04/06/2023", null, Status.WANTTOREAD, "");
+            BookEntry bookEntry4 = new BookEntry(hatback, andrewB, "01/06/2023", "04/06/2023", null,null, Status.WANTTOREAD, "");
             bookEntryRepository.save(bookEntry4);
-            BookEntry bookEntry5 = new BookEntry(goingVolcano, andrewB, "01/06/2023", "04/06/2023", null, Status.CURRENTLYREADING, "");
+            BookEntry bookEntry5 = new BookEntry(goingVolcano, andrewB, "01/06/2023", "04/06/2023", null, null, Status.CURRENTLYREADING, "");
             bookEntryRepository.save(bookEntry5);
-            BookEntry bookEntry6 = new BookEntry(hildaMidnightGiant, andrewB, "01/06/2023", "04/06/2023", 4, Status.HAVEREAD, "loved it loved it loved it loved it");
+            BookEntry bookEntry6 = new BookEntry(hildaMidnightGiant, andrewB, "01/06/2023", "04/06/2023", 4, 4, Status.HAVEREAD, "loved it loved it loved it loved it");
             bookEntryRepository.save(bookEntry6);
         }
     }

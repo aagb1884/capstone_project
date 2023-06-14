@@ -4,7 +4,7 @@ const BookEntryItem = ({}) => {
         <ul>
             <li><img src={bookEntry.book.coverUrl} alt="Book cover" width="175" height="200"/></li>
             <li>{bookEntry.book.title}</li>
-            <li>{bookEntry.starRating}</li>
+            <li>{bookEntry.childRating}</li>
             <li>{bookEntry.status}</li>
 
         </ul>

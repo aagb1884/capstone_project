@@ -23,7 +23,8 @@ const HaveReadItem = ({bookEntry}) => {
         <li>Started reading on {bookEntry.startedReading}</li>
         <li>Finished reading on {bookEntry.finishedReading}</li>
         
-        <li><StarRating rating={bookEntry.starRating} /></li>
+        <li>How much my child enjoyed it: <StarRating rating={bookEntry.childRating} /></li>
+        <li>How much I enjoyed it: <StarRating rating={bookEntry.adultRating} /></li>
         <li>Thoughts: {bookEntry.review}</li>
     </ul>
     </div>

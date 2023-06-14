@@ -28,7 +28,8 @@ const ExpandedShelf = ({bookEntry}) => {
             <li>{bookEntry.book.title}</li>
             <li>Written by {authorInfo}</li>
             <li>Illustrated by {illustratorInfo}</li>
-            <li><StarRating rating={bookEntry.starRating} /></li>
+            <li>How much my child enjoyed it<StarRating rating={bookEntry.childRating} /></li>
+            <li>How much I enjoyed it<StarRating rating={bookEntry.adultRating} /></li>
             <br />
             <li>{bookEntry.book.synopsis}</li>
             <br />

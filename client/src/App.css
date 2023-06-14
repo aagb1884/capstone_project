@@ -3,6 +3,10 @@
   font-family: 'Exo';
 }
 
+.search-page input{
+  margin-bottom: 5px;
+}
+
 .about{
   background-color: rgb(245, 245, 245, 0.5);
   width: 75%;

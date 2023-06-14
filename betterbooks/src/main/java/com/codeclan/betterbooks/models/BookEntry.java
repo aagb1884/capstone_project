@@ -28,8 +28,10 @@ public class BookEntry {
     private String startedReading;
     @Column(name = "finished_reading")
     private String finishedReading;
-    @Column(name = "star_rating")
-    private Integer starRating;
+    @Column(name = "child_rating")
+    private Integer childRating;
+    @Column(name = "adult_rating")
+    private Integer adultRating;
     @Enumerated(EnumType.STRING)
     @Column
     private Status status;
@@ -39,12 +41,13 @@ public class BookEntry {
     public BookEntry() {
     }
 
-    public BookEntry(Book book, User user, String startedReading, String finishedReading, Integer starRating, Status status, String review) {
+    public BookEntry(Book book, User user, String startedReading, String finishedReading, Integer childRating, Integer adultRating, Status status, String review) {
         this.book = book;
         this.user = user;
         this.startedReading = startedReading;
         this.finishedReading = finishedReading;
-        this.starRating = starRating;
+        this.childRating = childRating;
+        this.adultRating = adultRating;
         this.status = status;
         this.review = review;
     }
@@ -81,12 +84,20 @@ public class BookEntry {
         this.finishedReading = finishedReading;
     }
 
-    public Integer getStarRating() {
-        return starRating;
+    public Integer getChildRating() {
+        return childRating;
     }
 
-    public void setStarRating(Integer starRating) {
-        this.starRating = starRating;
+    public void setChildRating(Integer childRating) {
+        this.childRating = childRating;
+    }
+
+    public Integer getAdultRating() {
+        return adultRating;
+    }
+
+    public void setAdultRating(Integer adultRating) {
+        this.adultRating = adultRating;
     }
 
     public Status getStatus() {

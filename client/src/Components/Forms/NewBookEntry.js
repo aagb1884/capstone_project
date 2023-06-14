@@ -13,7 +13,8 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
     const [status, setStatus] = useState("");
     const [startedReading, setStartedReading] = useState("");
     const [finishedReading, setFinishedReading] = useState("");
-    const [starRating, setStarRating] = useState(0);
+    const [childRating, setChildRating] = useState(0);
+    const [adultRating, setAdultRating] = useState(0);
     const [review, setReview] = useState("");
   
     const handleBookChange = (e) => {
@@ -32,8 +33,11 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
       setFinishedReading(e.target.value);
     };
 
-    const handleStarRatingChange = (e) => {
-      setStarRating(parseInt(e.target.value));
+    const handleChildRatingChange = (e) => {
+      setChildRating(parseInt(e.target.value));
+    };
+    const handleAdultRatingChange = (e) => {
+      setAdultRating(parseInt(e.target.value));
     };
 
     const handleReviewChange = (e) => {
@@ -50,14 +54,16 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
         // this will need changed when there is more than one user
         startedReading: startedReading,
         finishedReading: finishedReading,
-        starRating: starRating,
+        childRating: childRating,
+        adultRating: adultRating,
         review: review
       });
       setBookId("");
       setStatus("");
       setStartedReading("");
       setFinishedReading("");
-      setStarRating(0);
+      setChildRating(0);
+      setAdultRating(0);
       setReview("");
       fetchData()    
     };
@@ -124,23 +130,44 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
           onChange={handleFinishedReadingChange}
             />
           </div>
-          <label htmlFor="star-rating">Star Rating</label>
           <br />
-        <div className="star-rating">
-          <input type="radio" id="star5" name="star-rating" value="5" checked={starRating === 5}
-          onChange={handleStarRatingChange}/>
+          <label htmlFor="child-rating">How much did the young person enjoy it?</label>
+          <br />
+        <div className="child-rating">
+          <input type="radio" id="star5" name="child-rating" value="5" checked={childRating === 5}
+          onChange={handleChildRatingChange}/>
           <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="star-rating" value="4" checked={starRating === 4}
-          onChange={handleStarRatingChange}/>
+          <input type="radio" id="star4" name="child-rating" value="4" checked={childRating === 4}
+          onChange={handleChildRatingChange}/>
           <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="star-rating" value="3" checked={starRating === 3}
-          onChange={handleStarRatingChange} />
+          <input type="radio" id="star3" name="child-rating" value="3" checked={childRating === 3}
+          onChange={handleChildRatingChange} />
           <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="star-rating" value="2" checked={starRating === 2}
-          onChange={handleStarRatingChange}/>
+          <input type="radio" id="star2" name="child-rating" value="2" checked={childRating === 2}
+          onChange={handleChildRatingChange}/>
           <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="star-rating" value="1" checked={starRating === 1}
-          onChange={handleStarRatingChange} />
+          <input type="radio" id="star1" name="child-rating" value="1" checked={childRating === 1}
+          onChange={handleChildRatingChange} />
+          <label for="star1" title="text">1 star</label>
+        </div>
+        <br />
+        <label htmlFor="star-rating">How much did you enjoy reading it to them?</label>
+          <br />
+        <div className="adult-rating">
+          <input type="radio" id="star5" name="adult-rating" value="5" checked={adultRating === 5}
+          onChange={handleAdultRatingChange}/>
+          <label for="star5" title="text">5 stars</label>
+          <input type="radio" id="star4" name="adult-rating" value="4" checked={adultRating === 4}
+          onChange={handleAdultRatingChange}/>
+          <label for="star4" title="text">4 stars</label>
+          <input type="radio" id="star3" name="adult-rating" value="3" checked={adultRating === 3}
+          onChange={handleAdultRatingChange} />
+          <label for="star3" title="text">3 stars</label>
+          <input type="radio" id="star2" name="adult-rating" value="2" checked={adultRating === 2}
+          onChange={handleAdultRatingChange}/>
+          <label for="star2" title="text">2 stars</label>
+          <input type="radio" id="star1" name="adult-rating" value="1" checked={adultRating === 1}
+          onChange={handleAdultRatingChange} />
           <label for="star1" title="text">1 star</label>
         </div>
         <div>

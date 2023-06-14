@@ -22,17 +22,17 @@ const SearchContainer = ({books}) => {
    
     return ( 
         <div className="search-page">
-         <h2>SEARCH PAGE - UNDER CONSTRUCTION</h2>
-            {/* <form id="form" onSubmit={handleSubmit}>  */}
+         <h2>All Books</h2>
+         <h3>Please use the search bar to filter by title.</h3>
+            
                <input  id="search" 
                 placeholder="Search..." 
                 onChange={handleSearch}
                 type="text"
                 name="searchTerm"
                 value={searchTerm}/>
-               {/* <button>Search</button> */}
                <SearchResults filteredBooks={filteredBooks}/>
-            {/* </form> */}
+          
         </div>
      );
 }

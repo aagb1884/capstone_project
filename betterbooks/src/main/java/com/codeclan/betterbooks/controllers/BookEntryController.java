@@ -70,7 +70,8 @@ class BookEntryController {
         updatedBookEntry.setStatus(bookEntry.getStatus());
         updatedBookEntry.setStartedReading(bookEntry.getStartedReading());
         updatedBookEntry.setFinishedReading(bookEntry.getFinishedReading());
-        updatedBookEntry.setStarRating(bookEntry.getStarRating());
+        updatedBookEntry.setChildRating(bookEntry.getChildRating());
+        updatedBookEntry.setAdultRating(bookEntry.getAdultRating());
         updatedBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(updatedBookEntry);
@@ -86,7 +87,8 @@ class BookEntryController {
         newBookEntry.setStatus(bookEntry.getStatus());
         newBookEntry.setStartedReading(bookEntry.getStartedReading());
         newBookEntry.setFinishedReading(bookEntry.getFinishedReading());
-        newBookEntry.setStarRating(bookEntry.getStarRating());
+        newBookEntry.setChildRating(bookEntry.getChildRating());
+        newBookEntry.setAdultRating(bookEntry.getAdultRating());
         newBookEntry.setReview(bookEntry.getReview());
 
         bookEntryRepository.save(newBookEntry);
