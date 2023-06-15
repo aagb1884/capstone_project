@@ -151,24 +151,24 @@ const NewBookEntry = ({addBookEntry, fetchData, books}) => {
           <label for="star1" title="text">1 star</label>
         </div>
         <br />
-        <label htmlFor="star-rating">How much did you enjoy reading it to them?</label>
+        <label htmlFor="adult-rating">How much did you enjoy reading it to them?</label>
           <br />
         <div className="adult-rating">
-          <input type="radio" id="star5" name="adult-rating" value="5" checked={adultRating === 5}
+          <input type="radio" id="star5a" name="adult-rating" value="5" checked={adultRating === 5}
           onChange={handleAdultRatingChange}/>
-          <label for="star5" title="text">5 stars</label>
-          <input type="radio" id="star4" name="adult-rating" value="4" checked={adultRating === 4}
+          <label for="star5a" title="text">5 stars</label>
+          <input type="radio" id="star4a" name="adult-rating" value="4" checked={adultRating === 4}
           onChange={handleAdultRatingChange}/>
-          <label for="star4" title="text">4 stars</label>
-          <input type="radio" id="star3" name="adult-rating" value="3" checked={adultRating === 3}
+          <label for="star4a" title="text">4 stars</label>
+          <input type="radio" id="star3a" name="adult-rating" value="3" checked={adultRating === 3}
           onChange={handleAdultRatingChange} />
-          <label for="star3" title="text">3 stars</label>
-          <input type="radio" id="star2" name="adult-rating" value="2" checked={adultRating === 2}
+          <label for="star3a" title="text">3 stars</label>
+          <input type="radio" id="star2a" name="adult-rating" value="2" checked={adultRating === 2}
           onChange={handleAdultRatingChange}/>
-          <label for="star2" title="text">2 stars</label>
-          <input type="radio" id="star1" name="adult-rating" value="1" checked={adultRating === 1}
+          <label for="star2a" title="text">2 stars</label>
+          <input type="radio" id="star1a" name="adult-rating" value="1" checked={adultRating === 1}
           onChange={handleAdultRatingChange} />
-          <label for="star1" title="text">1 star</label>
+          <label for="star1a" title="text">1 star</label>
         </div>
         <div>
           <label htmlFor="review">Your Review</label>
