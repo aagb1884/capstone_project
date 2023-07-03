@@ -110,21 +110,13 @@ const Container = () => {
                 bookEntries={bookEntries} 
                 books={books} />} />
               <Route 
-                path="/books" 
-                element={< BooksContainer 
-                bookData={books}
-                booksBySameAuthor={booksBySameAuthor}
-                booksBySameIllustrator={booksBySameIllustrator}
-                booksInBookEntry={booksInBookEntry}
-                />} />
-              <Route 
                 path="/profile" 
                 element={< UserContainer 
                 userData={users}
                 userBooks={bookEntriesbyUserId}
                 />}  />
               <Route 
-                path="/search" 
+                path="/booksearch" 
                 element={< SearchContainer
                   // bookEntries={bookEntries} 
                   books={books}
