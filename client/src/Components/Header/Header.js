@@ -12,7 +12,7 @@ const Header = () => {
         <div className='better-reads-header'>
                 <h1>Better Reads</h1>
             </div>         
-                <div className="dropdown">
+                <nav>
                     <button class="dropbtn"><FontAwesomeIcon icon={faBars} style={{color: "#ffffff",}} size="2x" /></button>
                         <div className="dropdown-content">
                             <ul>
@@ -24,7 +24,7 @@ const Header = () => {
                             <li><a rel='noopener' href="/about">About</a></li>
                             </ul>
                         </div>
-                </div>
+                </nav>
             </header>      
       );
     }

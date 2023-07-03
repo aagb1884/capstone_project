@@ -6,12 +6,12 @@ const currentlyReadingList = ({currentlyReading}) => {
     })
 
     return ( 
-        <>
+        <section>
         <h2>Currently Reading</h2>
-        <div className="currently-reading">
-        {currentlyReadingInfo}
-        </div>
-        </>
+                <div className="currently-reading">
+                    {currentlyReadingInfo}
+                </div>
+        </section>
      );
 }
  

@@ -1,5 +1,5 @@
 import React from "react";
-import BookItem from "../BooksPage/BookItem";
+import BookItem from "../../Deprecated/BooksPage/BookItem";
 
 const SearchResults = ({filteredBooks}) => {
 

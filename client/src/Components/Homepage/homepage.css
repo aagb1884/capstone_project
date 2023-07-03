@@ -1,4 +1,4 @@
-.homepage {
+main {
     position: absolute;
     text-align: center;
     color: black;
@@ -10,7 +10,7 @@
     transform: translate(-50%, -50%);
   }
 
-  .homepage > h2 {
+  main > h2 {
     font-family: 'Mr Dafoe';
     margin: 0;
     font-size: 5.5em;

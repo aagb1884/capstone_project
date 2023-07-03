@@ -7,12 +7,12 @@ const wantToReadList = ({wantToRead}) => {
     })
 
     return ( 
-        <>
-        <h2>Want To Read</h2>
-        <div className="want-to-read">   
-        {wantToReadInfo}
-        </div>
-        </>
+        <section>
+            <h2>Want To Read</h2>
+                <div className="want-to-read">   
+                    {wantToReadInfo}
+                </div>
+        </section>
      );
 }
  

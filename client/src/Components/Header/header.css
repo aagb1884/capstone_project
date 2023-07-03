@@ -30,7 +30,7 @@ header > h2 {
     z-index: 2;
   }
 
-  .dropdown { 
+header > nav { 
     display: inline-block; 
     position: relative; 
     background-color: #fe4705;
@@ -75,7 +75,7 @@ header > h2 {
     margin-left: -1em; 
   }
 
-  .dropdown:hover .dropdown-content {
+  nav:hover .dropdown-content {
     display: block;
 }
 

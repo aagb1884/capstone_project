@@ -5,9 +5,7 @@ import Footer from "../Components/Footer/Footer";
 import HomePage from "../Components/Homepage/HomePage";
 import MyBooksContainer from "../Components/userBookshelves/MyBooksContainer";
 import UserContainer from '../Components/UserProfile/UserContainer';
-import BooksContainer from '../Components/BooksPage/BooksContainer'
 import SearchContainer from '../Components/SearchPage/SearchContainer';
-import BookEntriesContainer from '../Components/BookEntriesPage/BookEntriesContainer';
 import ErrorPage from '../Components/ErrorPage';
 import { createBookEntry, getBookEntries, getBookEntriesByBookId, getBookEntriesByUserId, getBookEntriesCurrentlyReading, getBookEntriesHaveRead, getBookEntriesWantToRead } from '../Services/BookEntryServices';
 import { getBooks } from '../Services/BookServices';
@@ -71,22 +69,6 @@ const Container = () => {
     const addBookEntry = (newBookEntry) => {
       createBookEntry(newBookEntry, loggedInUser).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
     }
-
-  //   const lowerSearch = searchTerm.toLowerCase();
-  // const filteredBooks = books.filter((book) => {
-  //   return book.title.toLowerCase().indexOf(lowerSearch) > -1;
-  // });
-
-    // const updateBookEntry= async (id, updatedBookEntry) => {
-    //   await updateBookEntry(id, updatedBookEntry)
-    //   const bookEntryToEdit = bookEntries.find((bookEntry) => bookEntry._id === id)
-    //   const bookEntryIndex = bookEntries.indexOf(bookEntryToEdit)
-    //   bookEntryToEdit.name = updatedBookEntry.name
-    //   bookToEdit.image_url = updatedBookEntry.image_url
-    //   const newBookEntryArray = bookEntries.toSpliced(bookEntryIndex, 1, bookEntryToEdit)
-    //   setBookEntries(newBookEntryArray)
-    // }
-
     return  <>
     <div className='flex-wrapper'>
       <Header />
@@ -98,7 +80,6 @@ const Container = () => {
               <Route 
                 path="/mybooks" 
                 element={< MyBooksContainer
-                // bookEntryData={bookEntries} 
                 wantToRead={bookEntriesByWantToRead}
                 currentlyReading={bookEntriesByCurrentlyReading}
                 haveRead={bookEntriesbyHaveRead}
@@ -118,27 +99,11 @@ const Container = () => {
               <Route 
                 path="/booksearch" 
                 element={< SearchContainer
-                  // bookEntries={bookEntries} 
-                  books={books}
-                  // authors={authors}
-                  // illustrators={illustrators}
-                  // users={users}
-                  // wantToRead={bookEntriesByWantToRead}
-                  // currentlyReading={bookEntriesByCurrentlyReading}
-                  // haveRead={bookEntriesbyHaveRead}
-                  // byBookId={bookEntriesbyBookId}
-                  // byUserId={bookEntriesbyUserId}
-                  // booksBySameAuthor={booksBySameAuthor}
-                  // booksBySameIllustrator={booksBySameIllustrator}
-                  // booksInBookEntry={booksInBookEntry}
-                  // bookList={filteredBooks}
+                books={books}
                 />} />
-              <Route 
-                path="/bookentries" 
-                element={< BookEntriesContainer bookEntryData={bookEntries}/>} />
-                <Route
+              <Route
                 path='/about'
-                element={< AboutPage />}/>
+                element={< AboutPage />} />  
               <Route 
                 path="*" 
                 element={< ErrorPage/>} />

@@ -7,7 +7,7 @@ import './myBooks.css';
 const MyBooksContainer = ({wantToRead, currentlyReading, haveRead}) => {
 
     return ( 
-<div className ='my-bookshelf'>
+<section className='my-bookshelf'>
         <h1>My Bookshelf</h1>
         <WantToReadList
         wantToRead={wantToRead} 
@@ -17,7 +17,7 @@ const MyBooksContainer = ({wantToRead, currentlyReading, haveRead}) => {
         <HaveReadList
         haveRead={haveRead}
          />
-</div>
+</section>
      );
 }
  

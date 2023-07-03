@@ -23,9 +23,9 @@ const UserInfoBooks = ({userBooks}) => {
 
 
     return ( 
-        <div className="user-book-entry">
+        <section className="user-book-entry">
         {userBookInfo}
-        </div>
+        </section>
      );
 }
  

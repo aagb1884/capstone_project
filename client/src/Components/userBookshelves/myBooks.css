@@ -2,6 +2,10 @@ ul{
     list-style-type: none;
 }
 
+.my-bookshelf h1{
+    font-size: xx-large;
+}
+
 .want-to-read{
     display: flex;
     flex-direction: row;
@@ -29,10 +33,3 @@ ul{
     align-items: center;
     background-color: rgb(245, 245, 245, 0.55);
 }
-/* 
-.star-rating2 {
-    display: inline-block;
-    height: 46px;
-    justify-content: center;
-    color: #ffc700;  
-} */

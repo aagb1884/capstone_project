@@ -7,12 +7,12 @@ const HaveReadList = ({haveRead}) => {
     })
 
     return ( 
-        <>
-        <h2>Finished Reading</h2>
-    <div className="have-read"> 
-    {haveReadInfo}
-    </div> 
-    </>
+        <section>
+          <h2>Finished Reading</h2>
+            <div className="have-read"> 
+                {haveReadInfo}
+            </div> 
+        </section>
     );
 }
  

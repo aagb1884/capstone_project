@@ -6,7 +6,7 @@ const UserInfoPage = ({user}) => {
    
 
     return ( 
-        <div className="user-profile">
+        <section className="user-profile">
         <h2>{user.firstname} {user.lastname}'s Profile</h2>
         <div className="userInfo">
             <img src={user.imgUrl} alt="userImage" width="100px" height="100px"/>
@@ -17,7 +17,7 @@ const UserInfoPage = ({user}) => {
                    
                 </div>
         </div>
-        </div>
+        </section>
      );
 }
  

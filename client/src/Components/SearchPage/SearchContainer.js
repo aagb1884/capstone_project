@@ -21,7 +21,7 @@ const SearchContainer = ({books}) => {
   
    
     return ( 
-        <div className="search-page">
+        <section className="search-page">
          <h2>All Books</h2>
          <h3>Please use the search bar to filter by title.</h3>
             
@@ -33,7 +33,7 @@ const SearchContainer = ({books}) => {
                 value={searchTerm}/>
                <SearchResults filteredBooks={filteredBooks}/>
           
-        </div>
+        </section>
      );
 }
 

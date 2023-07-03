@@ -10,10 +10,10 @@ const UserContainer = ({userData, userBooks}) => {
    
 
     return ( 
-    <div className="user-container">
+    <section className="user-container">
        {userInfo}
        <UserInfoBooks userBooks={userBooks} />
-    </div> );
+    </section> );
 }
  
 export default UserContainer;
