@@ -12,8 +12,10 @@ import { getBooks } from '../Services/BookServices';
 import { getUsers } from '../Services/UserServices';
 import { getAuthors } from '../Services/AuthorServices';
 import { getIllustrators } from '../Services/IllustratorServices';
+import { createUser } from '../Services/UserServices';
 import NewBookEntry from '../Components/Forms/NewBookEntry';
 import AboutPage from '../About';
+import NewUserEntry from '../Components/Forms/NewUserEntry';
 
 const Container = () => {
   const [bookEntries, setBookEntries] = useState([]);
@@ -69,6 +71,12 @@ const Container = () => {
     const addBookEntry = (newBookEntry) => {
       createBookEntry(newBookEntry, loggedInUser).then((savedBookEntry) => setBookEntries([...bookEntries, savedBookEntry]));
     }
+
+    const addNewUser = (newUser) => {
+      createUser(newUser, loggedInUser).then((savedUser) => setUsers([...users, savedUser]));
+    }
+
+
     return  <>
     <div className='flex-wrapper'>
       <Header />
@@ -104,6 +112,12 @@ const Container = () => {
               <Route
                 path='/about'
                 element={< AboutPage />} />  
+              <Route
+                path='/newuser'
+                element={< NewUserEntry 
+                addNewUser={addNewUser}
+                users={users}
+                fetchData={fetchData} />} />  
               <Route 
                 path="*" 
                 element={< ErrorPage/>} />
