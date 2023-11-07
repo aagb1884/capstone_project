@@ -73,8 +73,17 @@ const Container = () => {
     }
 
     const addNewUser = (newUser) => {
-      createUser(newUser, loggedInUser).then((savedUser) => setUsers([...users, savedUser]));
-    }
+      createUser(newUser)
+        .then((savedUser) => {
+          console.log('User added successfully:', savedUser);
+          setUsers([...users, savedUser]);
+        })
+        .catch((error) => {
+          console.error('Error adding new user:', error);
+        });
+    };
+    
+    
 
 
     return  <>
@@ -116,7 +125,6 @@ const Container = () => {
                 path='/newuser'
                 element={< NewUserEntry 
                 addNewUser={addNewUser}
-                users={users}
                 fetchData={fetchData} />} />  
               <Route 
                 path="*" 

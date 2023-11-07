@@ -40,6 +40,7 @@ class UserController {
         User updatedUser = userRepository.findById(id).get();
         updatedUser.setFirstname(user.getFirstname());
         updatedUser.setLastname(user.getLastname());
+        updatedUser.setUsername(user.getUsername());
         updatedUser.setImgUrl(user.getImgUrl());
         updatedUser.setBio(user.getBio());
 
@@ -53,6 +54,7 @@ class UserController {
         User newUser = new User();
         newUser.setFirstname(user.getFirstname());
         newUser.setLastname(user.getLastname());
+        newUser.setUsername(user.getUsername());
         newUser.setImgUrl(user.getImgUrl());
         newUser.setBio(user.getBio());
 

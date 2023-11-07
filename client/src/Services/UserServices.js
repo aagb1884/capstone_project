@@ -29,11 +29,19 @@ export const createUser = (newUser) => {
         body: JSON.stringify(newUser),
         headers: { 'Content-Type': "application/json" }
     })
-    .then(res => res.json())
-    .then(data => {
-        return {
-        ...data,
-        ...newUser
-        }
+    .then((res) => {
+      console.log('API Response:', res);
+      return res.json();
     })
-}
+    .then((data) => {
+      console.log('API Data:', data);
+      return {
+        ...data,
+        ...newUser,
+      };
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      throw error; // Rethrow the error to be caught by the calling code
+    });
+};

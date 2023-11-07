@@ -1,54 +1,50 @@
 import { useState } from "react";
 
-const NewUserEntry = ({ addNewUser, users, fetchData }) => {
+const NewUserEntry = ({ addNewUser, fetchData }) => {
 
-    // const [userId, setUserId] = useState("");
     const [username, setUsername] = useState("");
-    const [userFirstName, setUserFirstName] = useState("");
-    const [userLastName, setUserLastName] = useState("");
-    const [userBio, setUserBio] = useState("");
-    const [userImgUrl, setUserImageUrl] = useState("");
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [bio, setBio] = useState("");
+    const [imgUrl, setImgUrl] = useState("");
 
-    // const handleUserChange = (e) => {
-    //     setUserId(e.target.value);
-    //   };
 
       const handleUsernameChange = (e) => {
         setUsername(e.target.value);
       };
 
     const handleFirstNameChange = (e) => {
-        setUserFirstName(e.target.value);
+        setFirstname(e.target.value);
       };
 
     const handleLastNameChange = (e) => {
-        setUserLastName(e.target.value);
+        setLastname(e.target.value);
       };
    
     const handleUserBioChange = (e) => {
-        setUserBio(e.target.value);
+        setBio(e.target.value);
       };
 
     const handleUserImgUrlChange = (e) => {
-        setUserImageUrl(e.target.value);
+        setImgUrl(e.target.value);
       };
 
       const handleSubmit = e => {
         e.preventDefault();
 
         addNewUser({
+            firstname: firstname,
+            lastname: lastname,
             username: username,
-            userFirstName: userFirstName,
-            userLastName: userLastName,
-            userBio: userBio,
-            userImgUrl: userImgUrl
+            imgUrl: imgUrl,
+            bio: bio
           });
           
+          setFirstname("");
+          setLastname("");
           setUsername("");
-          setUserFirstName("");
-          setUserLastName("");
-          setUserBio("");
-          setUserImageUrl("");
+          setImgUrl("");
+          setBio("");
           fetchData()    
         };
 
@@ -60,7 +56,7 @@ const NewUserEntry = ({ addNewUser, users, fetchData }) => {
       
       <h2>Enter User details:</h2>
         <div>
-          <label htmlFor="started-reading">Username</label>
+          <label htmlFor="enter-username">Username</label>
           <br/>
           <input
           type="text"
@@ -70,19 +66,19 @@ const NewUserEntry = ({ addNewUser, users, fetchData }) => {
           value={username}
           onChange={handleUsernameChange}
             />
-          </div>
+        </div>
         <div>
-          <label htmlFor="user-first-name">Firstname</label>
+          <label htmlFor="user-first-name">First name</label>
           <br/>
           <input
           type="text"
           id="user-first-name"
           placeholder="Enter firstname(s)"
           name="user-first-name"
-          value={userFirstName}
+          value={firstname}
           onChange={handleFirstNameChange}
             />
-          </div>
+        </div>
         <div>
           <label htmlFor="user-last-name">Last name</label>
           <br/>
@@ -91,10 +87,10 @@ const NewUserEntry = ({ addNewUser, users, fetchData }) => {
           id="user-last-name"
           placeholder="Enter last name(s)"
           name="user-last-name"
-          value={userLastName}
+          value={lastname}
           onChange={handleLastNameChange}
             />
-          </div>
+        </div>
         <div>
           <label htmlFor="user-bio">Short biography (500 Characters max)</label>
           <br/>
@@ -103,25 +99,27 @@ const NewUserEntry = ({ addNewUser, users, fetchData }) => {
           id="user-bio"
           placeholder="Enter bio"
           name="user-bio"
-          value={userBio}
+          value={bio}
           onChange={handleUserBioChange}
             />
-          </div>
+        </div>
         <div>
           <label htmlFor="user-image-url">Profile Image Link</label>
           <br/>
           <input
           type="text"
           id="user-img-url"
-          placeholder="Enter url for profile image"
+          placeholder="Enter image url"
           name="user-img-url"
-          value={userImgUrl}
+          value={imgUrl}
           onChange={handleUserImgUrlChange}
             />
-          </div>
-          <div className="form-button">
-        <button type="submit">Add User</button>
         </div>
+
+        <div className="form-button">
+            <button type="submit">Add User</button>
+        </div>
+
         </form>
 
             </div>
