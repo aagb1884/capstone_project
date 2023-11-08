@@ -3,21 +3,21 @@ import './bookitem.css'
 const BookItem = ({book}) => {
 
     const authorInfo = book.authors.map((author, index) => {
-        return <span>{author.firstname} {author.lastname}
+        return <span key={index}>{author.firstname} {author.lastname} 
         {index < book.authors.length - 1 && <span>, </span>}</span> 
     })
     const illustratorInfo = book.illustrators.map((illustrator, index) => {
-        return <span>{illustrator.firstname} {illustrator.lastname}
+        return <span key={index}>{illustrator.firstname} {illustrator.lastname} 
         {index < book.illustrators.length - 1 && <span>, </span>}</span>
     })
     const descriptiveTags = book.descriptions.map((description, index) => {
-        return <span>{description} 
+        return <span key={index}>{description} 
         {index < book.descriptions.length - 1 && <span>, </span>}</span>
     })
     
     return ( 
-        <div className="book-item">
-         
+        <div className="book-item" data-testid="book-item">
+            
         
             <div className='image-container'>
                 <img src={book.coverUrl} alt="Book cover" />

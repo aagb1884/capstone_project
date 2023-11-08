@@ -8,7 +8,7 @@ const HomePage = () => {
             <div className='better-reads'>
                 <h1>Better Reads</h1>
             </div>
-        <Link to="/mybooks"><img SRC="images/icons8-open-book.gif" alt="book pages gif" data-testid="my-books-img-button" /> </Link>
+        <Link to="/mybooks"><img src="images/icons8-open-book.gif" alt="book pages gif" data-testid="my-books-img-button" /> </Link>
         <p><Link to="/mybooks">Enter Here</Link></p>
         </main>
      );

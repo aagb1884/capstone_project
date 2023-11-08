@@ -16,9 +16,6 @@ const SearchContainer = ({books}) => {
         return book.title.toLowerCase().match(searchTerm.toLowerCase());
       });
    }
-
-   
-  
    
     return ( 
         <section className="search-page">
@@ -30,7 +27,9 @@ const SearchContainer = ({books}) => {
                 onChange={handleSearch}
                 type="text"
                 name="searchTerm"
-                value={searchTerm}/>
+                value={searchTerm}
+                data-testid="search-input"
+               />
                <SearchResults filteredBooks={filteredBooks}/>
           
         </section>

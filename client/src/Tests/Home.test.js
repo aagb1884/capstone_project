@@ -8,7 +8,7 @@ describe("HomePage", () => {
   
     beforeEach(() => {
       homepage = render(<Router>
-                        <HomePage />
+                          <HomePage />
                         </Router>);
     });
 
