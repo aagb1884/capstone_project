@@ -1,4 +1,5 @@
 import './homepage.css';
+import { Link } from 'react-router-dom';
 
 const HomePage = () => {
     return ( 
@@ -7,8 +8,8 @@ const HomePage = () => {
             <div className='better-reads'>
                 <h1>Better Reads</h1>
             </div>
-        <a href="/mybooks"><img SRC="images/icons8-open-book.gif" alt="book pages gif"/></a>
-        <p><a href="/mybooks">Enter Here</a></p>
+        <Link to="/mybooks"><img SRC="images/icons8-open-book.gif" alt="book pages gif" data-testid="my-books-img-button" /> </Link>
+        <p><Link to="/mybooks">Enter Here</Link></p>
         </main>
      );
 }
